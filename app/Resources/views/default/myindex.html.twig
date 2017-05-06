@@ -25,12 +25,7 @@
                 <div class="clearfix"></div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="inner">
-                <a href="informations/mentions-legales.html">Mentions Légales </a> - <a title="Koredge, agence digitale Lyon et Besançon – création de site internet, référencement, social média" target="_blank" href="http://www.koredge.fr">Réalisation Koredge</a>
-                <!--<a href="informations/plan-de-site.html">Plan du site</a>-->
-            </div>
-        </div></footer>
+    </footer>
 {% endblock %}
 
 {% block stylesheets %}
@@ -41,9 +36,13 @@
         background-size: 100%;
     }
     .footer {
-        float: left;
-        width: 100%;
-        overflow: hidden;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 1rem;
+        background-color: #efefef;
+        text-align: center;
     }
     .footer-top {
         float: left;
@@ -53,13 +52,6 @@
         background-size: contain;
         background-color: #1197d0;
         text-align: center;
-    }
-    .footer-bottom {
-        background: #FFF;
-        text-align: center;
-        width: 100%;
-        float: left;
-        padding: 18px 0px;
     }
     .inner {
         max-width: 1178px;
