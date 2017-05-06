@@ -17,6 +17,22 @@
 
         </div>
     </div>
+    <footer class="footer clearfix"><div class="footer-top">
+            <div class="inner">
+                <a href=""><img src="fileadmin/template2/img/accueil.png" alt="">Accueil</a>
+                <!--<a href="informations/plan-de-site.html"><img src="fileadmin/template2/img/plan-site.png" alt="" />Plan de site</a>-->
+                <a href="informations/nous-contacter.html"><img src="fileadmin/template2/img/contact.png" alt="">Contact</a>
+                <a href="inscription-newsletter.html"><img src="fileadmin/template2/img/newsletter.png" alt="">Newsletter</a>
+                <a target="_blank" href="https://www.facebook.com/CE-Peugeot-Citroen-Sochaux-1255918834425618/"><img src="fileadmin/template2/img/fb-footer.png" alt="">Facebook</a>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="inner">
+                <a href="informations/mentions-legales.html">Mentions Légales </a> - <a title="Koredge, agence digitale Lyon et Besançon – création de site internet, référencement, social média" target="_blank" href="http://www.koredge.fr">Réalisation Koredge</a>
+                <!--<a href="informations/plan-de-site.html">Plan du site</a>-->
+            </div>
+        </div></footer>
 {% endblock %}
 
 {% block stylesheets %}
@@ -24,8 +40,57 @@
     body {
         background-image: url({{ asset('/bundles/app/images/cepsa.JPG') }});
         background-repeat: no-repeat;
-        background-size: auto;
-        height: 258px;
+        background-size: 100%;
+    }
+    .footer {
+        float: left;
+        width: 100%;
+        overflow: hidden;
+    }
+    .footer-top {
+        float: left;
+        width: 100%;
+        /* background-image: url(../img/bg-footer.jpg); */
+        padding: 24px 0px;
+        background-size: contain;
+        background-color: #1197d0;
+        text-align: center;
+    }
+    .footer-bottom {
+        background: #FFF;
+        text-align: center;
+        width: 100%;
+        float: left;
+        padding: 18px 0px;
+    }
+    .inner {
+        max-width: 1178px;
+        margin: 0px auto;
+        width: 98%;
+        /* position: relative; */
+    }
+    .footer-top a {
+        width: 10%;
+        text-align: center;
+        color: #FFF;
+        margin: 0px 5%;
+        font-size: 14px;
+        display: inline-block;
+    }
+    a {
+        text-decoration: none;
+    }
+    .footer-top img {
+        width: 80%;
+        margin: 7px auto;
+        display: block;
+    }
+    .clearfix:after {
+        content: ".";
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
     }
 </style>
 {% endblock %}
