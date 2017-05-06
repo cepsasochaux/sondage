@@ -1,10 +1,7 @@
 {% extends 'base.html.twig' %}
-{% stylesheets
-'@AppBundle/Resources/public/css/reset.css'
-'bundles/App/css/style.css'
-filter='cssrewrite' %}
-<link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
-{% endstylesheets %}
+
+
+
 {% block body %}
     <div id="wrapper">
         <div id="container">
@@ -21,8 +18,9 @@ filter='cssrewrite' %}
     </div>
 {% endblock %}
 
-{% block stylesheets %}
-    <style>
-        body { background-image: url({{ asset('bundles/app/images/cepsa.JPG') }}) ; font: 18px/1.5 sans-serif; }
-    </style>
+{% block stylesheets
+'@AppBundle/Resources/public/css/reset.css'
+'bundles/App/css/style.css'
+filter='cssrewrite' %}
+<link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
 {% endblock %}
