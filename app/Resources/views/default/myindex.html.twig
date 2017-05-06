@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
-
+{% stylesheets
+'@AppBundle/Resources/public/css/reset.css'
+'bundles/App/css/style.css'
+filter='cssrewrite' %}
+<link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
+{% endstylesheets %}
 {% block body %}
     <div id="wrapper">
         <div id="container">

@@ -3,12 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Cepsa{% endblock %}</title>
-        {% stylesheets
-        '@AppBundle/Resources/public/css/reset.css'
-        'bundles/App/css/style.css'
-        filter='cssrewrite' %}
-        <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
-        {% endstylesheets %}
+        {% block stylesheets %}
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
