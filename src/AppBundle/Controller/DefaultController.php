@@ -16,7 +16,7 @@ class DefaultController extends Controller
         $host_name  = "db680319702.db.1and1.com";
         $database   = "db680319702";
         $user_name  = "dbo680319702";
-        $password   = "cepsa1234";
+        $password   = "cepsa123";
 
 
         $connect = mysqli_connect($host_name, $user_name, $password, $database);
