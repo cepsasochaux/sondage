@@ -17,11 +17,10 @@
     </div>
     <footer class="footer clearfix"><div class="footer-top">
             <div class="inner">
-                <a href=""><img src="fileadmin/template2/img/accueil.png" alt="">Accueil</a>
-                <!--<a href="informations/plan-de-site.html"><img src="fileadmin/template2/img/plan-site.png" alt="" />Plan de site</a>-->
-                <a href="informations/nous-contacter.html"><img src="fileadmin/template2/img/contact.png" alt="">Contact</a>
-                <a href="inscription-newsletter.html"><img src="fileadmin/template2/img/newsletter.png" alt="">Newsletter</a>
-                <a target="_blank" href="https://www.facebook.com/CE-Peugeot-Citroen-Sochaux-1255918834425618/"><img src="fileadmin/template2/img/fb-footer.png" alt="">Facebook</a>
+                <a href="http://www.cepsa-sochaux.com/"><img src=" {{ asset('/bundles/app/images/accueil.png')}}" alt="">Accueil</a>
+                <a href="http://www.cepsa-sochaux.com/informations/nous-contacter.html"><img src="{{ asset('/bundles/app/images/contact.png')}}" alt="">Contact</a>
+                <a href="http://www.cepsa-sochaux.com/inscription-newsletter.html"><img src="{{ asset('/bundles/app/images/newsletter.png')}}" alt="">Newsletter</a>
+                <a target="_blank" href="https://www.facebook.com/CE-Peugeot-Citroen-Sochaux-1255918834425618/"><img src="{{ asset('/bundles/app/images/fb-footer.png')}}" alt="">Facebook</a>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -40,14 +39,11 @@
         right: 0;
         bottom: 0;
         left: 0;
-        padding: 1rem;
-        background-color: #efefef;
         text-align: center;
     }
     .footer-top {
         float: left;
         width: 100%;
-        /* background-image: url(../img/bg-footer.jpg); */
         padding: 24px 0px;
         background-size: contain;
         background-color: #1197d0;
@@ -56,8 +52,7 @@
     .inner {
         max-width: 1178px;
         margin: 0px auto;
-        width: 98%;
-        /* position: relative; */
+        width: 100%;
     }
     .footer-top a {
         width: 10%;
