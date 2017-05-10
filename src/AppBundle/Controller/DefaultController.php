@@ -13,9 +13,17 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        if(isset($_POST['submit'])){
-            dump('yeye');
-        }
-        return $this->render('default/myindex.html.twig');
+        $task = new Task();
+
+        $form = $this->createFormBuilder($task)
+            ->add('user', TextType::class, array('class' => 'Essai'))
+            ->add('save', SubmitType::class, array('label' => 'Create Task'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        return $this->render('default/myindex.html.twig', array(
+            'form' => $form->createView(),
+        ));
     }
 }

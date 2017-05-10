@@ -19,10 +19,15 @@
                     </p>
                     <div id="numero_anonyme" class="clearfix">
                         <h2>Votre N° de participation anonyme</h2>
+                        <form>
                         <input type="text" name="user" maxlength="10">
                         <input type="submit" name="submit" value="VALIDER" >
+                        </form>
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                        {{ form_end(form) }}
                     </div>
-                    <br>
+                    <br><br>
                     <i><center>Toutes vos réponses seront anonymes et utilisés dans la cadre seul de statistique afin que le Ce PSA puissent établir des corrélations entre les prestations et les utilisateurs. Aucune de vos données personnelles ne sera enregistrée</center></i>
                     <br><br>
                 </div>
