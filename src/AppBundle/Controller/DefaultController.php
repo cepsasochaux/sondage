@@ -35,7 +35,7 @@ class DefaultController extends Controller
                 $this->get('session')->getFlashBag()->set('error', 'Le N° de participation anonyme n\'existe pas.');
             }
             else {
-                $myClient->setStatus(1);
+                $myClient->setStatus('1');
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($myClient);
                 $em->flush();
