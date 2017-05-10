@@ -31,12 +31,11 @@ class DefaultController extends Controller
 
             $isClient = $this->getDoctrine()->getRepository('AppBundle:Client')->findByCode($client->getCode());
             if(!$isClient){
-                throw $this->createNotFoundException(
-                    'No product found for id '.$client->getCode()
-                );
+                $this->get('session')->getFlashBag()->set('error', 'Le N° de participation anonyme n\'existe pas.');
             }
-
-            return $this->redirectToRoute('task_success');
+            else {
+                return $this->redirectToRoute('task_success');
+            }
         }
 
 

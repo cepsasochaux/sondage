@@ -23,6 +23,10 @@
                         {{ form_widget(form) }}
                         {{ form_end(form) }}
                     </div>
+                    {% for flashMessage in app.session.flashbag.get('error') %}
+                    <br><br>
+                        {{ flashMessage }}
+                    {% endfor %}
                     <br><br>
                     <i><center>Toutes vos réponses seront anonymes et utilisés dans la cadre seul de statistique afin que le Ce PSA puissent établir des corrélations entre les prestations et les utilisateurs. Aucune de vos données personnelles ne sera enregistrée</center></i>
                     <br><br>
@@ -234,7 +238,6 @@
     <script type="text/javascript">
         $("#form_code").on('keypress', function () {
             var ten_char = $("#form_code").val().length+1;
-            console.log(ten_char);
             if(ten_char>=10){
                 $("#form_save").addClass('btn_ok');
             }
