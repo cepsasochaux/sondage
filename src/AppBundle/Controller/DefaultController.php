@@ -20,7 +20,7 @@ class DefaultController extends Controller
 
         $form = $this->createFormBuilder($client)
             ->add('code', TextType::class)
-            ->add('save', SubmitType::class, array('label' => 'Create Task'))
+            ->add('save', SubmitType::class, array('label' => 'VALIDER'))
             ->getForm();
 
         $form->handleRequest($request);

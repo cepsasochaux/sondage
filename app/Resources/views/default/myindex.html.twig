@@ -19,10 +19,6 @@
                     </p>
                     <div id="numero_anonyme" class="clearfix">
                         <h2>Votre N° de participation anonyme</h2>
-                        <form>
-                        <input type="text" name="user" maxlength="10">
-                        <input type="submit" name="submit" value="VALIDER" >
-                        </form>
                         {{ form_start(form) }}
                         {{ form_widget(form) }}
                         {{ form_end(form) }}
@@ -71,7 +67,7 @@
         text-align: center;
         box-sizing: border-box;
     }
-    #numero_anonyme input[type=submit] {
+    #form_save {
         float: left;
         border: none;
         color: white;
