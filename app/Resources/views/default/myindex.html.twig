@@ -232,13 +232,14 @@
 
 {% block javascripts %}
     <script type="text/javascript">
-        $("#numero_anonyme input[type=text]").on('keypress', function () {
+        $("#form_code").on('keypress', function () {
             var ten_char = $("#form_code").val().length+1;
+            console.log(ten_char);
             if(ten_char>=10){
-                $("#form_submit").addClass('btn_ok');
+                $("#form_save").addClass('btn_ok');
             }
             else {
-                $("#form_submit").removeClass('btn_ok');
+                $("#form_save").removeClass('btn_ok');
             }
         })
     </script>
