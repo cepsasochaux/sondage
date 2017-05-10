@@ -9,9 +9,11 @@
                 </h1>
                 <p id="P_3">
                     Quod si rectum statuerimus vel concedere amicis, quidquid velint, vel impetrare ab iis, quidquid velimus, perfecta quidem sapientia si simus, nihil habeat res vitii; sed loquimur de iis amicis qui ante oculos sunt, quos vidimus aut de quibus memoriam accepimus, quos novit vita communis. Ex hoc numero nobis exempla sumenda sunt, et eorum quidem maxime qui ad sapientiam proxime accedunt.<br id="BR_4" />
-                    <button id="BUTTON_5">
-                        Démarrer
-                    </button>
+                <div id="numero_anonyme" class="clearfix">
+                    <h2>Votre N° de participation anonyme</h2>
+                    <input type="text" name="user" maxlength="10">
+                    <input type="submit" name="submit" value="VALIDER" >
+                </div>
                 </p>
             </div>
         </div>
@@ -30,7 +32,30 @@
 
 {% block stylesheets %}
 <style>
-
+    #numero_anonyme h2 {
+        margin: 0px 0px 0px 0px;
+    }
+    #numero_anonyme {
+        background: orangered;
+        color: white;
+        font-family: Calibri;
+        width: 350px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+    #numero_anonyme input[type=text] {
+        width: 100%;
+        border: none;
+        float:left;
+        margin: 8px 0;
+        font-size: 20px;
+        letter-spacing: 0.3em;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    #numero_anonyme input[type=submit] {
+        float: left;
+    }
     #DIV_1 {
         margin-top: 50px;
     }
