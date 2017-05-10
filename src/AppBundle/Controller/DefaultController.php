@@ -13,7 +13,9 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
+        if(isset($_POST['submit'])){
+            dump('yeye');
+        }
         return $this->render('default/myindex.html.twig');
     }
 }
