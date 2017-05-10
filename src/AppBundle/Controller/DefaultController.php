@@ -28,14 +28,12 @@ class DefaultController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
             $client = $form->getData();
-            dump($client);
             $em = $this->getDoctrine()->getManager();
             $clients = $em->getRepository('AppBundle:Client')->findByCode($client->getCode());
             if(!$clients){
                 $this->get('session')->getFlashBag()->set('error', 'Le N° de participation anonyme n\'existe pas.');
             }
             else {
-                dump($clients);
                 $myClient=$clients[0];
                 $myClient->setStatus('1');
                 $em->flush();
