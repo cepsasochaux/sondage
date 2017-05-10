@@ -29,7 +29,7 @@ class DefaultController extends Controller
 
             $client = $form->getData();
 
-            $isClient = $this->getDoctrine()->getRepository('AppBundle:Client')->find($client->getCode());
+            $isClient = $this->getDoctrine()->getRepository('AppBundle:Client')->findByCode($client->getCode());
             if(!$isClient){
                 throw $this->createNotFoundException(
                     'No product found for id '.$client->getCode()
