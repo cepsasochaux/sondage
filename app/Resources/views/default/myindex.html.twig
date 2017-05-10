@@ -233,12 +233,12 @@
 {% block javascripts %}
     <script type="text/javascript">
         $("#numero_anonyme input[type=text]").on('keypress', function () {
-            var ten_char = $("#numero_anonyme input[type=text]").val().length+1;
+            var ten_char = $("#form_code").val().length+1;
             if(ten_char>=10){
-                $("#numero_anonyme input[type=submit]").addClass('btn_ok');
+                $("#form_submit").addClass('btn_ok');
             }
             else {
-                $("#numero_anonyme input[type=submit]").removeClass('btn_ok');
+                $("#form_submit").removeClass('btn_ok');
             }
         })
     </script>

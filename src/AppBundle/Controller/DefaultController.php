@@ -25,6 +25,21 @@ class DefaultController extends Controller
 
         $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $client = $form->getData();
+
+            $isClient = $this->getDoctrine()->getRepository('AppBundle:Client')->find($client->getCode());
+            if(!$isClient){
+                throw $this->createNotFoundException(
+                    'No product found for id '.$client->getCode()
+                );
+            }
+
+            return $this->redirectToRoute('task_success');
+        }
+
+
         return $this->render('default/myindex.html.twig', array(
             'form' => $form->createView(),
         ));
