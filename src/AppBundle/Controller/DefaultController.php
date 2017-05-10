@@ -13,10 +13,10 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $host_name  = "db680319702.db.1and1.com";
-        $database   = "db680319702";
-        $user_name  = "dbo680319702";
-        $password   = "cepsa123";
+        $host_name  = "db680754909.db.1and1.com";
+        $database   = "db680754909";
+        $user_name  = "dbo680754909";
+        $password   = "cepsa1234";
 
 
         $connect = mysqli_connect($host_name, $user_name, $password, $database);
