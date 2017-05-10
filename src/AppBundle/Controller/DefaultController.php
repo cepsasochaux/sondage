@@ -28,6 +28,7 @@ class DefaultController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
             $client = $form->getData();
+            dump($client);
             $em = $this->getDoctrine()->getManager();
             $myClient = $em->getRepository('AppBundle:Client')->findByCode($client->getCode());
             if(!$myClient){
