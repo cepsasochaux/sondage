@@ -36,7 +36,7 @@ class DefaultController extends Controller
             }
             else {
                 dump($clients);
-                $myClient=$clients->get('Client');
+                $myClient=$clients[0];
                 $myClient->setStatus('1');
                 $em->flush();
                 return $this->redirectToRoute('task_success');
