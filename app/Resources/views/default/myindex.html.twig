@@ -25,7 +25,9 @@
                     </div>
                     {% for flashMessage in app.session.flashbag.get('error') %}
                     <br><br>
+                        <div id="flash">
                         {{ flashMessage }}
+                        </div>
                     {% endfor %}
                     <br><br>
                     <i><center>Toutes vos réponses seront anonymes et utilisés dans la cadre seul de statistique afin que le Ce PSA puissent établir des corrélations entre les prestations et les utilisateurs. Aucune de vos données personnelles ne sera enregistrée</center></i>
@@ -48,6 +50,13 @@
 
 {% block stylesheets %}
 <style>
+    #flash{
+        margin: 0 auto;
+        color: #fff;
+        background: #ff6072;
+        padding: 5px;
+        border-radius: 5px;
+    }
     #numero_anonyme h2 {
         margin: 0px 0px 0px 0px;
     }
