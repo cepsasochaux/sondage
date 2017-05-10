@@ -29,11 +29,16 @@ class DefaultController extends Controller
 
             $client = $form->getData();
 
-            $isClient = $this->getDoctrine()->getRepository('AppBundle:Client')->findByCode($client->getCode());
-            if(!$isClient){
+            $myClient = new Client();
+            $myClient = $this->getDoctrine()->getRepository('AppBundle:Client')->findByCode($client->getCode());
+            if(!$myClient){
                 $this->get('session')->getFlashBag()->set('error', 'Le N° de participation anonyme n\'existe pas.');
             }
             else {
+                $myClient->setStatus(1);
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($myClient);
+                $em->flush();
                 return $this->redirectToRoute('task_success');
             }
         }
