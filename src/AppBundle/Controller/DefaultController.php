@@ -19,7 +19,7 @@ class DefaultController extends Controller
         $client = new Client();
 
         $form = $this->createFormBuilder($client)
-            ->add('code', TextType::class)
+            ->add('code', TextType::class, array('label' => false))
             ->add('save', SubmitType::class, array('label' => 'VALIDER'))
             ->getForm();
 
