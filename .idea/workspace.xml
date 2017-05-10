@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09ec901f-efda-4596-8f79-ab8c4bfada99" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/myindex.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/myindex.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +17,8 @@
       <file leaf-file-name="myindex.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/myindex.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="254" lean-forward="false" selection-start-line="20" selection-start-column="254" selection-end-line="20" selection-end-column="254" />
+            <state relative-caret-position="187">
+              <caret line="53" column="25" lean-forward="false" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -484,12 +483,12 @@
       <option name="presentableId" value="Default" />
       <updated>1494060914334</updated>
       <workItem from="1494060915724" duration="15671000" />
-      <workItem from="1494397270199" duration="5857000" />
+      <workItem from="1494397270199" duration="6073000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21528000" />
+    <option name="totallyTimeSpent" value="21744000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -853,8 +852,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/myindex.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="254" lean-forward="false" selection-start-line="20" selection-start-column="254" selection-end-line="20" selection-end-column="254" />
+        <state relative-caret-position="187">
+          <caret line="53" column="25" lean-forward="false" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
           <folding />
         </state>
       </provider>
