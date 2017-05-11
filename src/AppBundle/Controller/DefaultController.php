@@ -8,10 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Client;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider;
-use Symfony\Component\Security\Core\User\UserChecker;
-use Symfony\Component\Security\Core\User\InMemoryUserProvider;
-use Symfony\Component\Security\Core\Encoder\EncoderFactory;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class DefaultController extends Controller
 {
@@ -22,17 +19,13 @@ class DefaultController extends Controller
     {
         $client = new Client();
 
+        
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            throw $this->createAccessDeniedException();
+        }
 
-
-        $userProvider = new InMemoryUserProvider(
-            array(
-                'admin' => array(
-                    // password is "foo"
-                    'password' => '5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg==',
-                    'roles'    => array('ROLE_ADMIN'),
-                ),
-            )
-        );
+        // the above is a shortcut for this
+        $user = $this->get('security.token_storage')->getToken()->getUser();
 
 
         $form = $this->createFormBuilder($client)
