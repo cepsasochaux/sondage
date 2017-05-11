@@ -8,8 +8,8 @@
                     Enquête de satisfaction
                 </h1>
                 <div id="content_first">
-                    <h2>{{ description }}</h2>
-                    <h3>{{ title }}</h3>
+                    <h2>{{ page.description }}</h2>
+                    <h3>{{ page.titre }}</h3>
                     <form name="first" method="post">
                     <table>
                         <tr>
@@ -24,11 +24,9 @@
                             <tr>
                                 <td>{{ question.id }}</td>
                                 <td>{{ question.titre }}<span>{{ question.description }}</span></td>
-                                <td><input type="radio" value="0" name="question_{{ question.id }}"></td>
-                                <td><input type="radio" value="1" name="question_{{ question.id }}"></td>
-                                <td><input type="radio" value="2" name="question_{{ question.id }}"></td>
-                                <td><input type="radio" value="3" name="question_{{ question.id }}"></td>
-                                <td><input type="radio" value="4" name="question_{{ question.id }}"></td>
+                                {% for i in 1..page.nombre %}
+                                <td><input type="radio" value="{{ i }}" name="question_{{ question.id }}"></td>
+                                {% endfor %}
                                 <td><input type="text" name="question_{{ question.id }}_text"></td>
                             </tr>
                         {% endfor %}
