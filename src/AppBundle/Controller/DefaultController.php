@@ -67,7 +67,8 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $client = $em->getRepository('AppBundle:Client')->findOneByCode($client);
         $page = $em->getRepository('AppBundle:Page')->findOneById(1);
-
+        $questions = $em->getRepository('AppBundle:Question')->findByPageId(1);
+        dump($questions);
 
 
         /*$form = $this->createFormBuilder($question)

@@ -42,12 +42,6 @@ class Question
      */
     private $description;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="type", type="string", length=255)
-     */
-    private $type;
 
 
     /**
@@ -132,28 +126,5 @@ class Question
         return $this->description;
     }
 
-    /**
-     * Set type
-     *
-     * @param string $type
-     *
-     * @return Question
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
 }
 
