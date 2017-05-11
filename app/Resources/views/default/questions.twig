@@ -8,44 +8,13 @@
                     Enquête de satisfaction
                 </h1>
                 <div id="content_first">
-                    <h2>Objectif</h2>
-                <p id="P_3">
-                    En ces temps incertains, votre CE s'efforce de vous satisfaire au quotidien. Avec un budget réduit suite à la baisse des effectifs du site, nous souhaitons avoir votre ressenti sur les prestations actuelles et votre utilisation.
-                    Cette enquête décisive influera sur l'avenir de votre CE, c'est pourquoi nous comptons sur votre participation !<br id="BR_4" />
-                </p>
-                    <h2>Tombola</h2>
-                    <p id="P_3">
-                     A la fin de l'enquête vous serez redirigé vers une URL afin de participer à une tombola. Vous pouvez retrouver le règlement ici : <a href="">cepsa-sochaux.com/reglement</a>   <br id="BR_4" />
-                    </p>
-                    <div id="numero_anonyme" class="clearfix">
-                        <h2>Votre N° de participation anonyme</h2>
-                        {{ form_start(form) }}
-                        {{ form_widget(form) }}
-                        {{ form_end(form) }}
-                    </div>
-                    {% for flashMessage in app.session.flashbag.get('error') %}
-                    <br><br>
-                        <div id="flash">
-                        {{ flashMessage }}
-                        </div>
-                    {% endfor %}
-                    <br><br>
-                    <i><center>Toutes vos réponses seront anonymes et utilisés dans la cadre seul de statistique afin que le Ce PSA puissent établir des corrélations entre les prestations et les utilisateurs. Aucune de vos données personnelles ne sera enregistrée</center></i>
-                    <br><br>
+                    <h2>{{ title }}</h2>
+                    <p>{{ description }}</p>
                 </div>
             </div>
         </div>
     </div>
-    <footer class="footer clearfix"><div class="footer-top">
-            <div class="inner">
-                <a href="http://www.cepsa-sochaux.com/"><img src=" {{ asset('/bundles/app/images/accueil.png')}}" alt="">Accueil</a>
-                <a href="http://www.cepsa-sochaux.com/informations/nous-contacter.html"><img src="{{ asset('/bundles/app/images/contact.png')}}" alt="">Contact</a>
-                <a href="http://www.cepsa-sochaux.com/inscription-newsletter.html"><img src="{{ asset('/bundles/app/images/newsletter.png')}}" alt="">Newsletter</a>
-                <a target="_blank" href="https://www.facebook.com/CE-Peugeot-Citroen-Sochaux-1255918834425618/"><img src="{{ asset('/bundles/app/images/fb-footer.png')}}" alt="">Facebook</a>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </footer>
+
 {% endblock %}
 
 {% block stylesheets %}
@@ -56,15 +25,7 @@
 
 {% block javascripts %}
     <script type="text/javascript">
-        $("#form_code").on('keypress', function () {
-            var ten_char = $("#form_code").val().length+1;
-            if(ten_char>=10){
-                $("#form_save").addClass('btn_ok');
-            }
-            else {
-                $("#form_save").removeClass('btn_ok');
-            }
-        })
+
     </script>
 {% endblock %}
 

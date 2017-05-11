@@ -65,13 +65,12 @@ class DefaultController extends Controller
         $client = $this->get('session')->get('user');
 
         $em = $this->getDoctrine()->getManager();
-        $clients = $em->getRepository('AppBundle:Client')->findByCode($client);
-        $pages = $em->getRepository('AppBundle:Page')->findOneById(1);
-        dump($pages);
-        
-        $myClient = $client[0];
+        $client = $em->getRepository('AppBundle:Client')->findOneByCode($client);
+        $page = $em->getRepository('AppBundle:Page')->findOneById(1);
 
-        $form = $this->createFormBuilder($client)
+
+
+        /*$form = $this->createFormBuilder($question)
             ->add('code', TextType::class, array('label' => false))
             ->add('save', SubmitType::class, array('label' => 'VALIDER'))
             ->getForm();
@@ -96,10 +95,12 @@ class DefaultController extends Controller
                 }
             }
         }
+*/
 
-
-        return $this->render('default/myindex.html.twig', array(
-            'form' => $form->createView(),
+        return $this->render('default/questions.html.twig', array(
+            //'form' => $form->createView(),
+            'title' => $page->getTitre(),
+            'description' => $page->getDescription(),
         ));
     }
 }

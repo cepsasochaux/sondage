@@ -12,6 +12,16 @@
     </head>
     <body>
         {% block body %}{% endblock %}
+        <footer class="footer clearfix"><div class="footer-top">
+                <div class="inner">
+                    <a href="http://www.cepsa-sochaux.com/"><img src=" {{ asset('/bundles/app/images/accueil.png')}}" alt="">Accueil</a>
+                    <a href="http://www.cepsa-sochaux.com/informations/nous-contacter.html"><img src="{{ asset('/bundles/app/images/contact.png')}}" alt="">Contact</a>
+                    <a href="http://www.cepsa-sochaux.com/inscription-newsletter.html"><img src="{{ asset('/bundles/app/images/newsletter.png')}}" alt="">Newsletter</a>
+                    <a target="_blank" href="https://www.facebook.com/CE-Peugeot-Citroen-Sochaux-1255918834425618/"><img src="{{ asset('/bundles/app/images/fb-footer.png')}}" alt="">Facebook</a>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </footer>
         {% block javascripts %}
         {% endblock %}
     </body>
