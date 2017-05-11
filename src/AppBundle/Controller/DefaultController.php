@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Client;
+use AppBundle\Entity\Page;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -65,6 +66,9 @@ class DefaultController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $clients = $em->getRepository('AppBundle:Client')->findByCode($client);
+        $pages = $em->getRepository('AppBundle:Page')->findOneById(1);
+        dump($pages);
+        
         $myClient = $client[0];
 
         $form = $this->createFormBuilder($client)
