@@ -25,9 +25,9 @@
                                 <td>{{ question.id }}</td>
                                 <td>{{ question.titre }}<span>{{ question.description }}</span></td>
                                 {% for i in 0..(page.nombre-1) %}
-                                <td><input type="radio" value="{{ i }}" name="question_{{ question.id }}"></td>
+                                <td><input type="radio" value="{{ i }}" id="question_{{ question.id }}" name="question_{{ question.id }}"></td>
                                 {% endfor %}
-                                <td><input type="text" name="question_{{ question.id }}_text"></td>
+                                <td><input type="text" id="question_{{ question.id }}_text" name="question_{{ question.id }}_text"></td>
                             </tr>
                         {% endfor %}
                     </table>
@@ -48,13 +48,23 @@
             color: white;
             float: right;
         }
+        .warning {
+            border:1px solid palevioletred;
+        }
     </style>
 {% endblock %}
 
 {% block javascripts %}
     <script type="text/javascript">
         $("#myForm").on('change', function () {
-            alert('test');
+            {% for question in questions %}
+                if($("#question_{{ question.id }}").val()== 3 || $("#question_{{ question.id }}").val()== 4){
+                    $("#question_{{ question.id }}_text").addClass('warning');
+                }
+                else {
+                    $("#question_{{ question.id }}_text").removeClass('warning');
+                }
+            {% endfor %}
         })
     </script>
 {% endblock %}
