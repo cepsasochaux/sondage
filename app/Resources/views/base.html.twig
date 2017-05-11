@@ -3,13 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Cepsa Sochaux | Sondage{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        {% endblock %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/app/css/style.css') }}">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link href="https://fonts.googleapis.com/css?family=Advent+Pro" rel="stylesheet">
         <script src="{{ asset('/bundles/app/js/jquery.min.js') }}"></script>
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+        {% endblock %}
     </body>
 </html>
