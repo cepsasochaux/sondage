@@ -7,10 +7,10 @@
                 <h1 id="H1_2">
                     Enquête de satisfaction
                 </h1>
-                <div id="content_first">
+                <div id="content_first" class="clearfix">
                     <h2>{{ page.description }}</h2>
                     <h3>{{ page.titre }}</h3>
-                    <form name="first" method="post">
+                    <form name="first" method="post" id="myForm">
                     <table>
                         <tr>
                             <th>N°</th>
@@ -31,7 +31,7 @@
                             </tr>
                         {% endfor %}
                     </table>
-                        <input type="submit" value="Suivant" name="submit">
+                        <input class="btn" type="submit" value="Suivant" name="submit">
                     </form>
                 </div>
             </div>
@@ -41,14 +41,21 @@
 {% endblock %}
 
 {% block stylesheets %}
-<style>
-
-</style>
+    <style>
+        .btn {
+            border: none;
+            padding: 10px;
+            color: white;
+            float: right;
+        }
+    </style>
 {% endblock %}
 
 {% block javascripts %}
     <script type="text/javascript">
-
+        $("#myForm").on('change', function () {
+            alert('test');
+        })
     </script>
 {% endblock %}
 
