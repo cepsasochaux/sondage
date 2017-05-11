@@ -77,11 +77,11 @@ class DefaultController extends Controller
                 $qv = $_POST['question_'.$question->getId()];
                 $qt = $_POST['question_'.$question->getId().'_text'];
                 $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
-                    array('questionId' => $question->getId(), 'clientId' => $client)
+                    array('questionId' => $question->getId(), 'clientId' => $client->getCode())
                 );
                 if($reponse){
                     $reponse->setQuestionId($question->getId());
-                    $reponse->setClientId($client);
+                    $reponse->setClientId($client->getCode());
                     $reponse->setValue($qv);
                     $reponse->setMore($qt);
                     $em->persist($reponse);
@@ -90,7 +90,7 @@ class DefaultController extends Controller
                 else {
                     $response = new Reponse();
                     $response->setQuestionId($question->getId());
-                    $response->setClientId($client);
+                    $response->setClientId($client->getCode());
                     $response->setValue($qv);
                     $response->setMore($qt);
                     $em->persist($response);
