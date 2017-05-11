@@ -104,7 +104,7 @@ class DefaultController extends Controller
             'title' => $page->getTitre(),
             'description' => $page->getDescription(),
             'questions' => $questions,
-            'choix' => $choices,
+            'choices' => $choices,
         ));
     }
 }
