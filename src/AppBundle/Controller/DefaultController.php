@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Reponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -75,7 +76,26 @@ class DefaultController extends Controller
             foreach ($questions as $question){
                 $qv = $_POST['question_'.$question->getId()];
                 $qt = $_POST['question_'.$question->getId().'_text'];
-                dump($qv);
+                $reponse = $em->getRepository('AppBundle:Question')->findOneBy(
+                    array('question_id' => $question->getId(), 'client_id' => $client)
+                );
+                if($reponse){
+                    $reponse->setQuestionId();
+                    $reponse->setClientId();
+                    $reponse->setValue();
+                    $reponse->setMore();
+                    $em->persist($reponse);
+                    $em->flush();
+                }
+                else {
+                    $response = new Reponse();
+                    $reponse->setQuestionId();
+                    $reponse->setClientId();
+                    $reponse->setValue();
+                    $reponse->setMore();
+                    $em->persist($reponse);
+                    $em->flush();
+                }
             }
             die;
         }
