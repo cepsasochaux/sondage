@@ -18,6 +18,15 @@ class DefaultController extends Controller
     {
         $client = new Client();
 
+        $logger = $this->get('logger');
+        $logger->info('I just got the logger');
+        $logger->error('An error occurred');
+
+        $logger->critical('I left the oven on!', array(
+            // include extra "context" info in your logs
+            'cause' => 'in_hurry',
+        ));
+
         $form = $this->createFormBuilder($client)
             ->add('code', TextType::class, array('label' => false))
             ->add('save', SubmitType::class, array('label' => 'VALIDER'))
@@ -37,7 +46,6 @@ class DefaultController extends Controller
                 $myClient=$clients[0];
                 $myClient->setStatus('1');
                 $em->flush();
-                return $this->redirectToRoute('task_success');
             }
         }
 
