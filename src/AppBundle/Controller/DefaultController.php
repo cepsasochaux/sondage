@@ -68,7 +68,7 @@ class DefaultController extends Controller
         $client = $em->getRepository('AppBundle:Client')->findOneByCode($client);
         $page = $em->getRepository('AppBundle:Page')->findOneById(1);
         $questions = $em->getRepository('AppBundle:Question')->findByPageId(1);
-        $choices = explode("||", $page);
+        $choices = explode("||", $page->getChoix());
         dump($questions);
 
 
@@ -103,7 +103,8 @@ class DefaultController extends Controller
             //'form' => $form->createView(),
             'title' => $page->getTitre(),
             'description' => $page->getDescription(),
-            'questions' => $questions
+            'questions' => $questions,
+            'choix' => $choices,
         ));
     }
 }
