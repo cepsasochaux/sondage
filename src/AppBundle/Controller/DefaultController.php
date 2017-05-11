@@ -77,7 +77,7 @@ class DefaultController extends Controller
                 $qv = $_POST['question_'.$question->getId()];
                 $qt = $_POST['question_'.$question->getId().'_text'];
                 $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
-                    array('question_id' => $question->getId(), 'client_id' => $client)
+                    array('questionId' => $question->getId(), 'clientId' => $client)
                 );
                 if($reponse){
                     $reponse->setQuestionId($question->getId());
