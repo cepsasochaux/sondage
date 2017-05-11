@@ -61,8 +61,11 @@ class DefaultController extends Controller
             $this->get('session')->getFlashBag()->set('error', 'Vous n\'êtes pas connecté.');
             return  $this->redirectToRoute('homepage');
         }
+        $client = $this->get('session')->get('user');
 
-        $client = new Client();
+        $em = $this->getDoctrine()->getManager();
+        $clients = $em->getRepository('AppBundle:Client')->findByCode($client);
+        $myClient = $client[0];
 
         $form = $this->createFormBuilder($client)
             ->add('code', TextType::class, array('label' => false))
