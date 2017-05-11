@@ -73,6 +73,7 @@ class DefaultController extends Controller
 
         if(isset($_POST['submit'])){
             dump($_POST[$questions[0]->getTitre()]);
+            die;
         }
         /*$form = $this->createFormBuilder($question)
             ->add('code', TextType::class, array('label' => false))
