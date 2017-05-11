@@ -55,8 +55,9 @@ class DefaultController extends Controller
     /**
      * @Route("/1", name="first_question")
      */
-    public function firstAction(Request $request, Client $user)
+    public function firstAction(Request $request, $user)
     {
+        dump($user);
         $client = new Client();
 
         $form = $this->createFormBuilder($client)
