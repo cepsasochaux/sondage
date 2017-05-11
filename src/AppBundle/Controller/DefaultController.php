@@ -104,7 +104,7 @@ class DefaultController extends Controller
 
         return $this->render('default/questions.html.twig', array(
             //'form' => $form->createView(),
-            'page' => $page(),
+            'page' => $page,
             'questions' => $questions,
             'choices' => $choices,
         ));
