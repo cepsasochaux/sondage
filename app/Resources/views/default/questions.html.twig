@@ -10,6 +10,7 @@
                 <div id="content_first">
                     <h2>{{ description }}</h2>
                     <h3>{{ title }}</h3>
+                    <form>
                     <table>
                         <tr>
                             <th>N°</th>
@@ -23,9 +24,15 @@
                             <tr>
                                 <td>{{ question.id }}</td>
                                 <td>{{ question.titre }}<span>{{ question.description }}</span></td>
+                                <td><input type="radio"></td>
+                                <td><input type="radio"></td>
+                                <td><input type="radio"></td>
+                                <td><input type="radio"></td>
+                                <td><input type="radio"></td>
                             </tr>
                         {% endfor %}
                     </table>
+                    </form>
                 </div>
             </div>
         </div>
