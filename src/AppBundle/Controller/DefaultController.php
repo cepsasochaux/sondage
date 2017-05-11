@@ -8,6 +8,10 @@ use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Client;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider;
+use Symfony\Component\Security\Core\User\UserChecker;
+use Symfony\Component\Security\Core\User\InMemoryUserProvider;
+use Symfony\Component\Security\Core\Encoder\EncoderFactory;
 
 class DefaultController extends Controller
 {
@@ -18,14 +22,18 @@ class DefaultController extends Controller
     {
         $client = new Client();
 
-        $logger = $this->get('logger');
-        $logger->info('I just got the logger');
-        $logger->error('An error occurred');
 
-        $logger->critical('I left the oven on!', array(
-            // include extra "context" info in your logs
-            'cause' => 'in_hurry',
-        ));
+
+        $userProvider = new InMemoryUserProvider(
+            array(
+                'admin' => array(
+                    // password is "foo"
+                    'password' => '5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg==',
+                    'roles'    => array('ROLE_ADMIN'),
+                ),
+            )
+        );
+
 
         $form = $this->createFormBuilder($client)
             ->add('code', TextType::class, array('label' => false))
