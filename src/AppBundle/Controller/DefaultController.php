@@ -19,13 +19,13 @@ class DefaultController extends Controller
     {
         $client = new Client();
 
-        
-        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+
+       /* if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             throw $this->createAccessDeniedException();
-        }
+        }*/
 
         // the above is a shortcut for this
-        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $user = $this->get('security.token_storage')->getToken()->setUser('Mickeal');
 
 
         $form = $this->createFormBuilder($client)
