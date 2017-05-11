@@ -71,7 +71,9 @@ class DefaultController extends Controller
         $choices = explode("||", $page->getChoix());
         dump($questions);
 
-
+        if(isset($_POST['submit'])){
+            dump($_POST[$questions[0]->getTitre()]);
+        }
         /*$form = $this->createFormBuilder($question)
             ->add('code', TextType::class, array('label' => false))
             ->add('save', SubmitType::class, array('label' => 'VALIDER'))
