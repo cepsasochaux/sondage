@@ -24,7 +24,7 @@
                             <tr>
                                 <td>{{ question.id }}</td>
                                 <td>{{ question.titre }}<span>{{ question.description }}</span></td>
-                                {% for i in 1..page.nombre %}
+                                {% for i in 0..(page.nombre-1) %}
                                 <td><input type="radio" value="{{ i }}" name="question_{{ question.id }}"></td>
                                 {% endfor %}
                                 <td><input type="text" name="question_{{ question.id }}_text"></td>
