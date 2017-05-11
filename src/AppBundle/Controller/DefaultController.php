@@ -89,11 +89,11 @@ class DefaultController extends Controller
                 }
                 else {
                     $response = new Reponse();
-                    $reponse->setQuestionId($question->getId());
-                    $reponse->setClientId($client);
-                    $reponse->setValue($qv);
-                    $reponse->setMore($qt);
-                    $em->persist($reponse);
+                    $response->setQuestionId($question->getId());
+                    $response->setClientId($client);
+                    $response->setValue($qv);
+                    $response->setMore($qt);
+                    $em->persist($response);
                     $em->flush();
                 }
             }
