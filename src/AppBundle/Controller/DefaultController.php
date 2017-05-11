@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Client;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class DefaultController extends Controller
 {
@@ -36,12 +36,12 @@ class DefaultController extends Controller
             }
             else {
                 $myClient=$clients[0];
-                $this->get('security.token_storage')->getToken()->setUser($myClient->getCode());
                 if($myClient->getStatus('0'))
                 {
                     $myClient->setStatus('1');
                     $em->flush();
-                    return $this->redirectToRoute('first_question', array('user' => $myClient));
+                    $this->get('session')->set('user', $myClient->getCode());
+                    return $this->redirectToRoute('first_question');
                 }
             }
         }
@@ -57,7 +57,10 @@ class DefaultController extends Controller
      */
     public function firstAction(Request $request)
     {
-        dump($request->query->get('user'));
+        if(!$this->get('session')->get('user')){
+            return  $this->redirectToRoute('homepage');
+        }
+        
         $client = new Client();
 
         $form = $this->createFormBuilder($client)
