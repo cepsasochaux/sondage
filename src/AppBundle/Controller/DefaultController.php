@@ -72,7 +72,7 @@ class DefaultController extends Controller
         dump($questions);
 
         if(isset($_POST['submit'])){
-            dump($_POST[$questions[0]->getTitre()]);
+            dump($_POST['question_'.$questions[0]->getId()]);
             die;
         }
         /*$form = $this->createFormBuilder($question)

@@ -24,12 +24,12 @@
                             <tr>
                                 <td>{{ question.id }}</td>
                                 <td>{{ question.titre }}<span>{{ question.description }}</span></td>
-                                <td><input type="radio" name="{{ question.titre }}"></td>
-                                <td><input type="radio" name="{{ question.titre }}"></td>
-                                <td><input type="radio" name="{{ question.titre }}"></td>
-                                <td><input type="radio" name="{{ question.titre }}"></td>
-                                <td><input type="radio" name="{{ question.titre }}"></td>
-                                <td><input type="text" name="{{ question.titre }}_text"></td>
+                                <td><input type="radio" name="question_{{ question.id }}"></td>
+                                <td><input type="radio" name="question_{{ question.id }}"></td>
+                                <td><input type="radio" name="question_{{ question.id }}"></td>
+                                <td><input type="radio" name="question_{{ question.id }}"></td>
+                                <td><input type="radio" name="question_{{ question.id }}"></td>
+                                <td><input type="text" name="question_{{ question.id }}_text"></td>
                             </tr>
                         {% endfor %}
                     </table>
