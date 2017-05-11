@@ -19,15 +19,6 @@ class DefaultController extends Controller
     {
         $client = new Client();
 
-
-       /* if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
-            throw $this->createAccessDeniedException();
-        }*/
-
-        // the above is a shortcut for this
-        $user = $this->get('security.token_storage')->getToken()->setUser('Mickeal');
-
-
         $form = $this->createFormBuilder($client)
             ->add('code', TextType::class, array('label' => false))
             ->add('save', SubmitType::class, array('label' => 'VALIDER'))
@@ -45,8 +36,12 @@ class DefaultController extends Controller
             }
             else {
                 $myClient=$clients[0];
-                $myClient->setStatus('1');
-                $em->flush();
+                $this->get('security.token_storage')->getToken()->setUser($myClient->getCode());
+                if($myClient->getStatus('0'))
+                {
+                    $myClient->setStatus('1');
+                    $em->flush();
+                }
             }
         }
 
