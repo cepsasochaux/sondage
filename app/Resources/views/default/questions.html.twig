@@ -17,7 +17,14 @@
                             {% for txt in choices %}
                                 <th>{{ txt }}</th>
                             {% endfor %}
+                            <th>les raisons pour vos réponses "plutôt non" ou "non pas du tout"</th>
                         </tr>
+                        {% for question in questions %}
+                            <tr>
+                                <td>{{ question.id }}</td>
+                                <td>{{ question.titre }}<span>{{ question.description }}</span></td>
+                            </tr>
+                        {% endfor %}
                     </table>
                 </div>
             </div>
