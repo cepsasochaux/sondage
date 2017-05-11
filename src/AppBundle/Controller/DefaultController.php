@@ -80,19 +80,19 @@ class DefaultController extends Controller
                     array('question_id' => $question->getId(), 'client_id' => $client)
                 );
                 if($reponse){
-                    $reponse->setQuestionId();
-                    $reponse->setClientId();
-                    $reponse->setValue();
-                    $reponse->setMore();
+                    $reponse->setQuestionId($question->getId());
+                    $reponse->setClientId($client);
+                    $reponse->setValue($qv);
+                    $reponse->setMore($qt);
                     $em->persist($reponse);
                     $em->flush();
                 }
                 else {
                     $response = new Reponse();
-                    $reponse->setQuestionId();
-                    $reponse->setClientId();
-                    $reponse->setValue();
-                    $reponse->setMore();
+                    $reponse->setQuestionId($question->getId());
+                    $reponse->setClientId($client);
+                    $reponse->setValue($qv);
+                    $reponse->setMore($qt);
                     $em->persist($reponse);
                     $em->flush();
                 }
