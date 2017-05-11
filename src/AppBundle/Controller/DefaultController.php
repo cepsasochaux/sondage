@@ -58,9 +58,10 @@ class DefaultController extends Controller
     public function firstAction(Request $request)
     {
         if(!$this->get('session')->get('user')){
+            $this->get('session')->getFlashBag()->set('error', 'Vous n\'êtes pas connecté.');
             return  $this->redirectToRoute('homepage');
         }
-        
+
         $client = new Client();
 
         $form = $this->createFormBuilder($client)
