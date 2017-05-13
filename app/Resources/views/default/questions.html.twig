@@ -23,11 +23,11 @@
                         {% for question in questions %}
                             <tr>
                                 <td>{{ question.id }}</td>
-                                <td>{{ question.titre }}<span>{{ question.description }}</span></td>
+                                <td>{{ question.titre }}<span class="italique">{{ question.description }}</span></td>
                                 {% for i in 0..(page.nombre-1) %}
-                                <td><input type="radio" value="{{ i }}" id="question_{{ question.id }}" name="question_{{ question.id }}"></td>
+                                <td class="table_input"><input type="radio" value="{{ i }}" id="question_{{ question.id }}" name="question_{{ question.id }}"></td>
                                 {% endfor %}
-                                <td><input type="text" id="question_{{ question.id }}_text" name="question_{{ question.id }}_text"></td>
+                                <td><textarea type="text" id="question_{{ question.id }}_text" name="question_{{ question.id }}_text"></textarea></td>
                             </tr>
                         {% endfor %}
                     </table>
@@ -42,20 +42,48 @@
 
 {% block stylesheets %}
     <style>
+        .active{
+            background: #868686;
+        }
+        textarea {
+            width: 320px;
+            height: 40px;
+            margin: 0px;
+        }
+        .table_input {
+            text-align: center;
+        }
+        th {
+            background-color: #1197d0;
+            color: white;
+            padding: 5px;
+            text-transform: uppercase;
+        }
+        td {
+            /*width: 50px;*/
+        }
         .btn {
             border: none;
             padding: 10px;
             color: white;
+            margin-top: 35px;
             float: right;
+            border-radius: 5px;
         }
         .warning {
             border:1px solid palevioletred;
         }
+
     </style>
 {% endblock %}
 
 {% block javascripts %}
     <script type="text/javascript">
+        $("td").click(function () {
+            $(this).find('input:radio').attr('checked', true);
+            $('td input:checked').closest("td").addClass('active');
+            $('td input[type=radio]').not(':checked').closest("td").removeClass('active');
+        });
         $("#myForm").on('change', function () {
             {% for question in questions %}
                 if($("#question_{{ question.id }}").val()== 3 || $("#question_{{ question.id }}").val()== 4){

@@ -56,7 +56,7 @@
 }/*#H1_2*/
 
 #content_first {
-    width: 750px;
+    width: 850px;
     background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
     border-radius: 5px 5px 5px 5px;
     font: normal normal normal normal 16px / normal "calibri Light";
@@ -92,14 +92,20 @@ body {
 }
 
 .footer {
-    position: absolute;
+    position: relative;
     right: 0;
     text-align: center;
     margin: 0 auto;
-    bottom: 20px;
+    /* bottom: 20px; */
+    margin-top: 40px;
     background-color: #1197d0;
     left: 0;
     text-align: center;
+}
+.italique {
+    display: block;
+    font-size: 0.7rem;
+    color: grey;
 }
 .footer-top {
     /* float: left; */
@@ -121,6 +127,7 @@ body {
     text-align: center;
     color: #FFF;
     margin: 0px 5%;
+    font-family: calibri Light;
     font-size: 14px;
     display: inline-block;
 }
