@@ -22,7 +22,7 @@
                         </tr>
                         {% for question in questions %}
                             <tr>
-                                <td>{{ question.id }}</td>
+                                <td class="col_id">{{ question.id }}</td>
                                 <td>{{ question.titre }}<span class="italique">{{ question.description }}</span></td>
                                 {% for i in 0..(page.nombre-1) %}
                                 <td class="table_input"><input type="radio" value="{{ i }}" id="question_{{ question.id }}" name="question_{{ question.id }}"></td>
@@ -42,6 +42,11 @@
 
 {% block stylesheets %}
     <style>
+        .col_id {
+            text-align: center;
+            color:white;
+            background: orangered;
+        }
         .active{
             background: #868686;
         }
@@ -70,32 +75,59 @@
             float: right;
             border-radius: 5px;
         }
+        tr:nth-child(odd) {
+            background: #cbdaff;
+        }
         .warning {
             border:1px solid palevioletred;
         }
-
+        @media screen and (max-width: 640px) {
+            table,
+            tbody,
+            tr,
+            td {
+                display: block;
+                width: auto!important;
+                /* parceque tu as mis des style inline grrr */
+            }
+        }
     </style>
 {% endblock %}
 
 {% block javascripts %}
     <script type="text/javascript">
+        $('.btn').prop("disabled",true);
         $("td").click(function () {
             $(this).find('input:radio').attr('checked', true);
             $('td input:checked').closest("td").addClass('active');
             $('td input[type=radio]').not(':checked').closest("td").removeClass('active');
-        });
-        $("#myForm").on('change', function () {
+            var nbr=0;
+            var resp=0;
             {% for question in questions %}
-                if($("#question_{{ question.id }}").val()== 3 || $("#question_{{ question.id }}").val()== 4){
-                    $("#question_{{ question.id }}_text").addClass('warning');
-                    console.log($("#question_{{ question.id }}").val());
-                }
-                else {
-                    $("#question_{{ question.id }}_text").removeClass('warning');
-                    console.log($("#question_{{ question.id }}").val());
-                }
+            nbr++;
+            if($('input[name=question_{{ question.id }}]:checked').val()){
+                resp++;
+            }
+            console.log($('input[name=question_{{ question.id }}]:checked').val());
+            if($('input[name=question_{{ question.id }}]:checked').val() == 3 || $('input[name=question_{{ question.id }}]:checked').val() == 4){
+                $("#question_{{ question.id }}_text").addClass('warning');
+                $("#question_{{ question.id }}_text").attr('placeholder','Pourquoi ?')
+            }
+            else {
+                $("#question_{{ question.id }}_text").removeClass('warning');
+                $("#question_{{ question.id }}_text").attr('placeholder','')
+
+            }
             {% endfor %}
-        })
+
+            if(nbr==resp){
+                $('.btn').prop("disabled",false);
+                $('.btn').css("background", "#1197d0");
+            } else {
+                $('.btn').prop("disabled",true);
+            }
+        });
+
     </script>
 {% endblock %}
 

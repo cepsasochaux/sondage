@@ -70,7 +70,6 @@ class DefaultController extends Controller
         $page = $em->getRepository('AppBundle:Page')->findOneById(1);
         $questions = $em->getRepository('AppBundle:Question')->findByPageId(1);
         $choices = explode("||", $page->getChoix());
-        dump($questions);
 
         if(isset($_POST['submit'])){
             foreach ($questions as $question){
@@ -97,7 +96,6 @@ class DefaultController extends Controller
                     $em->flush();
                 }
             }
-            die;
         }
         /*$form = $this->createFormBuilder($question)
             ->add('code', TextType::class, array('label' => false))
