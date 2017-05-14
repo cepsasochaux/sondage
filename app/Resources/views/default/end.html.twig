@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="DIV_1">
+                <h1 id="H1_2">
+                    Enquête de satisfaction
+                </h1>
+                <div id="content_first" class="clearfix">
+                    <h2>Merci pour votre participation</h2>
+                    <p>L'enquête de satisfaction est à présent terminée. Un formulaire pour participer à une tombola vas vous être présenter. Notez qu'aucun lien entre vos réponses et le formulaire de tombola ne pourra être fait. Vous pouvez cliquer sur lien lien ci-dessous pour ouvrir le forumaire. Attention ! Cette action vous empêchera d'ouvrir à nouveau cette fenêtre.</p>
+                    <center><button id="tombola">Participer</button></center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        #tombola{
+            font-family: "Calibri Light";
+            font-size: 20px;
+            padding: 10px;
+            border: none;
+            text-align: center;
+            border-radius: 5px;
+            background: orangered;
+            color: white;
+        }
+        .col_id {
+            text-align: center;
+            color:white;
+            background: orangered;
+        }
+        .active{
+            background: #868686;
+        }
+        textarea {
+            width: 320px;
+            height: 40px;
+            margin: 0px;
+        }
+        .table_input {
+            text-align: center;
+        }
+        th {
+            background-color: #1197d0;
+            color: white;
+            padding: 5px;
+            text-transform: uppercase;
+        }
+        td {
+            /*width: 50px;*/
+        }
+        .btn {
+            border: none;
+            padding: 10px;
+            color: white;
+            margin-top: 35px;
+            float: right;
+            border-radius: 5px;
+        }
+        tr:nth-child(odd) {
+            background: #cbdaff;
+        }
+        .warning {
+            border:1px solid palevioletred;
+        }
+        h3 {
+            color: white;
+            background: orangered;
+            width: 100px;
+            padding: 5px;
+            text-align: center;
+        }
+        @media screen and (max-width: 640px) {
+            table,
+            tbody,
+            tr,
+            td {
+                display: block;
+                width: auto!important;
+                /* parceque tu as mis des style inline grrr */
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $("#tombola").on('click', function () {
+            window.open('http://localhost:8080/sondage/web/app_dev.php/sondage/123456789', "nom_popup","directories=0,titlebar=0,toolbar=no,location=no,status=0,menubar=0,scrollbars=no,resizable=no,width=980,height=350")
+        })
+    </script>
+{% endblock %}
+
+

@@ -20,15 +20,21 @@
                             {% endfor %}
                             <th>les raisons pour vos réponses "plutôt non" ou "non pas du tout"</th>
                         </tr>
+                        {% set k = 0 %}
                         {% for question in questions %}
                             <tr>
                                 <td class="col_id">{{ question.id }}</td>
                                 <td>{{ question.titre }}<span class="italique">{{ question.description }}</span></td>
                                 {% for i in 0..(page.nombre-1) %}
-                                <td class="table_input"><input type="radio" value="{{ i }}" id="question_{{ question.id }}" name="question_{{ question.id }}"></td>
+                                    {% if reponses[k].value==i %}
+                                        <td class="table_input"><input type="radio" value="{{ i }}" checked id="question_{{ question.id }}" name="question_{{ question.id }}"></td>
+                                    {% else %}
+                                        <td class="table_input"><input type="radio" value="{{ i }}" id="question_{{ question.id }}" name="question_{{ question.id }}"></td>
+                                    {% endif %}
                                 {% endfor %}
                                 <td><textarea type="text" id="question_{{ question.id }}_text" name="question_{{ question.id }}_text"></textarea></td>
                             </tr>
+                        {% set k = k+1 %}
                         {% endfor %}
                     </table>
                         <input class="btn" type="submit" value="Suivant" name="submit">
@@ -81,6 +87,13 @@
         .warning {
             border:1px solid palevioletred;
         }
+        h3 {
+            color: white;
+            background: orangered;
+            width: 100px;
+            padding: 5px;
+            text-align: center;
+        }
         @media screen and (max-width: 640px) {
             table,
             tbody,
@@ -97,8 +110,7 @@
 {% block javascripts %}
     <script type="text/javascript">
         $('.btn').prop("disabled",true);
-        $("td").click(function () {
-            $(this).find('input:radio').attr('checked', true);
+        function mafct() {
             $('td input:checked').closest("td").addClass('active');
             $('td input[type=radio]').not(':checked').closest("td").removeClass('active');
             var nbr=0;
@@ -108,7 +120,6 @@
             if($('input[name=question_{{ question.id }}]:checked').val()){
                 resp++;
             }
-            console.log($('input[name=question_{{ question.id }}]:checked').val());
             if($('input[name=question_{{ question.id }}]:checked').val() == 3 || $('input[name=question_{{ question.id }}]:checked').val() == 4){
                 $("#question_{{ question.id }}_text").addClass('warning');
                 $("#question_{{ question.id }}_text").attr('placeholder','Pourquoi ?')
@@ -119,13 +130,17 @@
 
             }
             {% endfor %}
-
             if(nbr==resp){
                 $('.btn').prop("disabled",false);
                 $('.btn').css("background", "#1197d0");
             } else {
                 $('.btn').prop("disabled",true);
             }
+        }
+        mafct();
+        $("td").click(function () {
+            $(this).find('input:radio').attr('checked', true);
+            mafct();
         });
 
     </script>

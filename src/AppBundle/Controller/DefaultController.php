@@ -5,6 +5,8 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Reponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Client;
 use AppBundle\Entity\Page;
@@ -43,7 +45,7 @@ class DefaultController extends Controller
                     $myClient->setStatus('1');
                     $em->flush();
                     $this->get('session')->set('user', $myClient->getCode());
-                    return $this->redirectToRoute('first_question');
+                    return $this->redirectToRoute('question', array('number' => 1));
                 }
             }
         }
@@ -55,10 +57,11 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/1", name="first_question")
+     * @Route("/{number}", name="question")
      */
-    public function firstAction(Request $request)
+    public function firstAction(Request $request, $number)
     {
+        //dump($random = random_bytes(10));
         if(!$this->get('session')->get('user')){
             $this->get('session')->getFlashBag()->set('error', 'Vous n\'êtes pas connecté.');
             return  $this->redirectToRoute('homepage');
@@ -67,11 +70,30 @@ class DefaultController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $client = $em->getRepository('AppBundle:Client')->findOneByCode($client);
-        $page = $em->getRepository('AppBundle:Page')->findOneById(1);
-        $questions = $em->getRepository('AppBundle:Question')->findByPageId(1);
+        if($client->getStatus()>=$number){
+            $page = $em->getRepository('AppBundle:Page')->findOneById($number);
+        }
+        else {
+            return $this->redirectToRoute('question', array('number'=>$client->getStatus()));
+        }
+        if ($client->getStatus()==2) {
+            $client->setStatus(3);
+            $em->flush();
+            return $this->render('default/end.html.twig', array('tombola'=>true, 'client'=>$client->getCode()));
+        }
+        elseif ($client->getStatus()==3) {
+            return $this->render('default/end.html.twig', array('tombola'=>false, 'client'=>$client->getCode()));
+        }
+        $questions = $em->getRepository('AppBundle:Question')->findByPageId($number);
+        $reponses = $em->getRepository('AppBundle:Reponse')->findByClientId($client->getCode());
         $choices = explode("||", $page->getChoix());
 
+
         if(isset($_POST['submit'])){
+            if($client->getStatus()<=$number){
+                $client->setStatus($number+1);
+                $em->flush();
+            }
             foreach ($questions as $question){
                 $qv = $_POST['question_'.$question->getId()];
                 $qt = $_POST['question_'.$question->getId().'_text'];
@@ -96,7 +118,16 @@ class DefaultController extends Controller
                     $em->flush();
                 }
             }
+
+            return $this->redirectToRoute('question', array('number'=>$number+1));
         }
+        return $this->render('default/questions.html.twig', array(
+            //'form' => $form->createView(),
+            'page' => $page,
+            'questions' => $questions,
+            'choices' => $choices,
+            'reponses' => $reponses,
+        ));
         /*$form = $this->createFormBuilder($question)
             ->add('code', TextType::class, array('label' => false))
             ->add('save', SubmitType::class, array('label' => 'VALIDER'))
@@ -123,12 +154,40 @@ class DefaultController extends Controller
             }
         }
 */
+    }
 
-        return $this->render('default/questions.html.twig', array(
-            //'form' => $form->createView(),
-            'page' => $page,
-            'questions' => $questions,
-            'choices' => $choices,
+    /**
+     * @Route("/sondage/{token}", name="sondage")
+     */
+    public function sendmail(Request $request, $token)
+    {
+        $form = $this->createFormBuilder(null)
+            ->add('lastname', TextType::class, array('label' => "Nom"))
+            ->add('firstname', TextType::class, array('label' => "Prénom"))
+            ->add('email', EmailType::class, array('label' => "email"))
+            ->add('telephone', IntegerType::class, array('label' => "téléphone"))
+            ->add('save', SubmitType::class, array('label' => 'VALIDER'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $client = $form->getData();
+            $message = \Swift_Message::newInstance()
+                ->setSubject('Tombola - production')
+                ->setFrom('contact@cepsa-sondage.com')
+                ->setTo('leo.meyer12@gmail.com')
+                ->setBody(
+                    "BLABLABLA"
+                )
+
+            ;
+            $this->get('mailer')->send($message);
+
+        }
+
+        return $this->render('default/formulaire.html.twig', array(
+            'form' => $form->createView(),
         ));
     }
 }
