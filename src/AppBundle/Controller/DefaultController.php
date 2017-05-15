@@ -150,7 +150,7 @@ class DefaultController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $client = $form->getData();
-            require_once 'lib/swift_required.php';
+            /*require_once 'lib/swift_required.php';
             $message = Swift_Message::newInstance()
                 ->setSubject('Tombola - production')
                 ->setFrom('contact@cepsa-sondage.com')
@@ -160,7 +160,9 @@ class DefaultController extends Controller
                 )
 
             ;
-            $this->get('mailer')->send($message);
+            $this->get('mailer')->send($message);*/
+            mail('leo.meyer12@gmail.com', 'le sujet', 'le message', null,
+                '-fwebmaster@cepsa.com');
             die;
 
         }
