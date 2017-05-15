@@ -13,9 +13,13 @@
 <div id="wrapper">
     <div id="container">
         <div id="DIV_1">
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
-            {{ form_end(form) }}
+            <h1>Tombola</h1>
+            <div class="left">
+                {{ form_start(form) }}
+                {{ form_widget(form.lastname) }}
+                {{ form_end(form) }}</div>
+            <div class="right"></div>
+
         </div>
     </div>
 </div>
