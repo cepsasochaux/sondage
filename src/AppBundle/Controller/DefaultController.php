@@ -44,9 +44,8 @@ class DefaultController extends Controller
                 if($clients->getStatus()==0)
                 {
                     $clients->setStatus(1);
-                    $clients->setToken("AeOI16ZD".random_int(0,10)."e49Mp");
+                    $clients->setToken("AeOI".random_int(0,10)."ZD".random_int(0,10)."e".random_int(0,10)."Mp");
                     $em->flush();
-                    die;
                     $this->get('session')->set('user', $clients->getCode());
                     return $this->redirectToRoute('question', array('number' => 1));
                 }
