@@ -72,16 +72,17 @@ class DefaultController extends Controller
             return  $this->redirectToRoute('homepage');
         }
         $client = $this->get('session')->get('user');
+        $fin=2;
 
         $em = $this->getDoctrine()->getManager();
         $client = $em->getRepository('AppBundle:Client')->findOneByCode($client);
         if($client->getStatus()>=$number && $number!=0){
-            if ($client->getStatus()==2 && $number==2) {
+            if ($client->getStatus()==$fin && $number==$fin) {
                 $client->setStatus(3);
                 $em->flush();
                 return $this->render('default/end.html.twig', array('tombola'=>true, 'client'=>$client->getToken()));
             }
-            elseif ($client->getStatus()==3 && $number==3) {
+            elseif ($client->getStatus()==$fin+1 && $number>=$fin) {
                 return $this->render('default/end.html.twig', array('tombola'=>false, 'client'=>$client->getToken()));
             }
             else {
