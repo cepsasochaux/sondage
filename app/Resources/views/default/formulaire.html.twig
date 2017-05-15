@@ -14,7 +14,9 @@
     <div id="container">
         <div id="DIV_1">
             {{ form_start(form) }}
+            <fieldset>
             {{ form_widget(form) }}
+            </fieldset>
             {{ form_end(form) }}
         </div>
     </div>
@@ -29,6 +31,13 @@
         background: orangered;
         padding:5px;
         color: #FFFFFF;
+    }
+    input {
+        height: 25px;
+    }
+    fieldset {
+        min-width: 100px;
+        display: inline-block;
     }
 </style>
 </body>
