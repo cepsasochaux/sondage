@@ -93,11 +93,30 @@ class DefaultController extends Controller
             return $this->redirectToRoute('question', array('number'=>$client->getStatus()));
         }
 
+        if($number==1){
+            $form = $this->createFormBuilder($client)
+                ->add('sexe', 'choice', array('choices' => array(1 => "choix 1", 2 => "choix 2", 3 => "choix 3"),
+                        'multiple' => false,
+                        'expanded' => true,
+                        'preferred_choices' => array(2),
+                        'empty_value' => '- Choisissez une option -',
+                        'empty_data'  => -1
+                    )
+                )
+                ->add('save', SubmitType::class, array('label' => 'VALIDER'))
+                ->getForm();
 
-        $questions = $em->getRepository('AppBundle:Question')->findByPageId($number);
-        $reponses = $em->getRepository('AppBundle:Reponse')->findByClientId($client->getCode());
-        $choices = explode("||", $page->getChoix());
+            $form->handleRequest($request);
 
+            if ($form->isSubmitted() && $form->isValid()) {
+
+            }
+        }
+        else{
+            $questions = $em->getRepository('AppBundle:Question')->findByPageId($number);
+            $reponses = $em->getRepository('AppBundle:Reponse')->findByClientId($client->getCode());
+            $choices = explode("||", $page->getChoix());
+        }
 
         if(isset($_POST['submit'])){
             if($client->getStatus()<=$number){
@@ -131,13 +150,22 @@ class DefaultController extends Controller
 
             return $this->redirectToRoute('question', array('number'=>$number+1));
         }
-        return $this->render('default/questions.html.twig', array(
-            //'form' => $form->createView(),
-            'page' => $page,
-            'questions' => $questions,
-            'choices' => $choices,
-            'reponses' => $reponses,
-        ));
+
+        if($number==1){
+            return $this->render('default/personnalisation.html.twig', array(
+                'form' => $form->createView(),
+            ));
+        }
+        else {
+            return $this->render('default/questions.html.twig', array(
+                //'form' => $form->createView(),
+                'page' => $page,
+                'questions' => $questions,
+                'choices' => $choices,
+                'reponses' => $reponses,
+            ));
+        }
+
 
     }
 

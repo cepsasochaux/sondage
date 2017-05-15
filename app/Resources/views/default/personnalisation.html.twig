@@ -1,0 +1,162 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="DIV_1">
+                <h1 id="H1_2">
+                    Enquête de satisfaction
+                </h1>
+                <div id="content_first" class="clearfix">
+                    <h1>Quelques informations vous concernant...</h1>
+                    {{ form_start(form) }}
+                    {{ form_errors(form) }}
+                    <div class="block">
+                        <h2>Êtes-vous :</h2>
+                        {{ form_label(form.sexe) }}
+                        {{ form_widget(form.sexe) }}<br>
+                    </div>
+
+                    <div class="block">
+                        <h2>Dans quelle tranche d'âge vous situez-vous ?</h2>
+                        {{ form_label(form.age) }}
+                        {{ form_widget(form.age) }}<br>
+                    </div>
+
+                    <div class="block">
+                        <h2>Quelle est votre catégorie socio-professionnelle ?</h2>
+                        {{ form_label(form.profession) }}
+                        {{ form_widget(form.profession) }}<br>
+                    </div>
+
+                    <div class="block">
+                        <h2>Avez-vous des enfants à charge ?</h2>
+                        {{ form_label(form.enfant) }}
+                        {{ form_widget(form.enfant) }}<br>
+                    </div>
+
+
+                    <div class="block">
+                        <h2>Si oui, merci de préciser le nombre d'enfant par tranche d'âge :</h2>
+                        {{ form_label(form.enfantAge) }}
+                        {{ form_widget(form.enfantAge) }}<br>
+                    </div>
+
+                    <div class="block">
+                        <h2>Quelle est votre situation actuelle ?</h2>
+                        {{ form_label(form.situation) }}
+                        {{ form_widget(form.situation) }}<br>
+                    </div>
+
+                    {{ form_widget(form.save) }}
+                    {{ form_end(form) }}
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .col_id {
+            text-align: center;
+            color:white;
+            background: orangered;
+        }
+        .active{
+            background: #868686;
+        }
+        textarea {
+            width: 320px;
+            height: 40px;
+            margin: 0px;
+        }
+        .table_input {
+            text-align: center;
+        }
+        th {
+            background-color: #1197d0;
+            color: white;
+            padding: 5px;
+            text-transform: uppercase;
+        }
+        td {
+            /*width: 50px;*/
+        }
+        .btn {
+            border: none;
+            padding: 10px;
+            color: white;
+            margin-top: 35px;
+            float: right;
+            border-radius: 5px;
+        }
+        tr:nth-child(odd) {
+            background: #cbdaff;
+        }
+        .warning {
+            border:1px solid palevioletred;
+        }
+        h3 {
+            color: white;
+            background: orangered;
+            width: 100px;
+            padding: 5px;
+            text-align: center;
+        }
+        @media screen and (max-width: 640px) {
+            table,
+            tbody,
+            tr,
+            td {
+                display: block;
+                width: auto!important;
+                /* parceque tu as mis des style inline grrr */
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $('.btn').prop("disabled",true);
+        function mafct() {
+            $('td input:checked').closest("td").addClass('active');
+            $('td input[type=radio]').not(':checked').closest("td").removeClass('active');
+            var nbr=0;
+            var resp=0;
+            {% for question in questions %}
+            nbr++;
+            if($('input[name=question_{{ question.id }}]:checked').val()){
+                resp++;
+            }
+            if($('input[name=question_{{ question.id }}]:checked').val() == 3 || $('input[name=question_{{ question.id }}]:checked').val() == 4){
+                $("#question_{{ question.id }}_text").addClass('warning');
+                $("#question_{{ question.id }}_text").attr('placeholder','Pourquoi ?')
+            }
+            else {
+                $("#question_{{ question.id }}_text").removeClass('warning');
+                $("#question_{{ question.id }}_text").attr('placeholder','')
+
+            }
+            {% endfor %}
+            if(nbr==resp){
+                $('.btn').prop("disabled",false);
+                $('.btn').css("background", "#1197d0");
+            } else {
+                $('.btn').prop("disabled",true);
+            }
+        }
+        mafct();
+        $("td").click(function () {
+            $(this).find('input:radio').attr('checked', true);
+            mafct();
+        });
+
+    </script>
+{% endblock %}
+
+
