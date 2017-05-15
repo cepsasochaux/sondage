@@ -20,11 +20,14 @@
 
 
 
-                {{ form_row(form.lastname) }}
-                {{ form_row(form.firstname) }}
+                {{ form_label(form.lastname) }}
+                {{ form_widget(form.lastname) }}
+                {{ form_label(form.firstname) }}
+                {{ form_widget(form.firstname) }}
 
 
             </div>
+            {{ form_widget(form.save) }}
             {{ form_end(form) }}
             <div class="right"></div>
 
