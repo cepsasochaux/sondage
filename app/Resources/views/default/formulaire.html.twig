@@ -31,6 +31,7 @@
                 {{ form_label(form.code_personnel) }}
                 {{ form_widget(form.code_personnel) }}<br>
                 {{ form_widget(form.save) }}
+
             </div>
             {{ form_end(form) }}
 
@@ -40,7 +41,7 @@
 <script type="text/javascript"></script>
 <style>
     body {
-        font-family: Calibri Light;
+        font-family: 'Calibri Light';
 
     }
     label {
@@ -75,7 +76,12 @@
     }
     .right {
         float: right;
-        width:50%;
+        width:333px;
+        margin-left: 30px;
+    }
+    #form_save {
+        height:40px;
+        background: orangered;
     }
 </style>
 </body>
