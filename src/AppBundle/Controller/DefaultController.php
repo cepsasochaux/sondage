@@ -39,8 +39,8 @@ class DefaultController extends Controller
             if(!$clients){
                 $this->get('session')->getFlashBag()->set('error', 'Le N° de participation anonyme n\'existe pas.');
             }
-            else
-                dump($clients);
+            else{
+                var_dump($clients);
                 if($clients->getStatus(0))
                 {
                     $clients->setStatus(1);
