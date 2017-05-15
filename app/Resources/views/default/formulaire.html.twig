@@ -14,9 +14,7 @@
     <div id="container">
         <div id="DIV_1">
             {{ form_start(form) }}
-            <fieldset>
             {{ form_widget(form) }}
-            </fieldset>
             {{ form_end(form) }}
         </div>
     </div>
@@ -35,9 +33,18 @@
     input {
         height: 25px;
     }
-    fieldset {
+    form{
         min-width: 100px;
         display: inline-block;
+    }
+
+    form input{
+        float: right;
+    }
+
+    form label{
+        display:block;
+        margin-bottom: 2px;
     }
 </style>
 </body>
