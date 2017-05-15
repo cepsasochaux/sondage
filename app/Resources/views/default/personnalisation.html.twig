@@ -9,7 +9,7 @@
                 </h1>
                 <div id="content_first" class="clearfix">
                     <h1>Quelques informations vous concernant...</h1>
-                    {{ form_start(form) }}
+                    {{ form_start(form, {'id': 'myForm'}) }}
                     {{ form_errors(form) }}
                     <div class="block clearfix">
                         <h2>Êtes-vous :</h2>
@@ -124,9 +124,9 @@
 
 {% block javascripts %}
     <script type="text/javascript">
-        var form = $("form");
+        var form = $("#myForm");
         form.validate();
-        $("form").on('change', function () {
+        form.on('change', function () {
             alert('test');
             if(form.valid()){
                 alert('valide');
