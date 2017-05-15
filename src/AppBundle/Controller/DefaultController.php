@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Client;
 use AppBundle\Entity\Page;
@@ -140,8 +141,8 @@ class DefaultController extends Controller
             ->add('lastname', TextType::class, array('label' => "Nom"))
             ->add('firstname', TextType::class, array('label' => "Prénom"))
             ->add('email', EmailType::class, array('label' => "email"))
-            ->add('telephone', IntegerType::class, array('label' => "téléphone"))
-            ->add('code_personnel', TextType::class, array('label'=> 'Votre code  personnel'))
+            ->add('telephone', NumberType::class, array('label' => "téléphone"))
+            ->add('code_personnel', NumberType::class, array('label'=> 'Votre code  personnel'))
             ->add('save', SubmitType::class, array('label' => 'VALIDER'))
             ->getForm();
 
@@ -149,6 +150,7 @@ class DefaultController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $client = $form->getData();
+            require_once '../../../swiftmailer/lib/swift_required.php';
             $message = \Swift_Message::newInstance()
                 ->setSubject('Tombola - production')
                 ->setFrom('contact@cepsa-sondage.com')
@@ -159,6 +161,7 @@ class DefaultController extends Controller
 
             ;
             $this->get('mailer')->send($message);
+            die;
 
         }
 
