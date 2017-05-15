@@ -38,9 +38,9 @@ class DefaultController extends Controller
             $clients = $em->getRepository('AppBundle:Client')->findOneByCode($client->getCode());
             if(!$clients){
                 $this->get('session')->getFlashBag()->set('error', 'Le N° de participation anonyme n\'existe pas.');
+                return  $this->redirectToRoute('homepage');
             }
             else{
-                dump($clients);
                 if($clients->getStatus()==0)
                 {
                     $clients->setStatus(1);
@@ -48,6 +48,9 @@ class DefaultController extends Controller
                     $em->flush();
                     $this->get('session')->set('user', $clients->getCode());
                     return $this->redirectToRoute('question', array('number' => 1));
+                }
+                else {
+                    return $this->redirectToRoute('question', array('number' => $clients->getStatus()));
                 }
             }
         }
