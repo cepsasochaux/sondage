@@ -155,10 +155,10 @@ class DefaultController extends Controller
             $message .= '<h1>Ticket pour tombola<h1/>';
             $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
             $message .= "<tr style='background: #eee;'><td><strong>Nom:</strong> </td><td>" . $client['lastname'] . "</td></tr>";
-            $message .= "<tr><td><strong>Prénom:</strong> </td><td>" . $client->getFirstName() . "</td></tr>";
-            $message .= "<tr><td><strong>Email:</strong> </td><td>" . $client->getEmail() . "</td></tr>";
-            $message .= "<tr><td><strong>Code personnel:</strong> </td><td>" . $client->getCodePersonnel() . "</td></tr>";
-            $message .= "<tr><td><strong>Téléphone:</strong> </td><td>" . $client->getTelephone() . "</td></tr>";
+            $message .= "<tr><td><strong>Prénom:</strong> </td><td>" . $client['firstname'] . "</td></tr>";
+            $message .= "<tr><td><strong>Email:</strong> </td><td>" . $client['email'] . "</td></tr>";
+            $message .= "<tr><td><strong>Code personnel:</strong> </td><td>" . $client['code_personnel'] . "</td></tr>";
+            $message .= "<tr><td><strong>Téléphone:</strong> </td><td>" . $client['telephone'] . "</td></tr>";
             $message .= "</table>";
             $message .= "</body></html>";
             $to = 'leo.meyer12@gmail.com';
