@@ -18,16 +18,17 @@
             {{ form_errors(form) }}
             <div class="left">
                 {{ form_label(form.lastname) }}
-                {{ form_widget(form.lastname) }}
+                {{ form_widget(form.lastname) }}<br>
                 {{ form_label(form.firstname) }}
-                {{ form_widget(form.firstname) }}
+                {{ form_widget(form.firstname) }}<br>
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email) }}<br>
+                {{ form_label(form.telephone) }}
+                {{ form_widget(form.telephone) }}<br>
             </div>
 
             <div class="right">
-                {{ form_label(form.email) }}
-                {{ form_widget(form.email) }}
-                {{ form_label(form.telephone) }}
-                {{ form_widget(form.telephone) }}
+
             </div>
             {{ form_widget(form.save) }}
             {{ form_end(form) }}
@@ -55,7 +56,6 @@
     }
 
     form input{
-        float: right;
     }
 
     form label{
