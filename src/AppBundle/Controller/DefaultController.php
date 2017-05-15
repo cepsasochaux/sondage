@@ -23,7 +23,7 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         $client = new Client();
-
+        $this->get('session')->set('user', '');
         $form = $this->createFormBuilder($client)
             ->add('code', TextType::class, array('label' => false))
             ->add('save', SubmitType::class, array('label' => 'VALIDER'))
