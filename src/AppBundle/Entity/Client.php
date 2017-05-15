@@ -84,6 +84,13 @@ class Client
      */
     private $token;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="tombola", type="integer")
+     */
+    private $tombola;
+
 
     /**
      * Get id

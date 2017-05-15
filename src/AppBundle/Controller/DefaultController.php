@@ -137,42 +137,53 @@ class DefaultController extends Controller
      */
     public function sendmail(Request $request, $token)
     {
-        $form = $this->createFormBuilder(null)
-            ->add('lastname', TextType::class, array('label' => "Nom"))
-            ->add('firstname', TextType::class, array('label' => "Prénom"))
-            ->add('email', EmailType::class, array('label' => "email"))
-            ->add('telephone', NumberType::class, array('label' => "téléphone"))
-            ->add('code_personnel', NumberType::class, array('label'=> 'Votre code  personnel'))
-            ->add('save', SubmitType::class, array('label' => 'VALIDER'))
-            ->getForm();
+        $em = $this->getDoctrine()->getManager();
+        $tombola = $em->getRepository('AppBundle:Client')->findOneByToken($token);
 
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $client = $form->getData();
-            $message = '<html><body>';
-            $message .= '<h1>Ticket pour tombola<h1/>';
-            $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
-            $message .= "<tr style='background: #eee;'><td><strong>Nom:</strong> </td><td>" . $client['lastname'] . "</td></tr>";
-            $message .= "<tr><td><strong>Prénom:</strong> </td><td>" . $client['firstname'] . "</td></tr>";
-            $message .= "<tr><td><strong>Email:</strong> </td><td>" . $client['email'] . "</td></tr>";
-            $message .= "<tr><td><strong>Code personnel:</strong> </td><td>" . $client['code_personnel'] . "</td></tr>";
-            $message .= "<tr><td><strong>Téléphone:</strong> </td><td>" . $client['telephone'] . "</td></tr>";
-            $message .= "</table>";
-            $message .= "</body></html>";
-            $to = 'leo.meyer12@gmail.com';
-
-            $subject = 'Tombola ticket virtuel';
-
-            $headers = "From: contact@cepsa-sochaux-sondage.com\r\n";
-            $headers .= "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-            mail($to, $subject, $message, $headers);
-
+        if($tombola->getTombola()==1 || !$tombola){
+            $this->get('session')->getFlashBag()->set('error', 'Vous n\'êtes pas connecté.');
+            return $this->redirectToRoute('homepage');
         }
+        else{
+            $form = $this->createFormBuilder(null)
+                ->add('lastname', TextType::class, array('label' => "Nom"))
+                ->add('firstname', TextType::class, array('label' => "Prénom"))
+                ->add('email', EmailType::class, array('label' => "email"))
+                ->add('telephone', NumberType::class, array('label' => "téléphone"))
+                ->add('code_personnel', NumberType::class, array('label'=> 'Votre code  personnel'))
+                ->add('save', SubmitType::class, array('label' => 'VALIDER'))
+                ->getForm();
 
-        return $this->render('default/formulaire.html.twig', array(
-            'form' => $form->createView(),
-        ));
+            $form->handleRequest($request);
+
+            if ($form->isSubmitted() && $form->isValid()) {
+                $tombola->setTombola(1);
+                $em->flush();
+                $client = $form->getData();
+                $message = '<html><body>';
+                $message .= '<h1>Ticket pour tombola<h1/>';
+                $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+                $message .= "<tr style='background: #eee;'><td><strong>Nom:</strong> </td><td>" . $client['lastname'] . "</td></tr>";
+                $message .= "<tr><td><strong>Prénom:</strong> </td><td>" . $client['firstname'] . "</td></tr>";
+                $message .= "<tr><td><strong>Email:</strong> </td><td>" . $client['email'] . "</td></tr>";
+                $message .= "<tr><td><strong>Code personnel:</strong> </td><td>" . $client['code_personnel'] . "</td></tr>";
+                $message .= "<tr><td><strong>Téléphone:</strong> </td><td>" . $client['telephone'] . "</td></tr>";
+                $message .= "</table>";
+                $message .= "</body></html>";
+                $to = 'leo.meyer12@gmail.com';
+
+                $subject = 'Tombola ticket virtuel';
+
+                $headers = "From: contact@cepsa-sochaux-sondage.com\r\n";
+                $headers .= "MIME-Version: 1.0\r\n";
+                $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+                mail($to, $subject, $message, $headers);
+
+            }
+
+            return $this->render('default/formulaire.html.twig', array(
+                'form' => $form->createView(),
+            ));
+        }
     }
 }
