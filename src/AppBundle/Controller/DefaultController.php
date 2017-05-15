@@ -45,7 +45,7 @@ class DefaultController extends Controller
                 if($myClient->getStatus('0'))
                 {
                     $myClient->setStatus('1');
-                    $myClient->setToken(random_bytes(10));
+                   // $myClient->setToken(random_bytes(10));
                     $em->flush();
                     $this->get('session')->set('user', $myClient->getCode());
                     return $this->redirectToRoute('question', array('number' => 1));
