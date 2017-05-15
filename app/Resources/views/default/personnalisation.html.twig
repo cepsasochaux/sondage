@@ -126,16 +126,20 @@
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     <script type="text/javascript">
+        jQuery.validator.setDefaults({
+            debug: false,
+            success: "valid"
+        });
         var form = $("#myForm");
         form.validate();
         form.on('change', function () {
             $(".error").hide();
             if(form.valid()){
-                $('.btn').prop("disabled",false);
-                $('.btn').css("background", "#1197d0");
+                $('#form_save').prop("disabled",false);
+                $('#form_save').css("background", "#1197d0");
             }
             else {
-                $('.btn').prop("disabled",false);
+                $('#form_save').prop("disabled",false);
             }
         })
     </script>

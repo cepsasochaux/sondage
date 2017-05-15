@@ -26,6 +26,7 @@
                                 <td class="col_id">{{ question.id }}</td>
                                 <td>{{ question.titre }}<span class="italique">{{ question.description }}</span></td>
                                 {% for i in 0..(page.nombre-1) %}
+                                {% esdump(repons) %}
                                     {% if not reponses=="" %}
                                         {% if reponses[k].value==i %}
                                         <td class="table_input"><input type="radio" value="{{ i }}" checked id="question_{{ question.id }}" name="question_{{ question.id }}">
@@ -133,10 +134,10 @@
             }
             {% endfor %}
             if(nbr==resp){
-                $('#form_save').prop("disabled",false);
-                $('#form_save').css("background", "#1197d0");
+                $('.btn').prop("disabled",false);
+                $('.btn').css("background", "#1197d0");
             } else {
-                $('#form_save').prop("disabled",true);
+                $('.btn').prop("disabled",true);
             }
         }
         mafct();
