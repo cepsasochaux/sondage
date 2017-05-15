@@ -124,7 +124,13 @@
 
 {% block javascripts %}
     <script type="text/javascript">
-
+        var form = $("form");
+        form.validate();
+        $("form").on('change', function () {
+            if(form.valid()){
+                alert('valide');
+            }
+        })
     </script>
 {% endblock %}
 
