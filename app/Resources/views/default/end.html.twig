@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% dump(tombola) %}
     <div id="wrapper">
         <div id="container">
             <div id="DIV_1">
@@ -95,7 +96,7 @@
 
 {% block javascripts %}
     <script type="text/javascript">
-        {% if client==1 %}
+        {% if tombola==1 %}
             $("#tombola").val("Vous avez déjà participé");
             $("#tombola").prop('disabled', true);
             $("#tombola").css('background', '#aaaaaa');
