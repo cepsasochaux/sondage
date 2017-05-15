@@ -76,25 +76,23 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $client = $em->getRepository('AppBundle:Client')->findOneByCode($client);
         if($client->getStatus()>=$number && $number!=0){
-            $page = $em->getRepository('AppBundle:Page')->findOneById($number);
-        }
-        elseif($number!=0) {
-            return $this->redirectToRoute('question', array('number'=>$client->getStatus()));
+            if ($client->getStatus()==2 && $number==2) {
+                $client->setStatus(3);
+                $em->flush();
+                return $this->render('default/end.html.twig', array('tombola'=>true, 'client'=>$client->getToken()));
+            }
+            elseif ($client->getStatus()==3 && $number==3) {
+                return $this->render('default/end.html.twig', array('tombola'=>false, 'client'=>$client->getToken()));
+            }
+            else {
+                $page = $em->getRepository('AppBundle:Page')->findOneById($number);
+            }
         }
         else {
-            return $this->redirectToRoute('homepage');
-        }
-        if ($client->getStatus()==2 && $number==2) {
-            $client->setStatus(3);
-            $em->flush();
-            return $this->render('default/end.html.twig', array('tombola'=>true, 'client'=>$client->getToken()));
-        }
-        elseif ($client->getStatus()==3 && $number==3) {
-            return $this->render('default/end.html.twig', array('tombola'=>false, 'client'=>$client->getToken()));
-        }
-        elseif ($client->getStatus() != $number) {
             return $this->redirectToRoute('question', array('number'=>$client->getStatus()));
         }
+
+
         $questions = $em->getRepository('AppBundle:Question')->findByPageId($number);
         $reponses = $em->getRepository('AppBundle:Reponse')->findByClientId($client->getCode());
         $choices = explode("||", $page->getChoix());
