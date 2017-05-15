@@ -123,12 +123,14 @@
 {% endblock %}
 
 {% block javascripts %}
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     <script type="text/javascript">
         var form = $("#myForm");
-        //form.validate();
-        $("#myForm").on('change', function () {
+        form.validate();
+        form.on('change', function () {
             alert('test');
-            if($("#myForm").checkValidity()){
+            if(form.valid()){
                 alert('valide');
             }
         })
