@@ -128,32 +128,7 @@ class DefaultController extends Controller
             'choices' => $choices,
             'reponses' => $reponses,
         ));
-        /*$form = $this->createFormBuilder($question)
-            ->add('code', TextType::class, array('label' => false))
-            ->add('save', SubmitType::class, array('label' => 'VALIDER'))
-            ->getForm();
 
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $client = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            $clients = $em->getRepository('AppBundle:Client')->findByCode($client->getCode());
-            if(!$clients){
-                $this->get('session')->getFlashBag()->set('error', 'Le N° de participation anonyme n\'existe pas.');
-            }
-            else {
-                $myClient=$clients[0];
-                $this->get('security.token_storage')->getToken()->setUser($myClient->getCode());
-                if($myClient->getStatus('0'))
-                {
-                    $myClient->setStatus('1');
-                    $em->flush();
-                }
-            }
-        }
-*/
     }
 
     /**
@@ -186,7 +161,7 @@ class DefaultController extends Controller
 
         }
 
-        return $this->render('default/formulaire.html.twig', array(
+        return $this->render('default/questions.html.twig', array(
             'form' => $form->createView(),
         ));
     }
