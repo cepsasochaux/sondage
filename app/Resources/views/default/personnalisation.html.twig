@@ -111,6 +111,9 @@
             padding: 5px;
             text-align: center;
         }
+        .error{
+            display: none;
+        }
         @media screen and (max-width: 640px) {
             table,
             tbody,
@@ -143,7 +146,6 @@
             else {
                 $('#form_save').prop("disabled",false);
             }
-            $(".error").hide();
         });
     </script>
 {% endblock %}
