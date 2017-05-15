@@ -126,7 +126,7 @@
     <script type="text/javascript">
         var form = $("#myForm");
         form.validate();
-        form.on('change', function () {
+        $("#myForm").on('change', function () {
             alert('test');
             if(form.valid()){
                 alert('valide');
