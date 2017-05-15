@@ -129,11 +129,13 @@
         var form = $("#myForm");
         form.validate();
         form.on('change', function () {
+            $(".error").hide();
             if(form.valid()){
-                $("#form_save").addClass('btn_ok');
+                $('.btn').prop("disabled",false);
+                $('.btn').css("background", "#1197d0");
             }
             else {
-                $("#form_save").removeClass('btn_ok');
+                $('.btn').prop("disabled",false);
             }
         })
     </script>
