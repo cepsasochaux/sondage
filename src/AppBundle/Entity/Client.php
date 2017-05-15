@@ -317,4 +317,28 @@ class Client
     {
         return $this->token;
     }
+
+    /**
+     * Set tombola
+     *
+     * @param integer $tombola
+     *
+     * @return Client
+     */
+    public function setTombola($tombola)
+    {
+        $this->tombola = $tombola;
+
+        return $this;
+    }
+
+    /**
+     * Get tombola
+     *
+     * @return integer
+     */
+    public function getTombola()
+    {
+        return $this->tombola;
+    }
 }
