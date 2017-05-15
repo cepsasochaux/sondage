@@ -61,8 +61,8 @@
       <file leaf-file-name="personnalisation.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/personnalisation.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="39" column="46" lean-forward="false" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+            <state relative-caret-position="221">
+              <caret line="61" column="49" lean-forward="false" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -519,12 +519,12 @@
       <workItem from="1494491275747" duration="11563000" />
       <workItem from="1494662320339" duration="11332000" />
       <workItem from="1494750373890" duration="11042000" />
-      <workItem from="1494833332516" duration="18614000" />
+      <workItem from="1494833332516" duration="18712000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82521000" />
+    <option name="totallyTimeSpent" value="82619000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -898,8 +898,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/personnalisation.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="39" column="46" lean-forward="false" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+        <state relative-caret-position="221">
+          <caret line="61" column="49" lean-forward="false" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
           <folding />
         </state>
       </provider>
