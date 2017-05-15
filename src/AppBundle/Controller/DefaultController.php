@@ -73,7 +73,7 @@ class DefaultController extends Controller
             return  $this->redirectToRoute('homepage');
         }
         $client = $this->get('session')->get('user');
-        $fin=2;
+        $fin=3;
 
         $em = $this->getDoctrine()->getManager();
         $client = $em->getRepository('AppBundle:Client')->findOneByCode($client);
@@ -112,6 +112,9 @@ class DefaultController extends Controller
 
             if ($form->isSubmitted() && $form->isValid()) {
                 $em->flush();
+                $client->setStatus($number+1);
+                $em->flush();
+                return $this->redirectToRoute('question', array('number'=>$number+1));
             }
         }
         else{
