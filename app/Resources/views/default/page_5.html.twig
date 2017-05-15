@@ -8,46 +8,14 @@
                     Enquête de satisfaction
                 </h1>
                 <div id="content_first" class="clearfix">
-                    <h1>Quelques informations vous concernant...</h1>
-                    {{ form_start(form, {'attr' : {'id': 'myForm'}}) }}
-                    {{ form_errors(form) }}
-                    <div class="block clearfix">
-                        <h2>Êtes-vous :</h2>
-                        {{ form_widget(form.sexe) }}<br>
+                    <h1>Parmis l'ensemble des prestations mentionnées dans les questions précédentes indiquez les 5 qui vous interessent <bold>le plus</bold></h1>
+                    <div class="styled-select slate">
+                        <select>
+                            <option value="0">Here is the first option</option>
+                            <option value="1">The second option</option>
+                            <option value="2">The third option</option>
+                        </select>
                     </div>
-
-                    <div class="block clearfix">
-                        <h2>Dans quelle tranche d'âge vous situez-vous ?</h2>
-                        {{ form_widget(form.age) }}<br>
-                    </div>
-
-                    <div class="block clearfix">
-                        <h2>Quelle est votre catégorie socio-professionnelle ?</h2>
-                        {{ form_widget(form.profession) }}<br>
-                    </div>
-
-                    <div class="block clearfix">
-                        <h2>Avez-vous des enfants à charge ?</h2>
-                        {{ form_widget(form.enfant) }}<br>
-                    </div>
-
-
-                    <div class="block clearfix">
-                        <h2>Si oui, merci de préciser le nombre d'enfant par tranche d'âge :</h2>
-                        {{ form_widget(form.enfant_age) }}<br>
-                    </div>
-
-                    <div class="block clearfix">
-                        <h2>Quelle est votre situation actuelle ?</h2>
-                        {{ form_widget(form.situation) }}<br>
-                    </div>
-
-                    {{ form_widget(form.save) }}
-                    {{ form_end(form) }}
-
-                    {% if form.vars.valid == false %}
-                        <p class="error"> There is an error in the form. please Correct. </p>
-                    {% endif %}
                 </div>
             </div>
         </div>
@@ -57,6 +25,26 @@
 
 {% block stylesheets %}
     <style>
+        select#soflow, select#soflow-color {
+            -webkit-appearance: button;
+            -webkit-border-radius: 2px;
+            -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+            -webkit-padding-end: 20px;
+            -webkit-padding-start: 2px;
+            -webkit-user-select: none;
+            background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+            background-position: 97% center;
+            background-repeat: no-repeat;
+            border: 1px solid #AAA;
+            color: #555;
+            font-size: inherit;
+            margin: 20px;
+            overflow: hidden;
+            padding: 5px 10px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 300px;
+        }
         .block h2 {
             font-size: 16px;
             float:left;

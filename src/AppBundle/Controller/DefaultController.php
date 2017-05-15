@@ -117,6 +117,10 @@ class DefaultController extends Controller
                 return $this->redirectToRoute('question', array('number'=>$number+1));
             }
         }
+        elseif($number==5){
+            return $this->render('default/page_5.html.twig', array(
+            ));
+        }
         else{
             $questions = $em->getRepository('AppBundle:Question')->findByPageId($number);
             $reponses = $em->getRepository('AppBundle:Reponse')->findByClientId($client->getCode());
