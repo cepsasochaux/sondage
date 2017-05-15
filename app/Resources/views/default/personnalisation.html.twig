@@ -127,6 +127,7 @@
         var form = $("form");
         form.validate();
         $("form").on('change', function () {
+            alert('test');
             if(form.valid()){
                 alert('valide');
             }
