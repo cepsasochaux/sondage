@@ -44,8 +44,9 @@ class DefaultController extends Controller
                 if($clients->getStatus()==0)
                 {
                     $clients->setStatus(1);
-                    $clients->setToken(random_bytes(10));
+                    $clients->setToken("AeOI16ZD".random_int(0,10)."e49Mp");
                     $em->flush();
+                    die;
                     $this->get('session')->set('user', $clients->getCode());
                     return $this->redirectToRoute('question', array('number' => 1));
                 }
@@ -74,11 +75,14 @@ class DefaultController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $client = $em->getRepository('AppBundle:Client')->findOneByCode($client);
-        if($client->getStatus()>=$number){
+        if($client->getStatus()>=$number && $number!=0){
             $page = $em->getRepository('AppBundle:Page')->findOneById($number);
         }
-        else {
+        elseif($number!=0) {
             return $this->redirectToRoute('question', array('number'=>$client->getStatus()));
+        }
+        else {
+            return $this->redirectToRoute('homepage');
         }
         if ($client->getStatus()==2) {
             $client->setStatus(3);
