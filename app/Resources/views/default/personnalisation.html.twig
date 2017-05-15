@@ -122,39 +122,6 @@
 
 {% block javascripts %}
     <script type="text/javascript">
-        $('.btn').prop("disabled",true);
-        function mafct() {
-            $('td input:checked').closest("td").addClass('active');
-            $('td input[type=radio]').not(':checked').closest("td").removeClass('active');
-            var nbr=0;
-            var resp=0;
-            {% for question in questions %}
-            nbr++;
-            if($('input[name=question_{{ question.id }}]:checked').val()){
-                resp++;
-            }
-            if($('input[name=question_{{ question.id }}]:checked').val() == 3 || $('input[name=question_{{ question.id }}]:checked').val() == 4){
-                $("#question_{{ question.id }}_text").addClass('warning');
-                $("#question_{{ question.id }}_text").attr('placeholder','Pourquoi ?')
-            }
-            else {
-                $("#question_{{ question.id }}_text").removeClass('warning');
-                $("#question_{{ question.id }}_text").attr('placeholder','')
-
-            }
-            {% endfor %}
-            if(nbr==resp){
-                $('.btn').prop("disabled",false);
-                $('.btn').css("background", "#1197d0");
-            } else {
-                $('.btn').prop("disabled",true);
-            }
-        }
-        mafct();
-        $("td").click(function () {
-            $(this).find('input:radio').attr('checked', true);
-            mafct();
-        });
 
     </script>
 {% endblock %}
