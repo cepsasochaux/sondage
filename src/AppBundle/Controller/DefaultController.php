@@ -84,12 +84,12 @@ class DefaultController extends Controller
         else {
             return $this->redirectToRoute('homepage');
         }
-        if ($client->getStatus()==2) {
+        if ($client->getStatus()==2 && $number==2) {
             $client->setStatus(3);
             $em->flush();
             return $this->render('default/end.html.twig', array('tombola'=>true, 'client'=>$client->getToken()));
         }
-        elseif ($client->getStatus()==3) {
+        elseif ($client->getStatus()==3 && $number==3) {
             return $this->render('default/end.html.twig', array('tombola'=>false, 'client'=>$client->getToken()));
         }
         $questions = $em->getRepository('AppBundle:Question')->findByPageId($number);
