@@ -45,7 +45,9 @@
                     {{ form_widget(form.save) }}
                     {{ form_end(form) }}
 
-
+                    {% if form.vars.valid == false %}
+                        <p class="error"> There is an error in the form. please Correct. </p>
+                    {% endif %}
                 </div>
             </div>
         </div>
