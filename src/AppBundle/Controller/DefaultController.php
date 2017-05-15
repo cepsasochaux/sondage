@@ -100,7 +100,7 @@ class DefaultController extends Controller
                 ->add('sexe', ChoiceType::class, array('choices' => array("Un homme" =>0,"Une femme"=>1),
                     'choices_as_values' => true,'multiple'=>false,'expanded'=>true,'required' => true,'data' => 'male'))
                 ->add('age', ChoiceType::class, array('choices' => array("Moins de 25 ans"=>0, "de 25 à 34 ans"=>1, "de 35 à 44 ans"=>2, "de 45 à 54 ans"=>3, "55 et plus"=>4),'required' => true,'data' => null))
-                ->add('profession', ChoiceType::class, array('choices' => array("Apprenti"=>0, "Ouvrier"=>1, "Employé ou technicien"=>2, "cadre"=>3, "Autre"=>4),'required' => true,'data' => null))
+                ->add('profession', ChoiceType::class, array('choices' => array("Apprenti"=>0, "Ouvrier"=>1, "Employé ou technicien"=>2, "cadre"=>3, "Autre"=>4),'required' => true,'data' => 'male'))
                 ->add('enfant', ChoiceType::class, array('choices' => array("Oui"=>0, "Non"=>1),
                     'choices_as_values' => true,'multiple'=>false,'expanded'=>true,'required' => true,'data' => null))
                 ->add('enfant_age', ChoiceType::class, array('choices' => array("0-5 ans"=>0, "6-11 ans"=>1, "12-15 ans"=>2, "16-18 ans"=>3, "Plus de 18 ans"=>4),'required' => false,'data' => null))
