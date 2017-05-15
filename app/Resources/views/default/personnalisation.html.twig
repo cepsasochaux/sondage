@@ -129,9 +129,11 @@
         var form = $("#myForm");
         form.validate();
         form.on('change', function () {
-            alert('test');
             if(form.valid()){
-                alert('valide');
+                $("#form_save").addClass('btn_ok');
+            }
+            else {
+                $("#form_save").removeClass('btn_ok');
             }
         })
     </script>
