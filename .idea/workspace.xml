@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09ec901f-efda-4596-8f79-ab8c4bfada99" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-    </list>
+    <list default="true" id="09ec901f-efda-4596-8f79-ab8c4bfada99" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,12 +32,12 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="57" column="11" lean-forward="true" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
+            <state relative-caret-position="527">
+              <caret line="47" column="33" lean-forward="false" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="33" />
               <folding>
                 <element signature="e#40#69#0#PHP" expanded="true" />
-                <marker date="1494842359403" expanded="true" signature="6582:6601" ph="..." />
-                <marker date="1494842359403" expanded="true" signature="6663:6680" ph="..." />
+                <marker date="1494842405021" expanded="true" signature="6578:6597" ph="..." />
+                <marker date="1494842405021" expanded="true" signature="6659:6676" ph="..." />
               </folding>
             </state>
           </provider>
@@ -382,12 +380,12 @@
       <workItem from="1494491275747" duration="11563000" />
       <workItem from="1494662320339" duration="11332000" />
       <workItem from="1494750373890" duration="11042000" />
-      <workItem from="1494833332516" duration="9005000" />
+      <workItem from="1494833332516" duration="9029000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72912000" />
+    <option name="totallyTimeSpent" value="72936000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -441,8 +439,8 @@
           <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
           <folding>
             <element signature="e#40#69#0#PHP" expanded="true" />
-            <marker date="1494842359403" expanded="true" signature="6582:6601" ph="..." />
-            <marker date="1494842359403" expanded="true" signature="6663:6680" ph="..." />
+            <marker date="1494842405021" expanded="true" signature="6578:6597" ph="..." />
+            <marker date="1494842405021" expanded="true" signature="6659:6676" ph="..." />
           </folding>
         </state>
       </provider>
@@ -750,12 +748,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="57" column="11" lean-forward="true" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
+        <state relative-caret-position="527">
+          <caret line="47" column="33" lean-forward="false" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="33" />
           <folding>
             <element signature="e#40#69#0#PHP" expanded="true" />
-            <marker date="1494842359403" expanded="true" signature="6582:6601" ph="..." />
-            <marker date="1494842359403" expanded="true" signature="6663:6680" ph="..." />
+            <marker date="1494842405021" expanded="true" signature="6578:6597" ph="..." />
+            <marker date="1494842405021" expanded="true" signature="6659:6676" ph="..." />
           </folding>
         </state>
       </provider>
