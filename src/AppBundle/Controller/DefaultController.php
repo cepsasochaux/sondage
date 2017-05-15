@@ -96,7 +96,12 @@ class DefaultController extends Controller
 
         if($number==1){
             $form = $this->createFormBuilder($client)
-                ->add('sexe', ChoiceType::class, array('choices' => array(1 => "choix 1", 2 => "choix 2", 3 => "choix 3"),))
+                ->add('sexe', ChoiceType::class, array('choices' => array(0 => "Un homme", 1 => "Une femme"),))
+                ->add('age', ChoiceType::class, array('choices' => array(0 => "Moins de 25 ans", 1 => "de 25 à 34 ans", 2=>"de 35 à 44 ans", 3=>"de 45 à 54 ans", 4=>"55 et plus"),))
+                ->add('profession', ChoiceType::class, array('choices' => array(0 => "Apprenti", 1 => "Ouvrier", 2=>"Employé ou technicien", 3=>"cadre", 4=>"Autre"),))
+                ->add('enfant', ChoiceType::class, array('choices' => array(0 => "Oui", 1 => "Non"),))
+                ->add('enfant_age', ChoiceType::class, array('choices' => array(0 => "0-5 ans", 1 => "6-11 ans", 2=>"12-15 ans", 3=>"16-18 ans", 4=>"Plus de 18 ans"),))
+                ->add('situation', ChoiceType::class, array('choices' => array(0 => "Célibataire", 1 => "En couple", 2=>"Marié(e) / Pacsé(e)", 3=>"Séparé/Divorcé", 4=>"Famille recomposée"),))
                 ->add('save', SubmitType::class, array('label' => 'VALIDER'))
                 ->getForm();
 
