@@ -97,7 +97,7 @@
 {% block javascripts %}
     <script type="text/javascript">
         {% if tombola == false %}
-            $("#tombola").innerHTML="Vous avez déjà participé";
+            $("#tombola").html("Vous avez déjà participé");
             $("#tombola").prop('disabled', true);
             $("#tombola").css('background', '#aaaaaa');
         {% endif %}
