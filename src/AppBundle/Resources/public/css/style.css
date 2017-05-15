@@ -96,7 +96,7 @@ body {
     right: 0;
     text-align: center;
     margin: 0 auto;
-    top: 700px;
+    /* bottom: 20px; */
     margin-top: 30px;
     background-color: #1197d0;
     left: 0;
@@ -200,7 +200,6 @@ a {
     }
     .footer {
         width: 84%;
-        top:auto;
         position: relative;
     }
     .footer-top {

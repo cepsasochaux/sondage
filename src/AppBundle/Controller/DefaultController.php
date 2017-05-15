@@ -78,12 +78,12 @@ class DefaultController extends Controller
         $client = $em->getRepository('AppBundle:Client')->findOneByCode($client);
         if($client->getStatus()>=$number && $number!=0){
             if ($client->getStatus()==$fin && $number==$fin) {
-                $client->setStatus(3);
-                $em->flush();
-                return $this->render('default/end.html.twig', array('tombola'=>true, 'client'=>$client->getToken()));
-            }
-            elseif ($client->getStatus()==$fin+1 && $number>=$fin) {
-                return $this->render('default/end.html.twig', array('tombola'=>false, 'client'=>$client->getToken()));
+                if($client->getTombola()==1){
+                    return $this->render('default/end.html.twig', array('tombola'=>false, 'client'=>$client->getToken()));
+                }
+                else{
+                    return $this->render('default/end.html.twig', array('tombola'=>true, 'client'=>$client->getToken()));
+                }
             }
             else {
                 $page = $em->getRepository('AppBundle:Page')->findOneById($number);
