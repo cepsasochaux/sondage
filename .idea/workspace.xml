@@ -44,14 +44,15 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="55" lean-forward="false" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+            <state relative-caret-position="357">
+              <caret line="99" column="77" lean-forward="true" selection-start-line="99" selection-start-column="77" selection-end-line="99" selection-end-column="77" />
               <folding>
-                <marker date="1494853981329" expanded="true" signature="7850:7961" ph="..." />
-                <marker date="1494853981329" expanded="true" signature="7856:7961" ph="..." />
-                <marker date="1494853981329" expanded="true" signature="7892:7961" ph="..." />
-                <marker date="1494853981329" expanded="true" signature="7975:7994" ph="..." />
-                <marker date="1494853981329" expanded="true" signature="8056:8073" ph="..." />
+                <element signature="e#40#69#0#PHP" expanded="true" />
+                <marker date="1494854108558" expanded="true" signature="7548:7659" ph="..." />
+                <marker date="1494854108558" expanded="true" signature="7554:7659" ph="..." />
+                <marker date="1494854108558" expanded="true" signature="7590:7659" ph="..." />
+                <marker date="1494854108558" expanded="true" signature="7673:7692" ph="..." />
+                <marker date="1494854108558" expanded="true" signature="7754:7771" ph="..." />
               </folding>
             </state>
           </provider>
@@ -518,12 +519,12 @@
       <workItem from="1494491275747" duration="11563000" />
       <workItem from="1494662320339" duration="11332000" />
       <workItem from="1494750373890" duration="11042000" />
-      <workItem from="1494833332516" duration="17059000" />
+      <workItem from="1494833332516" duration="17186000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80966000" />
+    <option name="totallyTimeSpent" value="81093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -890,14 +891,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="55" lean-forward="false" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+        <state relative-caret-position="357">
+          <caret line="99" column="77" lean-forward="true" selection-start-line="99" selection-start-column="77" selection-end-line="99" selection-end-column="77" />
           <folding>
-            <marker date="1494853981329" expanded="true" signature="7850:7961" ph="..." />
-            <marker date="1494853981329" expanded="true" signature="7856:7961" ph="..." />
-            <marker date="1494853981329" expanded="true" signature="7892:7961" ph="..." />
-            <marker date="1494853981329" expanded="true" signature="7975:7994" ph="..." />
-            <marker date="1494853981329" expanded="true" signature="8056:8073" ph="..." />
+            <element signature="e#40#69#0#PHP" expanded="true" />
+            <marker date="1494854108558" expanded="true" signature="7548:7659" ph="..." />
+            <marker date="1494854108558" expanded="true" signature="7554:7659" ph="..." />
+            <marker date="1494854108558" expanded="true" signature="7590:7659" ph="..." />
+            <marker date="1494854108558" expanded="true" signature="7673:7692" ph="..." />
+            <marker date="1494854108558" expanded="true" signature="7754:7771" ph="..." />
           </folding>
         </state>
       </provider>
