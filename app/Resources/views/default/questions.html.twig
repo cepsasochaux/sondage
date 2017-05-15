@@ -26,8 +26,10 @@
                                 <td class="col_id">{{ question.id }}</td>
                                 <td>{{ question.titre }}<span class="italique">{{ question.description }}</span></td>
                                 {% for i in 0..(page.nombre-1) %}
-                                    {% if reponses is defined and reponses[k].value==i %}
+                                    {% if reponses is defined %}
+                                        {% if reponses[k].value==i %}
                                         <td class="table_input"><input type="radio" value="{{ i }}" checked id="question_{{ question.id }}" name="question_{{ question.id }}"></td>
+                                        {% endif %}
                                     {% else %}
                                         <td class="table_input"><input type="radio" value="{{ i }}" id="question_{{ question.id }}" name="question_{{ question.id }}"></td>
                                     {% endif %}
