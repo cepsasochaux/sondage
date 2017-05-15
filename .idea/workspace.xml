@@ -35,11 +35,11 @@
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
-              <caret line="41" column="27" lean-forward="true" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+              <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
               <folding>
                 <element signature="e#40#69#0#PHP" expanded="true" />
-                <marker date="1494842040748" expanded="true" signature="6614:6633" ph="..." />
-                <marker date="1494842040748" expanded="true" signature="6695:6712" ph="..." />
+                <marker date="1494842095524" expanded="true" signature="6614:6633" ph="..." />
+                <marker date="1494842095524" expanded="true" signature="6695:6712" ph="..." />
               </folding>
             </state>
           </provider>
@@ -382,12 +382,12 @@
       <workItem from="1494491275747" duration="11563000" />
       <workItem from="1494662320339" duration="11332000" />
       <workItem from="1494750373890" duration="11042000" />
-      <workItem from="1494833332516" duration="8692000" />
+      <workItem from="1494833332516" duration="8719000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72599000" />
+    <option name="totallyTimeSpent" value="72626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -441,8 +441,8 @@
           <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
           <folding>
             <element signature="e#40#69#0#PHP" expanded="true" />
-            <marker date="1494842040748" expanded="true" signature="6614:6633" ph="..." />
-            <marker date="1494842040748" expanded="true" signature="6695:6712" ph="..." />
+            <marker date="1494842095524" expanded="true" signature="6614:6633" ph="..." />
+            <marker date="1494842095524" expanded="true" signature="6695:6712" ph="..." />
           </folding>
         </state>
       </provider>
@@ -751,11 +751,11 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
-          <caret line="41" column="27" lean-forward="true" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+          <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
           <folding>
             <element signature="e#40#69#0#PHP" expanded="true" />
-            <marker date="1494842040748" expanded="true" signature="6614:6633" ph="..." />
-            <marker date="1494842040748" expanded="true" signature="6695:6712" ph="..." />
+            <marker date="1494842095524" expanded="true" signature="6614:6633" ph="..." />
+            <marker date="1494842095524" expanded="true" signature="6695:6712" ph="..." />
           </folding>
         </state>
       </provider>
