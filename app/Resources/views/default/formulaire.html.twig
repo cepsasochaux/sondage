@@ -14,15 +14,18 @@
     <div id="container">
         <div id="DIV_1">
             <h1>Tombola</h1>
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
             <div class="left">
-                {{ form_start(form) }}
-                {{ form_errors(form) }}
+
+
 
                 {{ form_row(form.lastname) }}
                 {{ form_row(form.firstname) }}
-                
-                {{ form_end(form) }}
+
+
             </div>
+            {{ form_end(form) }}
             <div class="right"></div>
 
         </div>
@@ -30,6 +33,9 @@
 </div>
 <script type="text/javascript"></script>
 <style>
+    .left {
+        color:gold;
+    }
     body {
         font-family: Calibri Light;
 
