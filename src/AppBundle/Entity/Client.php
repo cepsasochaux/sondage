@@ -286,4 +286,28 @@ class Client
     {
         return $this->situation;
     }
+
+    /**
+     * Set token
+     *
+     * @param string $token
+     *
+     * @return Client
+     */
+    public function setToken($token)
+    {
+        $this->token = $token;
+
+        return $this;
+    }
+
+    /**
+     * Get token
+     *
+     * @return string
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
 }

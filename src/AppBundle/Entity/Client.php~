@@ -77,6 +77,13 @@ class Client
      */
     private $situation;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="token", type="string", length=255)
+     */
+    private $token;
+
 
     /**
      * Get id
@@ -280,4 +287,3 @@ class Client
         return $this->situation;
     }
 }
-
