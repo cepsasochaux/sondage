@@ -154,7 +154,7 @@ class DefaultController extends Controller
             $message = '<html><body>';
             $message .= '<h1>Ticket pour tombola<h1/>';
             $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
-            $message .= "<tr style='background: #eee;'><td><strong>Nom:</strong> </td><td>" . $client->get('lastname') . "</td></tr>";
+            $message .= "<tr style='background: #eee;'><td><strong>Nom:</strong> </td><td>" . $client['lastname'] . "</td></tr>";
             $message .= "<tr><td><strong>Prénom:</strong> </td><td>" . $client->getFirstName() . "</td></tr>";
             $message .= "<tr><td><strong>Email:</strong> </td><td>" . $client->getEmail() . "</td></tr>";
             $message .= "<tr><td><strong>Code personnel:</strong> </td><td>" . $client->getCodePersonnel() . "</td></tr>";
