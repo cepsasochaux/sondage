@@ -96,13 +96,13 @@ class DefaultController extends Controller
 
         if($number==1){
             $form = $this->createFormBuilder($client)
-                ->add('sexe', ChoiceType::class, array('choices' => array(0 => "Un homme", 1 => "Une femme"),))
-                ->add('age', ChoiceType::class, array('choices' => array(0 => "Moins de 25 ans", 1 => "de 25 à 34 ans", 2=>"de 35 à 44 ans", 3=>"de 45 à 54 ans", 4=>"55 et plus"),))
-                ->add('profession', ChoiceType::class, array('choices' => array(0 => "Apprenti", 1 => "Ouvrier", 2=>"Employé ou technicien", 3=>"cadre", 4=>"Autre"),))
-                ->add('enfant', ChoiceType::class, array('choices' => array(0 => "Oui", 1 => "Non"),))
-                ->add('enfant_age', ChoiceType::class, array('choices' => array(0 => "0-5 ans", 1 => "6-11 ans", 2=>"12-15 ans", 3=>"16-18 ans", 4=>"Plus de 18 ans"),))
-                ->add('situation', ChoiceType::class, array('choices' => array(0 => "Célibataire", 1 => "En couple", 2=>"Marié(e) / Pacsé(e)", 3=>"Séparé/Divorcé", 4=>"Famille recomposée"),))
-                ->add('save', SubmitType::class, array('label' => 'VALIDER'))
+                ->add('sexe', ChoiceType::class, array('choices' => array("Un homme" =>0,"Une femme"=>1),))
+                ->add('age', ChoiceType::class, array('choices' => array("Moins de 25 ans"=>0, "de 25 à 34 ans"=>1, "de 35 à 44 ans"=>2, "de 45 à 54 ans"=>3, "55 et plus"=>4),))
+                ->add('profession', ChoiceType::class, array('choices' => array("Apprenti"=>0, "Ouvrier"=>1, "Employé ou technicien"=>2, "cadre"=>3, "Autre"=>4),))
+                ->add('enfant', ChoiceType::class, array('choices' => array("Oui"=>0, "Non"=>1),))
+                ->add('enfant_age', ChoiceType::class, array('choices' => array("0-5 ans"=>0, "6-11 ans"=>1, "12-15 ans"=>2, "16-18 ans"=>3, "Plus de 18 ans"=>4),))
+                ->add('situation', ChoiceType::class, array('choices' => array("Célibataire"=>0, "En couple"=>1, "Marié(e) / Pacsé(e)"=>2, "Séparé/Divorcé"=>3, "Famille recomposée"=>4),))
+                ->add('save', SubmitType::class, array('label' => 'suivant'))
                 ->getForm();
 
             $form->handleRequest($request);
