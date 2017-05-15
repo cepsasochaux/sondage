@@ -136,8 +136,7 @@
             success: "valid"
         });
         var form = $("#myForm");
-        console.log(form);
-        form.validate();
+        form.validate({ errorPlacement: function(error, element) {} });
         form.on('change', function () {
 
             if(form.valid()){
