@@ -1,93 +1,38 @@
-{% extends 'base.html.twig' %}
-
-{% block body %}
-    <div id="wrapper">
-        <div id="container">
-            <div id="DIV_1">
-                {{ form_start(form) }}
-                {{ form_widget(form) }}
-                {{ form_end(form) }}
-            </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Cepsa Sochaux | Tombola{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/app/css/style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro" rel="stylesheet">
+    <script src="{{ asset('/bundles/app/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('/bundles/app/js/Nibbler.js') }}"></script>
+</head>
+<body>
+<div id="wrapper">
+    <div id="container">
+        <div id="DIV_1">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
         </div>
     </div>
+</div>
+<script type="text/javascript"></script>
+<style>
+    body {
+        font-family: Calibri Light;
 
-{% endblock %}
+    }
+    label {
+        background: orangered;
+        padding:5px;
+        color: #FFFFFF;
+    }
+</style>
+</body>
+</html>
 
-{% block stylesheets %}
-    <style>
-        #tombola{
-            font-family: "Calibri Light";
-            font-size: 20px;
-            padding: 10px;
-            border: none;
-            text-align: center;
-            border-radius: 5px;
-            background: orangered;
-            color: white;
-        }
-        .col_id {
-            text-align: center;
-            color:white;
-            background: orangered;
-        }
-        .active{
-            background: #868686;
-        }
-        textarea {
-            width: 320px;
-            height: 40px;
-            margin: 0px;
-        }
-        .table_input {
-            text-align: center;
-        }
-        th {
-            background-color: #1197d0;
-            color: white;
-            padding: 5px;
-            text-transform: uppercase;
-        }
-        td {
-            /*width: 50px;*/
-        }
-        .btn {
-            border: none;
-            padding: 10px;
-            color: white;
-            margin-top: 35px;
-            float: right;
-            border-radius: 5px;
-        }
-        tr:nth-child(odd) {
-            background: #cbdaff;
-        }
-        .warning {
-            border:1px solid palevioletred;
-        }
-        h3 {
-            color: white;
-            background: orangered;
-            width: 100px;
-            padding: 5px;
-            text-align: center;
-        }
-        @media screen and (max-width: 640px) {
-            table,
-            tbody,
-            tr,
-            td {
-                display: block;
-                width: auto!important;
-                /* parceque tu as mis des style inline grrr */
-            }
-        }
-    </style>
-{% endblock %}
-
-{% block javascripts %}
-    <script type="text/javascript">
-
-    </script>
-{% endblock %}
 
 
