@@ -9,7 +9,7 @@
                 </h1>
                 <div id="content_first" class="clearfix">
                     <h2>Merci pour votre participation</h2>
-                    {% if tombola==0 %}
+                    {% if client ==0 %}
                     <p>L'enquête de satisfaction est à présent terminée. Un formulaire pour participer à une tombola vas vous être présenter. Notez qu'aucun lien entre vos réponses et le formulaire de tombola ne pourra être fait. Vous pouvez cliquer sur lien lien ci-dessous pour ouvrir le forumaire. Attention ! Cette action vous empêchera d'ouvrir à nouveau cette fenêtre.</p>
                     {% else %}
                         <p>L'enquête de satisfaction est à présent terminée. Si vous avez effectués des modifications elles seront enregistrés. Attention vous avez déjà participé à la tombola.</p>
@@ -95,7 +95,7 @@
 
 {% block javascripts %}
     <script type="text/javascript">
-        {% if tombola==1 %}
+        {% if client==1 %}
             $("#tombola").val("Vous avez déjà participé");
             $("#tombola").prop('disabled', true);
             $("#tombola").css('background', '#aaaaaa');
