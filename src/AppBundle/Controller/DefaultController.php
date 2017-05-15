@@ -187,6 +187,7 @@ class DefaultController extends Controller
                 $headers .= "MIME-Version: 1.0\r\n";
                 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                 mail($to, $subject, $message, $headers);
+                return $this->render('default/thx.html.twig', array());
 
             }
 

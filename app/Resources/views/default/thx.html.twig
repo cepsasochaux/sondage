@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Cepsa Sochaux | Tombola{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/app/css/style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro" rel="stylesheet">
+    <script src="{{ asset('/bundles/app/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('/bundles/app/js/Nibbler.js') }}"></script>
+</head>
+<body>
+<div id="wrapper">
+    <div id="container">
+        <div id="DIV_1">
+          <h1> Votre coupon virtuel à été envoyé avec succès !</h1>
+            <p>Vous pouvez désormais quitter la page.</p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript"></script>
+<style>
+    body {
+        font-family: 'Calibri Light';
+
+    }
+    label {
+        background: orangered;
+        padding:5px;
+        color: #FFFFFF;
+    }
+    input {
+        height: 25px;
+    }
+    form{
+        min-width: 100px;
+        display: inline-block;
+    }
+
+    form input{
+        float: right;
+    }
+
+    form label{
+        display: inline-block;
+        margin-bottom: 2px;
+        background: orangered;
+        width: 78px;
+    }
+    .right label{
+        width: 150px;
+    }
+    .left {
+        float: left;
+        width: 265px;
+    }
+    .right {
+        float: right;
+        width:333px;
+        margin-left: 30px;
+    }
+    #form_save {
+        height:40px;
+        background: orangered;
+    }
+</style>
+</body>
+</html>
+
+
+
