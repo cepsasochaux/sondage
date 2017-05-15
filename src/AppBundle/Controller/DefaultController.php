@@ -92,7 +92,7 @@ class DefaultController extends Controller
         elseif ($client->getStatus()==3 && $number==3) {
             return $this->render('default/end.html.twig', array('tombola'=>false, 'client'=>$client->getToken()));
         }
-        else {
+        elseif ($client->getStatus() != $number) {
             return $this->redirectToRoute('question', array('number'=>$client->getStatus()));
         }
         $questions = $em->getRepository('AppBundle:Question')->findByPageId($number);
