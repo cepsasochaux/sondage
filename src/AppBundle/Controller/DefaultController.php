@@ -161,7 +161,7 @@ class DefaultController extends Controller
 
         }
 
-        return $this->render('default/questions.html.twig', array(
+        return $this->render('default/myindex.html.twig', array(
             'form' => $form->createView(),
         ));
     }
