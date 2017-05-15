@@ -44,15 +44,15 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="120" column="9" lean-forward="true" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
+            <state relative-caret-position="193">
+              <caret line="106" column="204" lean-forward="false" selection-start-line="106" selection-start-column="204" selection-end-line="106" selection-end-column="204" />
               <folding>
                 <element signature="e#40#69#0#PHP" expanded="true" />
-                <marker date="1494856463850" expanded="true" signature="8719:8830" ph="..." />
-                <marker date="1494856463850" expanded="true" signature="8725:8830" ph="..." />
-                <marker date="1494856463850" expanded="true" signature="8761:8830" ph="..." />
-                <marker date="1494856463850" expanded="true" signature="8844:8863" ph="..." />
-                <marker date="1494856463850" expanded="true" signature="8925:8942" ph="..." />
+                <marker date="1494856550196" expanded="true" signature="8731:8842" ph="..." />
+                <marker date="1494856550196" expanded="true" signature="8737:8842" ph="..." />
+                <marker date="1494856550196" expanded="true" signature="8773:8842" ph="..." />
+                <marker date="1494856550196" expanded="true" signature="8856:8875" ph="..." />
+                <marker date="1494856550196" expanded="true" signature="8937:8954" ph="..." />
               </folding>
             </state>
           </provider>
@@ -114,9 +114,25 @@
       <find>REMOTE</find>
       <find>dump</find>
       <find>62.39.213.48</find>
-      <find>62.39.213.48</find>
       <find>dum</find>
+      <find>62.39.213.48</find>
+      <find>D</find>
+      <find>'</find>
+      <find>'d</find>
+      <find>'da</find>
+      <find>'data</find>
+      <find>'data'</find>
+      <find>'data'</find>
+      <find>'data' =</find>
+      <find>'data' =&gt;</find>
+      <find>'data' =&gt;</find>
+      <find>'data' =&gt; '</find>
+      <find>'data' =&gt; ''</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>'data' =&gt; null</replace>
+    </replaceStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
@@ -519,12 +535,12 @@
       <workItem from="1494491275747" duration="11563000" />
       <workItem from="1494662320339" duration="11332000" />
       <workItem from="1494750373890" duration="11042000" />
-      <workItem from="1494833332516" duration="19539000" />
+      <workItem from="1494833332516" duration="19619000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83446000" />
+    <option name="totallyTimeSpent" value="83526000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -534,7 +550,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -891,15 +907,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="120" column="9" lean-forward="true" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
+        <state relative-caret-position="193">
+          <caret line="106" column="204" lean-forward="false" selection-start-line="106" selection-start-column="204" selection-end-line="106" selection-end-column="204" />
           <folding>
             <element signature="e#40#69#0#PHP" expanded="true" />
-            <marker date="1494856463850" expanded="true" signature="8719:8830" ph="..." />
-            <marker date="1494856463850" expanded="true" signature="8725:8830" ph="..." />
-            <marker date="1494856463850" expanded="true" signature="8761:8830" ph="..." />
-            <marker date="1494856463850" expanded="true" signature="8844:8863" ph="..." />
-            <marker date="1494856463850" expanded="true" signature="8925:8942" ph="..." />
+            <marker date="1494856550196" expanded="true" signature="8731:8842" ph="..." />
+            <marker date="1494856550196" expanded="true" signature="8737:8842" ph="..." />
+            <marker date="1494856550196" expanded="true" signature="8773:8842" ph="..." />
+            <marker date="1494856550196" expanded="true" signature="8856:8875" ph="..." />
+            <marker date="1494856550196" expanded="true" signature="8937:8954" ph="..." />
           </folding>
         </state>
       </provider>
