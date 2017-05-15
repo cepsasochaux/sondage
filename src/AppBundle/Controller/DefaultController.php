@@ -41,7 +41,8 @@ class DefaultController extends Controller
             }
             else {
                 if($clients->getStatus('0'))
-                {
+
+                    dump($clients);
                     $clients->setStatus('1');
                     $clients->setToken(random_bytes(10));
                     $em->flush();
