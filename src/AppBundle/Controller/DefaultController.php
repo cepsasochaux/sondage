@@ -150,7 +150,6 @@ class DefaultController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $client = $form->getData();
-            dump($client);
             $message = '<html><body>';
             $message .= '<h1>Ticket pour tombola<h1/>';
             $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
@@ -169,7 +168,6 @@ class DefaultController extends Controller
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
             mail($to, $subject, $message, $headers);
-            die;
 
         }
 
