@@ -23,7 +23,7 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         $client = new Client();
-        
+
         $form = $this->createFormBuilder($client)
             ->add('code', TextType::class, array('label' => false))
             ->add('save', SubmitType::class, array('label' => 'VALIDER'))
@@ -50,6 +50,7 @@ class DefaultController extends Controller
                     return $this->redirectToRoute('question', array('number' => 1));
                 }
                 else {
+                    $this->get('session')->set('user', $clients->getCode());
                     return $this->redirectToRoute('question', array('number' => $clients->getStatus()));
                 }
             }
