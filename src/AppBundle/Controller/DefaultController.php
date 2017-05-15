@@ -150,8 +150,7 @@ class DefaultController extends Controller
         $tombola = $em->getRepository('AppBundle:Client')->findOneByToken($token);
 
         if($tombola->getTombola()==1 || !$tombola){
-            $this->get('session')->getFlashBag()->set('error', 'Vous n\'êtes pas connecté.');
-            return $this->redirectToRoute('homepage');
+            return $this->render('default/thx.html.twig', array());
         }
         else{
             $form = $this->createFormBuilder(null)
