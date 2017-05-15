@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09ec901f-efda-4596-8f79-ab8c4bfada99" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/default/personnalisation.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
@@ -46,15 +44,14 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="155" column="46" lean-forward="false" selection-start-line="155" selection-start-column="46" selection-end-line="155" selection-end-column="46" />
+            <state relative-caret-position="170">
+              <caret line="10" column="55" lean-forward="false" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
               <folding>
-                <element signature="e#40#69#0#PHP" expanded="true" />
-                <marker date="1494853897967" expanded="true" signature="7778:7889" ph="..." />
-                <marker date="1494853897967" expanded="true" signature="7784:7889" ph="..." />
-                <marker date="1494853897967" expanded="true" signature="7820:7889" ph="..." />
-                <marker date="1494853897967" expanded="true" signature="7903:7922" ph="..." />
-                <marker date="1494853897967" expanded="true" signature="7984:8001" ph="..." />
+                <marker date="1494853981329" expanded="true" signature="7850:7961" ph="..." />
+                <marker date="1494853981329" expanded="true" signature="7856:7961" ph="..." />
+                <marker date="1494853981329" expanded="true" signature="7892:7961" ph="..." />
+                <marker date="1494853981329" expanded="true" signature="7975:7994" ph="..." />
+                <marker date="1494853981329" expanded="true" signature="8056:8073" ph="..." />
               </folding>
             </state>
           </provider>
@@ -521,12 +518,12 @@
       <workItem from="1494491275747" duration="11563000" />
       <workItem from="1494662320339" duration="11332000" />
       <workItem from="1494750373890" duration="11042000" />
-      <workItem from="1494833332516" duration="16976000" />
+      <workItem from="1494833332516" duration="17059000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80883000" />
+    <option name="totallyTimeSpent" value="80966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -893,15 +890,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="155" column="46" lean-forward="false" selection-start-line="155" selection-start-column="46" selection-end-line="155" selection-end-column="46" />
+        <state relative-caret-position="170">
+          <caret line="10" column="55" lean-forward="false" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
           <folding>
-            <element signature="e#40#69#0#PHP" expanded="true" />
-            <marker date="1494853897967" expanded="true" signature="7778:7889" ph="..." />
-            <marker date="1494853897967" expanded="true" signature="7784:7889" ph="..." />
-            <marker date="1494853897967" expanded="true" signature="7820:7889" ph="..." />
-            <marker date="1494853897967" expanded="true" signature="7903:7922" ph="..." />
-            <marker date="1494853897967" expanded="true" signature="7984:8001" ph="..." />
+            <marker date="1494853981329" expanded="true" signature="7850:7961" ph="..." />
+            <marker date="1494853981329" expanded="true" signature="7856:7961" ph="..." />
+            <marker date="1494853981329" expanded="true" signature="7892:7961" ph="..." />
+            <marker date="1494853981329" expanded="true" signature="7975:7994" ph="..." />
+            <marker date="1494853981329" expanded="true" signature="8056:8073" ph="..." />
           </folding>
         </state>
       </provider>

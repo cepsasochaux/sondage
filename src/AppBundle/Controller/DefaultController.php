@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Client;
 use AppBundle\Entity\Page;
@@ -95,7 +96,7 @@ class DefaultController extends Controller
 
         if($number==1){
             $form = $this->createFormBuilder($client)
-                ->add('sexe', 'choice', array('choices' => array(1 => "choix 1", 2 => "choix 2", 3 => "choix 3"),
+                ->add('sexe', CheckboxType::class, array('choices' => array(1 => "choix 1", 2 => "choix 2", 3 => "choix 3"),
                         'multiple' => false,
                         'expanded' => true,
                         'preferred_choices' => array(2),
