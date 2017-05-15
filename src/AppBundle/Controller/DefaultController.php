@@ -44,6 +44,7 @@ class DefaultController extends Controller
                 if($myClient->getStatus('0'))
                 {
                     $myClient->setStatus('1');
+                    $myClient->setToken(random_bytes(10));
                     $em->flush();
                     $this->get('session')->set('user', $myClient->getCode());
                     return $this->redirectToRoute('question', array('number' => 1));
@@ -62,7 +63,6 @@ class DefaultController extends Controller
      */
     public function firstAction(Request $request, $number)
     {
-        //dump($random = random_bytes(10));
         if(!$this->get('session')->get('user')){
             $this->get('session')->getFlashBag()->set('error', 'Vous n\'êtes pas connecté.');
             return  $this->redirectToRoute('homepage');
@@ -80,10 +80,10 @@ class DefaultController extends Controller
         if ($client->getStatus()==2) {
             $client->setStatus(3);
             $em->flush();
-            return $this->render('default/end.html.twig', array('tombola'=>true, 'client'=>$client->getCode()));
+            return $this->render('default/end.html.twig', array('tombola'=>true, 'client'=>$client->getToken()));
         }
         elseif ($client->getStatus()==3) {
-            return $this->render('default/end.html.twig', array('tombola'=>false, 'client'=>$client->getCode()));
+            return $this->render('default/end.html.twig', array('tombola'=>false, 'client'=>$client->getToken()));
         }
         $questions = $em->getRepository('AppBundle:Question')->findByPageId($number);
         $reponses = $em->getRepository('AppBundle:Reponse')->findByClientId($client->getCode());
