@@ -28,7 +28,7 @@
             </div>
 
             <div class="right">
-                {{ form_label(form.code_personnel, {'attr': {'style': 'width:150px;'}}) }}
+                {{ form_label(form.code_personnel) }}
                 {{ form_widget(form.code_personnel) }}<br>
             </div>
             {{ form_widget(form.save) }}
@@ -65,6 +65,9 @@
         margin-bottom: 2px;
         background: orangered;
         width: 78px;
+    }
+    .right label{
+        width: 150px;
     }
     .left {
         float: left;
