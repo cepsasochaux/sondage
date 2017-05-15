@@ -9,7 +9,11 @@
                 </h1>
                 <div id="content_first" class="clearfix">
                     <h2>Merci pour votre participation</h2>
+                    {% if tombola==0 %}
                     <p>L'enquête de satisfaction est à présent terminée. Un formulaire pour participer à une tombola vas vous être présenter. Notez qu'aucun lien entre vos réponses et le formulaire de tombola ne pourra être fait. Vous pouvez cliquer sur lien lien ci-dessous pour ouvrir le forumaire. Attention ! Cette action vous empêchera d'ouvrir à nouveau cette fenêtre.</p>
+                    {% else %}
+                        <p>L'enquête de satisfaction est à présent terminée. Si vous avez effectués des modifications elles seront enregistrés. Attention vous avez déjà participé à la tombola.</p>
+                    {% endif %}
                     <center><button id="tombola">Participer</button></center>
                 </div>
             </div>
@@ -91,6 +95,11 @@
 
 {% block javascripts %}
     <script type="text/javascript">
+        {% if tombola==1 %}
+            $("#tombola").val("Vous avez déjà participé");
+            $("#tombola").prop('disabled', true);
+            $("#tombola").css('background', '#aaaaaa');
+        {% endif %}
         $("#tombola").on('click', function () {
             window.open('https://cepsa-sochaux-sondage.com/app_dev.php/sondage/{{ client }}', "nom_popup","directories=0,titlebar=0,toolbar=no,location=no,status=0,menubar=0,scrollbars=no,resizable=no,width=980,height=350")
         })
