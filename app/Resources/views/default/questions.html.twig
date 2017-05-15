@@ -27,7 +27,7 @@
                                 <td>{{ question.titre }}<span class="italique">{{ question.description }}</span></td>
                                 {% for i in 0..(page.nombre-1) %}
                                 {% dump(reponses) %}
-                                    {% if not reponses is null %}
+                                    {% if not reponses=="" %}
                                         {% if reponses[k].value==i %}
                                         <td class="table_input"><input type="radio" value="{{ i }}" checked id="question_{{ question.id }}" name="question_{{ question.id }}"></td>
                                         {% endif %}
