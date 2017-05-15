@@ -151,30 +151,20 @@ class DefaultController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $client = $form->getData();
             $message = '<html><body>';
-            $message .= '<img src="//css-tricks.com/examples/WebsiteChangeRequestForm/images/wcrf-header.png" alt="Website Change Request" />';
+            $message .= '<h1>Ticket pour tombola<h1/>';
             $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
-            $message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($_POST['req-name']) . "</td></tr>";
-            $message .= "<tr><td><strong>Email:</strong> </td><td>" . strip_tags($_POST['req-email']) . "</td></tr>";
-            $message .= "<tr><td><strong>Type of Change:</strong> </td><td>" . strip_tags($_POST['typeOfChange']) . "</td></tr>";
-            $message .= "<tr><td><strong>Urgency:</strong> </td><td>" . strip_tags($_POST['urgency']) . "</td></tr>";
-            $message .= "<tr><td><strong>URL To Change (main):</strong> </td><td>" . $_POST['URL-main'] . "</td></tr>";
-            $addURLS = $_POST['addURLS'];
-            if (($addURLS) != '') {
-                $message .= "<tr><td><strong>URL To Change (additional):</strong> </td><td>" . strip_tags($addURLS) . "</td></tr>";
-            }
-            $curText = htmlentities($_POST['curText']);
-            if (($curText) != '') {
-                $message .= "<tr><td><strong>CURRENT Content:</strong> </td><td>" . $curText . "</td></tr>";
-            }
-            $message .= "<tr><td><strong>NEW Content:</strong> </td><td>" . htmlentities($_POST['newText']) . "</td></tr>";
+            $message .= "<tr style='background: #eee;'><td><strong>Nom:</strong> </td><td>" . $client->getLastName() . "</td></tr>";
+            $message .= "<tr><td><strong>Prénom:</strong> </td><td>" . $client->getFirstName() . "</td></tr>";
+            $message .= "<tr><td><strong>Email:</strong> </td><td>" . $client->getEmail() . "</td></tr>";
+            $message .= "<tr><td><strong>Code personnel:</strong> </td><td>" . $client->getCodePersonnel() . "</td></tr>";
+            $message .= "<tr><td><strong>Téléphone:</strong> </td><td>" . $client->getTelephone() . "</td></tr>";
             $message .= "</table>";
             $message .= "</body></html>";
             $to = 'leo.meyer12@gmail.com';
 
             $subject = 'Tombola ticket virtuel';
 
-            $headers = "From: " . strip_tags($_POST['req-email']) . "\r\n";
-            $headers .= "Reply-To: ". strip_tags($_POST['req-email']) . "\r\n";
+            $headers = "From: contact@cepsa-sochaux-sondage.com\r\n";
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
             mail($to, $subject, $message, $headers);
