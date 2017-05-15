@@ -141,6 +141,7 @@ class DefaultController extends Controller
             ->add('firstname', TextType::class, array('label' => "Prénom"))
             ->add('email', EmailType::class, array('label' => "email"))
             ->add('telephone', IntegerType::class, array('label' => "téléphone"))
+            ->add('code_personnel', TextType::class, array('label', 'Votre code  personnel'))
             ->add('save', SubmitType::class, array('label' => 'VALIDER'))
             ->getForm();
 
