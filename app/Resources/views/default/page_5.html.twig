@@ -1,0 +1,154 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="DIV_1">
+                <h1 id="H1_2">
+                    Enquête de satisfaction
+                </h1>
+                <div id="content_first" class="clearfix">
+                    <h1>Quelques informations vous concernant...</h1>
+                    {{ form_start(form, {'attr' : {'id': 'myForm'}}) }}
+                    {{ form_errors(form) }}
+                    <div class="block clearfix">
+                        <h2>Êtes-vous :</h2>
+                        {{ form_widget(form.sexe) }}<br>
+                    </div>
+
+                    <div class="block clearfix">
+                        <h2>Dans quelle tranche d'âge vous situez-vous ?</h2>
+                        {{ form_widget(form.age) }}<br>
+                    </div>
+
+                    <div class="block clearfix">
+                        <h2>Quelle est votre catégorie socio-professionnelle ?</h2>
+                        {{ form_widget(form.profession) }}<br>
+                    </div>
+
+                    <div class="block clearfix">
+                        <h2>Avez-vous des enfants à charge ?</h2>
+                        {{ form_widget(form.enfant) }}<br>
+                    </div>
+
+
+                    <div class="block clearfix">
+                        <h2>Si oui, merci de préciser le nombre d'enfant par tranche d'âge :</h2>
+                        {{ form_widget(form.enfant_age) }}<br>
+                    </div>
+
+                    <div class="block clearfix">
+                        <h2>Quelle est votre situation actuelle ?</h2>
+                        {{ form_widget(form.situation) }}<br>
+                    </div>
+
+                    {{ form_widget(form.save) }}
+                    {{ form_end(form) }}
+
+                    {% if form.vars.valid == false %}
+                        <p class="error"> There is an error in the form. please Correct. </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .block h2 {
+            font-size: 16px;
+            float:left;
+        }
+        .block input, .block label, .block select {
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+        .col_id {
+            text-align: center;
+            color:white;
+            background: orangered;
+        }
+        .active{
+            background: #868686;
+        }
+        textarea {
+            width: 320px;
+            height: 40px;
+            margin: 0px;
+        }
+        .table_input {
+            text-align: center;
+        }
+        th {
+            background-color: #1197d0;
+            color: white;
+            padding: 5px;
+            text-transform: uppercase;
+        }
+        td {
+            /*width: 50px;*/
+        }
+        .btn {
+            border: none;
+            padding: 10px;
+            color: white;
+            margin-top: 35px;
+            float: right;
+            border-radius: 5px;
+        }
+        tr:nth-child(odd) {
+            background: #cbdaff;
+        }
+        .warning {
+            border:1px solid palevioletred;
+        }
+        h3 {
+            color: white;
+            background: orangered;
+            width: 100px;
+            padding: 5px;
+            text-align: center;
+        }
+        .error label{
+            display: none;
+        }
+        @media screen and (max-width: 640px) {
+            table,
+            tbody,
+            tr,
+            td {
+                display: block;
+                width: auto!important;
+                /* parceque tu as mis des style inline grrr */
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script type="text/javascript">
+        jQuery.validator.setDefaults({
+            debug: false,
+            success: "valid"
+        });
+        var form = $("#myForm");
+        form.validate({ errorPlacement: function(error, element) {} });
+        form.on('change', function () {
+
+            if(form.valid()){
+                $('#form_save').prop("disabled",false);
+                $('#form_save').css("background", "#1197d0");
+            }
+            else {
+                $('#form_save').prop("disabled",false);
+            }
+            $(".error label").hide();
+        });
+    </script>
+{% endblock %}
+
+
