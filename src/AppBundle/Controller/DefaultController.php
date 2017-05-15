@@ -44,7 +44,7 @@ class DefaultController extends Controller
                 if($clients->getStatus()==0)
                 {
                     $clients->setStatus(1);
-                    $clients->setToken("AeOI".random_int(0,10)."ZD".random_int(0,10)."e".random_int(0,10)."Mp");
+                    $clients->setToken("AeOI".random_int(0,1000)."ZD".random_int(0,1000)."e".random_int(0,1000)."Mp");
                     $em->flush();
                     $this->get('session')->set('user', $clients->getCode());
                     return $this->redirectToRoute('question', array('number' => 1));
@@ -91,6 +91,9 @@ class DefaultController extends Controller
         }
         elseif ($client->getStatus()==3 && $number==3) {
             return $this->render('default/end.html.twig', array('tombola'=>false, 'client'=>$client->getToken()));
+        }
+        else {
+            return $this->redirectToRoute('question', array('number'=>$client->getStatus()));
         }
         $questions = $em->getRepository('AppBundle:Question')->findByPageId($number);
         $reponses = $em->getRepository('AppBundle:Reponse')->findByClientId($client->getCode());
