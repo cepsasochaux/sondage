@@ -9,7 +9,7 @@
                 </h1>
                 <div id="content_first" class="clearfix">
                     <h2>{{ page.description }}</h2>
-                    <h3>{{ page.titre }}</h3>
+                    {% if not page.titre == '' %}<h3>{{ page.titre }}</h3>{% endif %}
                     <form name="first" method="post" id="myForm">
                     <table>
                         <tr>
