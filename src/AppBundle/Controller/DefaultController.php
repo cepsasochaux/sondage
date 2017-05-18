@@ -127,20 +127,20 @@ class DefaultController extends Controller
                     $client->setStatus($number+1);
                     $em->flush();
                 }
-                for($i=1;$i<=10;$i++){
+                for($i=1;$i>=10;$i++){
                     if($i<=5){
                         $qv = $_POST['select_'.$i];
                     }
                     else {
                         $qv = $_POST['select_'.$i.'_n'];
                     }
-                    dump($qv);
+
                     $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
                         array('questionId' => (25+$i), 'clientId' => $client->getCode())
                     );
 
                     if($reponse){
-                        $reponse->setQuestionId(50);
+                        $reponse->setQuestionId((25+$i));
                         $reponse->setClientId($client->getCode());
                         $reponse->setValue($qv);
                         $em->persist($reponse);
@@ -148,15 +148,14 @@ class DefaultController extends Controller
                     }
                     else {
                         $response = new Reponse();
-                        $response->setQuestionId(50);
+                        $response->setQuestionId((25+$i));
                         $response->setClientId($client->getCode());
                         $response->setValue($qv);
                         $em->persist($response);
                         $em->flush();
                     }
                 }
-                dump('entree valide');
-                die;
+
                 return $this->redirectToRoute('question', array('number'=>$number+1));
             }
 
