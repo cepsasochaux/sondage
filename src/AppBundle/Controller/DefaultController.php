@@ -121,6 +121,46 @@ class DefaultController extends Controller
         }
         elseif($number==6){
 
+            if(isset($_POST['submit2'])){
+                dump('succes');
+                die;
+                if($client->getStatus()<=$number){
+                    $client->setStatus($number+1);
+                    $em->flush();
+                }
+                for($i=1;$i>=10;$i++){
+                    if($i<=5){
+                        $qv = $_POST['select_'.$i];
+                    }
+                    else {
+                        $qv = $_POST['select_'.$i.'_n'];
+                    }
+
+                    $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
+                        array('questionId' => (25+$i), 'clientId' => $client->getCode())
+                    );
+
+                    if($reponse){
+                        $reponse->setQuestionId((25+$i));
+                        $reponse->setClientId($client->getCode());
+                        $reponse->setValue($qv);
+                        $em->persist($reponse);
+                        $em->flush();
+                    }
+                    else {
+                        $response = new Reponse();
+                        $response->setQuestionId((25+$i));
+                        $response->setClientId($client->getCode());
+                        $response->setValue($qv);
+                        $em->persist($response);
+                        $em->flush();
+                    }
+                }
+
+                return $this->redirectToRoute('question', array('number'=>$number+1));
+            }
+            dump("NOOOOOO");
+            die;
             return $this->render('default/page_5.html.twig', array(
             ));
         }
@@ -172,45 +212,6 @@ class DefaultController extends Controller
 
                 return $this->redirectToRoute('question', array('number'=>$number+1));
             }
-        }
-
-        if(isset($_POST['submit2'])){
-            dump('succes');
-            die;
-            if($client->getStatus()<=$number){
-                $client->setStatus($number+1);
-                $em->flush();
-            }
-            for($i=1;$i>=10;$i++){
-                if($i<=5){
-                    $qv = $_POST['select_'.$i];
-                }
-                else {
-                    $qv = $_POST['select_'.$i.'_n'];
-                }
-
-                $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
-                    array('questionId' => (25+$i), 'clientId' => $client->getCode())
-                );
-
-                if($reponse){
-                    $reponse->setQuestionId((25+$i));
-                    $reponse->setClientId($client->getCode());
-                    $reponse->setValue($qv);
-                    $em->persist($reponse);
-                    $em->flush();
-                }
-                else {
-                    $response = new Reponse();
-                    $response->setQuestionId((25+$i));
-                    $response->setClientId($client->getCode());
-                    $response->setValue($qv);
-                    $em->persist($response);
-                    $em->flush();
-                }
-            }
-
-            return $this->redirectToRoute('question', array('number'=>$number+1));
         }
 
         if($number==1){
