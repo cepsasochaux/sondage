@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="09ec901f-efda-4596-8f79-ab8c4bfada99" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/page_5.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/page_5.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,8 +66,8 @@
       <file leaf-file-name="page_5.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/page_5.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="654" column="41" lean-forward="true" selection-start-line="654" selection-start-column="41" selection-end-line="654" selection-end-column="41" />
+            <state relative-caret-position="323">
+              <caret line="634" column="32" lean-forward="false" selection-start-line="634" selection-start-column="32" selection-end-line="634" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -574,12 +573,12 @@
       <workItem from="1494662320339" duration="11332000" />
       <workItem from="1494750373890" duration="11042000" />
       <workItem from="1494833332516" duration="24440000" />
-      <workItem from="1495088541462" duration="11931000" />
+      <workItem from="1495088541462" duration="11964000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100278000" />
+    <option name="totallyTimeSpent" value="100311000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -939,8 +938,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/page_5.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="654" column="41" lean-forward="true" selection-start-line="654" selection-start-column="41" selection-end-line="654" selection-end-column="41" />
+        <state relative-caret-position="323">
+          <caret line="634" column="32" lean-forward="false" selection-start-line="634" selection-start-column="32" selection-end-line="634" selection-end-column="32" />
           <folding />
         </state>
       </provider>
