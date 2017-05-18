@@ -12,15 +12,27 @@
                         <h2> Par quels moyens préférez-vous recevoir les informations ?</h2>
                         <h4>Clicquez et déplacez l'élément dans l'ordre de préférence du plus haut celui qui vous intéresse le plus au plus bas celui qui vous intéresse le moins.</h4>
                             <ul id="sortable">
-                                <li id="my_1" onmousedown="test();" class="ui-state-default">Item 1</li>
-                                <li id="2" class="ui-state-default">Item 2</li>
-                                <li id="3" class="ui-state-default">Item 3</li>
-                                <li id="4" class="ui-state-default">Item 4</li>
-                                <li id="5" class="ui-state-default">Item 5</li>
-                                <li id="6" class="ui-state-default">Item 6</li>
-                                <li id="7" class="ui-state-default">Item 7</li>
+                                <li id="1" onmousedown="my_id();" class="ui-state-default">Le site internet</li>
+                                <li id="2" onmousedown="my_id();" class="ui-state-default">La newsletter</li>
+                                <li id="3" onmousedown="my_id();" class="ui-state-default">La page Facebook</li>
+                                <li id="4" onmousedown="my_id();" class="ui-state-default">Le Mag'Ce</li>
+                                <li id="5" onmousedown="my_id();" class="ui-state-default">La lettre CE Mensuelle</li>
+                                <li id="6" onmousedown="my_id();" class="ui-state-default">Plaquettes CE (Billeterie, Guide Bon Plans...)</li>
+                                <li id="7" onmousedown="my_id();" class="ui-state-default">Affichages</li>
+                                <li id="8" onmousedown="my_id();" class="ui-state-default">Infos par les élus syndicaux</li>
+                                <li id="9" onmousedown="my_id();" class="ui-state-default">Infos par le personnel CE</li>
+                                <li id="10" onmousedown="my_id();" class="ui-state-default">Ecran dans le hall d'accueil</li>
                             </ul>
                             <input type="hidden" value="" id="input_1">
+                            <input type="hidden" value="" id="input_2">
+                            <input type="hidden" value="" id="input_3">
+                            <input type="hidden" value="" id="input_4">
+                            <input type="hidden" value="" id="input_5">
+                            <input type="hidden" value="" id="input_6">
+                            <input type="hidden" value="" id="input_7">
+                            <input type="hidden" value="" id="input_8">
+                            <input type="hidden" value="" id="input_9">
+                            <input type="hidden" value="" id="input_10">
                         <input class="btn" type="submit" value="Suivant" name="submit2">
                         </form>
                     </div>
@@ -55,8 +67,10 @@
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript">
-            function test() {
-               console.log($("ul#sortable li:first").attr("id"));
+            function my_id() {
+               for(var i = 1 ; i<=10; i++){
+                   $("#input_"+i).val($("ul#sortable li:nth-child("+i+")").attr("id"));
+               }
             }
 
             $( function() {
