@@ -127,7 +127,7 @@ class DefaultController extends Controller
                     $client->setStatus($number+1);
                     $em->flush();
                 }
-                for($i=1;$i>=10;$i++){
+                for($i=1;$i<=10;$i++){
                     if($i<=5){
                         $qv = $_POST['select_'.$i];
                     }
