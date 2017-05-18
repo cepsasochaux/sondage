@@ -13,7 +13,13 @@
                     <form name="first" method="post" id="myForm">
                     <table>
                         <tr>
-                            <th style="width:200px;">PRESTATIONS</th>
+                            {% if page.id == 8  %}
+                                <th style="width:200px;">MOYENS D'INFORMATION</th>
+                            {% elseif page.id == 7 %}
+                                <!-- NOTHING -->
+                            {% else %}
+                                <th style="width:200px;">PRESTATIONS</th>
+                            {% endif %}
                             {% for txt in choices %}
                                 <th>{{ txt }}</th>
                             {% endfor %}
@@ -22,7 +28,7 @@
                         {% set k = 0 %}
                         {% for question in questions %}
                             <tr>
-                                <td>{{ question.titre }}<span class="italique">{{ question.description }}</span></td>
+                                {% if not page.id == 7 %}<td>{{ question.titre }}<span class="italique">{{ question.description }}</span></td>{% endif %}
                                 {% for i in 0..(page.nombre-1) %}
                                     {% if not reponses=="" %}
 
