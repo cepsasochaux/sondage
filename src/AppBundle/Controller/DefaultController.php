@@ -127,12 +127,14 @@ class DefaultController extends Controller
                     $client->setStatus($number+1);
                     $em->flush();
                 }
+                $k=0;
                 for($i=1;$i<=10;$i++){
                     if($i<=5){
                         $qv = $_POST['select_'.$i];
                     }
                     else {
-                        $qv = $_POST['select_'.$i.'_n'];
+                        $k++;
+                        $qv = $_POST['select_'.$k.'_n'];
                     }
 
                     $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
