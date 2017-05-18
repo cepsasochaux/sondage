@@ -73,7 +73,7 @@ class DefaultController extends Controller
             return  $this->redirectToRoute('homepage');
         }
         $client = $this->get('session')->get('user');
-        $fin=9;
+        $fin=10;
 
         $em = $this->getDoctrine()->getManager();
         $client = $em->getRepository('AppBundle:Client')->findOneByCode($client);
@@ -119,6 +119,20 @@ class DefaultController extends Controller
                 return $this->redirectToRoute('question', array('number'=>$number+1));
             }
         }
+        elseif($number==9){
+
+          /*            $query = $em->createQuery(
+                'SELECT c
+            FROM AppBundle:Reponse c
+            WHERE c.questionId >= :minQ AND c.questionId <= :maxQ'
+            )->setParameter('minQ', 26)->setParameter('maxQ' ,35);
+
+            $reponses = $query->getResult();*/
+
+            return $this->render('default/page_9.html.twig', array(
+            ));
+        }
+
         elseif($number==6){
 
             if(isset($_POST['submit2'])){
