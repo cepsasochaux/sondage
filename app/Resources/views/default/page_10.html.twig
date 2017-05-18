@@ -10,7 +10,7 @@
                     <div id="content_first" class="clearfix">
                         <form name="presta" method="post" id="myForm">
                             <div class="block">
-                                <h2> Par quels moyens préférez-vous recevoir les informations ?</h2>
+                                <h2> Connaissez-vous l'espace personnel disponible sur le site internet du CE ?</h2>
                                 <input type="radio" name="espace_perso" value="1"> Oui
                                 <input type="radio" name="espace_perso" value="0"> Non
                             </div>
@@ -64,6 +64,16 @@
 
     {% block stylesheets %}
         <style>
+            tr th{
+                background: rgba(17, 151, 208, 0.41);
+            }
+            tr td select {
+                width: 100%;
+                height: 40px;
+                font-size: 20px;
+                padding-left: 90px;
+                text-align: center;
+            }
             .btn {
                 border: none;
                 padding: 10px;
