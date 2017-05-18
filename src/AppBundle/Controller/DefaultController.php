@@ -73,7 +73,7 @@ class DefaultController extends Controller
             return  $this->redirectToRoute('homepage');
         }
         $client = $this->get('session')->get('user');
-        $fin=3;
+        $fin=6;
 
         $em = $this->getDoctrine()->getManager();
         $client = $em->getRepository('AppBundle:Client')->findOneByCode($client);
@@ -108,6 +108,8 @@ class DefaultController extends Controller
                 ->add('save', SubmitType::class, array('label' => 'suivant'))
                 ->getForm();
 
+
+
             $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
@@ -117,7 +119,7 @@ class DefaultController extends Controller
                 return $this->redirectToRoute('question', array('number'=>$number+1));
             }
         }
-        elseif($number==5){
+        elseif($number==6){
             return $this->render('default/page_5.html.twig', array(
             ));
         }
