@@ -163,7 +163,15 @@ class DefaultController extends Controller
                 return $this->redirectToRoute('question', array('number'=>$number+1));
             }
 
-            return $this->render('default/page_5.html.twig', array(
+            $query = $em->createQuery(
+                'SELECT c
+            FROM AppBundle:Reponse c
+            WHERE c.questionId >= :minQ AND c.questionId <= :maxQ'
+            )->setParameter('minQ', 26)->setParameter('maxQ' ,35);
+
+            $reponses = $query->getResult();
+
+            return $this->render('default/page_5.html.twig', array('responses' => $reponses
             ));
         }
 

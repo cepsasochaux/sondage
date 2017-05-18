@@ -632,6 +632,31 @@
         <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
         <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
         <script type="text/javascript">
+            {% if not responses="" %}
+            var    sel1={{ responses[0].value }};
+            var    sel2={{ responses[1].value }};
+            var    sel3={{ responses[2].value }};
+            var    sel4={{ responses[3].value }};
+            var    sel5={{ responses[4].value }};
+            var    sel1_n={{ responses[5].value }};
+            var    sel2_n={{ responses[6].value }};
+            var    sel3_n={{ responses[7].value }};
+            var    sel4_n={{ responses[8].value }};
+            var    sel5_n={{ responses[9].value }};
+
+           $('#select_1').val(sel1);
+           $('#select_2').val(sel2);
+           $('#select_3').val(sel3);
+           $('#select_4').val(sel4);
+           $('#select_5').val(sel5);
+
+            $('#select_1_n').val(sel1_n);
+            $('#select_2_n').val(sel2_n);
+            $('#select_3_n').val(sel3_n);
+            $('#select_4_n').val(sel4_n);
+            $('#select_5_n').val(sel5_n);
+
+            {% endif %}
             $("select").on('change', function(){
                 var sel1 = $('#select_1').val();
                 var sel2 = $('#select_2').val();
