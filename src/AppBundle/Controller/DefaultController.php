@@ -127,9 +127,9 @@ class DefaultController extends Controller
             $questions = $em->getRepository('AppBundle:Question')->findByPageId($number);
             $em = $this->getDoctrine()->getManager();
             $query = $em->createQuery(
-                        'SELECT *
-            FROM AppBundle:Reponse 
-            WHERE question_id >= :minQ AND question_id <= :maxQ'
+                        'SELECT c
+            FROM AppBundle:Reponse c
+            WHERE c.question_id >= :minQ AND c.question_id <= :maxQ'
             )->setParameter('minQ', $questions[0])->setParameter('maxQ' ,end($questions));
 
             $reponses = $query->getResult();
