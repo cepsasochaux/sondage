@@ -192,7 +192,7 @@ class DefaultController extends Controller
                         $qv = $_POST['espace_'.$i];
                     }
                     else {
-                        $qv = $_POST['comm_'.$i];
+                        $qv = $_POST['comm_'.$k];
                         $k++;
                     }
 
