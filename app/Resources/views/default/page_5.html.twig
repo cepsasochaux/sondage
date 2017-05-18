@@ -711,11 +711,11 @@
             form.on('change', function () {
 
                 if(form.valid()){
-                    $('#form_save').prop("disabled",false);
-                    $('#form_save').css("background", "#1197d0");
+                    $('.btn').prop("disabled",false);
+                    $('.btn').css("background", "#1197d0");
                 }
                 else {
-                    $('#form_save').prop("disabled",false);
+                    $('.btn').prop("disabled",false);
                 }
                 $(".error label").hide();
             });
