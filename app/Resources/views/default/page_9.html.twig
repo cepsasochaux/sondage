@@ -1,0 +1,49 @@
+    {% extends 'base.html.twig' %}
+
+    {% block body %}
+        <div id="wrapper">
+            <div id="container">
+                <div id="DIV_1">
+                    <h1 id="H1_2">
+                        Enquête de satisfaction
+                    </h1>
+                    <div id="content_first" class="clearfix">
+                        <form name="presta" method="post" id="myForm">
+                        <h2> Par quels moyens préférez-vous recevoir les informations ?</h2>
+                        <h4>Clicquez et déplacez l'élément dans l'ordre de préférence du plus haut celui qui vous intéresse le plus au plus bas celui qui vous intéresse le moins.</h4>
+                            <ul id="sortable">
+                                <li class="ui-state-default">Item 1</li>
+                                <li class="ui-state-default">Item 2</li>
+                                <li class="ui-state-default">Item 3</li>
+                                <li class="ui-state-default">Item 4</li>
+                                <li class="ui-state-default">Item 5</li>
+                                <li class="ui-state-default">Item 6</li>
+                                <li class="ui-state-default">Item 7</li>
+                            </ul>
+                        <input class="btn" type="submit" value="Suivant" name="submit2">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}
+
+    {% block stylesheets %}
+        <style>
+
+        </style>
+    {% endblock %}
+
+    {% block javascripts %}
+        <script type="text/javascript">
+            $( function() {
+                $( "#sortable" ).sortable({
+                    placeholder: "ui-state-highlight"
+                });
+                $( "#sortable" ).disableSelection();
+            } );
+        </script>
+    {% endblock %}
+
+
