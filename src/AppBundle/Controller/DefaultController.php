@@ -73,7 +73,7 @@ class DefaultController extends Controller
             return  $this->redirectToRoute('homepage');
         }
         $client = $this->get('session')->get('user');
-        $fin=8;
+        $fin=9;
 
         $em = $this->getDoctrine()->getManager();
         $client = $em->getRepository('AppBundle:Client')->findOneByCode($client);
