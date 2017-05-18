@@ -12,7 +12,7 @@
                         <h2> Par quels moyens préférez-vous recevoir les informations ?</h2>
                         <h4>Clicquez et déplacez l'élément dans l'ordre de préférence du plus haut celui qui vous intéresse le plus au plus bas celui qui vous intéresse le moins.</h4>
                             <ul id="sortable">
-                                <li id="1"class="ui-state-default">Item 1</li>
+                                <li id="1" onmousedown="test();" class="ui-state-default">Item 1</li>
                                 <li id="2" class="ui-state-default">Item 2</li>
                                 <li id="3" class="ui-state-default">Item 3</li>
                                 <li id="4" class="ui-state-default">Item 4</li>
@@ -55,9 +55,9 @@
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript">
-            $("ul").onmousedown(function () {
-                alert('lol');
-            });
+            function test() {
+                alert('ok');
+            }
 
             $( function() {
                 $( "#sortable" ).sortable({
