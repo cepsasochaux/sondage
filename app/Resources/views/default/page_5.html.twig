@@ -632,6 +632,7 @@
         <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
         <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
         <script type="text/javascript">
+            $('.btn').prop("disabled",true);
             {% if not responses=="" %}
             var    sel1={{ responses[0].value }};
             var    sel2={{ responses[1].value }};
@@ -655,6 +656,10 @@
             $('#select_3_n').val(sel3_n);
             $('#select_4_n').val(sel4_n);
             $('#select_5_n').val(sel5_n);
+            
+            $('.btn').prop("disabled",false);
+            $('.btn').css("background", "#1197d0");
+
 
             {% endif %}
             $("select").on('change', function(){
