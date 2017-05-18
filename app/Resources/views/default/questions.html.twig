@@ -13,7 +13,6 @@
                     <form name="first" method="post" id="myForm">
                     <table>
                         <tr>
-                            <th>N°</th>
                             <th>PRESTATIONS</th>
                             {% for txt in choices %}
                                 <th>{{ txt }}</th>
@@ -21,15 +20,12 @@
                             <th>les raisons pour vos réponses "plutôt non" ou "non pas du tout"</th>
                         </tr>
                         {% set k = 0 %}
-                        {% dump(page) %}
-                        {% dump(questions) %}
                         {% for question in questions %}
                             <tr>
-                                <td class="col_id">{{ question.id }}</td>
                                 <td>{{ question.titre }}<span class="italique">{{ question.description }}</span></td>
                                 {% for i in 0..(page.nombre-1) %}
                                     {% if not reponses=="" %}
-                                        {% dump(reponses) %}
+
                                         {% if reponses[k].value==i %}
                                         <td class="table_input"><input type="radio" value="{{ i }}" checked id="question_{{ question.id }}" name="question_{{ question.id }}">
                                         {% else %}
@@ -106,9 +102,8 @@
             tbody,
             tr,
             td {
-                display: block;
+                /*display: block;*/
                 width: auto!important;
-                /* parceque tu as mis des style inline grrr */
             }
         }
     </style>
