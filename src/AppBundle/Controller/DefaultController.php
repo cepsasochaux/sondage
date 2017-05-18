@@ -120,6 +120,44 @@ class DefaultController extends Controller
             }
         }
         elseif($number==6){
+
+            if(isset($_POST['submit'])){
+                if($client->getStatus()<=$number){
+                    $client->setStatus($number+1);
+                    $em->flush();
+                }
+                for($i=1;$i>=10;$i++){
+                    if($i<=5){
+                        $qv = $_POST['select_'.$i];
+                    }
+                    else {
+                        $qv = $_POST['select_'.$i.'_n'];
+                    }
+
+                    $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
+                        array('questionId' => (25+$i), 'clientId' => $client->getCode())
+                    );
+
+                    if($reponse){
+                        $reponse->setQuestionId((25+$i));
+                        $reponse->setClientId($client->getCode());
+                        $reponse->setValue($qv);
+                        $em->persist($reponse);
+                        $em->flush();
+                    }
+                    else {
+                        $response = new Reponse();
+                        $response->setQuestionId((25+$i));
+                        $response->setClientId($client->getCode());
+                        $response->setValue($qv);
+                        $em->persist($response);
+                        $em->flush();
+                    }
+                }
+
+                return $this->redirectToRoute('question', array('number'=>$number+1));
+            }
+
             return $this->render('default/page_5.html.twig', array(
             ));
         }
@@ -136,39 +174,38 @@ class DefaultController extends Controller
             $reponses = $query->getResult();
             //$reponses = $em->getRepository('AppBundle:Reponse')->findBy(array('client'=>$client->getCode(), 'questionId'=>5));
             $choices = explode("||", $page->getChoix());
-        }
-
-        if(isset($_POST['submit'])){
-            if($client->getStatus()<=$number){
-                $client->setStatus($number+1);
-                $em->flush();
-            }
-            foreach ($questions as $question){
-                $qv = $_POST['question_'.$question->getId()];
-                $qt = $_POST['question_'.$question->getId().'_text'];
-                $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
-                    array('questionId' => $question->getId(), 'clientId' => $client->getCode())
-                );
-                if($reponse){
-                    $reponse->setQuestionId($question->getId());
-                    $reponse->setClientId($client->getCode());
-                    $reponse->setValue($qv);
-                    $reponse->setMore($qt);
-                    $em->persist($reponse);
+            if(isset($_POST['submit'])){
+                if($client->getStatus()<=$number){
+                    $client->setStatus($number+1);
                     $em->flush();
                 }
-                else {
-                    $response = new Reponse();
-                    $response->setQuestionId($question->getId());
-                    $response->setClientId($client->getCode());
-                    $response->setValue($qv);
-                    $response->setMore($qt);
-                    $em->persist($response);
-                    $em->flush();
+                foreach ($questions as $question){
+                    $qv = $_POST['question_'.$question->getId()];
+                    $qt = $_POST['question_'.$question->getId().'_text'];
+                    $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
+                        array('questionId' => $question->getId(), 'clientId' => $client->getCode())
+                    );
+                    if($reponse){
+                        $reponse->setQuestionId($question->getId());
+                        $reponse->setClientId($client->getCode());
+                        $reponse->setValue($qv);
+                        $reponse->setMore($qt);
+                        $em->persist($reponse);
+                        $em->flush();
+                    }
+                    else {
+                        $response = new Reponse();
+                        $response->setQuestionId($question->getId());
+                        $response->setClientId($client->getCode());
+                        $response->setValue($qv);
+                        $response->setMore($qt);
+                        $em->persist($response);
+                        $em->flush();
+                    }
                 }
-            }
 
-            return $this->redirectToRoute('question', array('number'=>$number+1));
+                return $this->redirectToRoute('question', array('number'=>$number+1));
+            }
         }
 
         if($number==1){

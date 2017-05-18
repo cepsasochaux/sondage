@@ -8,12 +8,13 @@
                         Enquête de satisfaction
                     </h1>
                     <div id="content_first" class="clearfix">
-                        <h2> Vos prestation préféré du haut au bas</h2>
+                        <h2> Parmis les prestations vues dans les questions précédentes, indiquez vos 5 prestations préférées (bleu) puis les 5 prestations qui vous intéressent le moins.</h2>
                         <div class="clearfix cnt">
                             <div class="left">
                                 <div class="mySelect">
+                                    <form name="presta" method="post" id="myForm">
          <span class="custom-dropdown custom-dropdown--white">
-        <select class="custom-dropdown__select custom-dropdown__select--white" id='select_1'>
+        <select class="custom-dropdown__select custom-dropdown__select--white" id='select_1' name="select_1">
             <option selected disabled>Choisissez</option>
             <optgroup label="Prestation Adulte">
                 <option value='1'>1. Aide Vacances Adulte</option>
@@ -53,7 +54,7 @@
                                 </div>
                                 <div class="mySelect">
         <span class="custom-dropdown custom-dropdown--white">
-          <select class="custom-dropdown__select custom-dropdown__select--white" id='select_2'>
+          <select class="custom-dropdown__select custom-dropdown__select--white" id='select_2' name="select_2">
             <option selected disabled>Choisissez</option>
             <optgroup label="Prestation Adulte">
                 <option value='1'>1. Aide Vacances Adulte</option>
@@ -93,7 +94,7 @@
                                 </div>
                                 <div class=" mySelect">
         <span class="custom-dropdown custom-dropdown--white">
-          <select class="custom-dropdown__select custom-dropdown__select--white" id='select_3'>
+          <select class="custom-dropdown__select custom-dropdown__select--white" id='select_3' name="select_3">
             <option selected disabled>Choisissez</option>
             <optgroup label="Prestation Adulte">
                 <option value='1'>1. Aide Vacances Adulte</option>
@@ -133,7 +134,7 @@
                                 </div>
                                 <div class="mySelect">
         <span class="custom-dropdown custom-dropdown--white">
-          <select class="custom-dropdown__select custom-dropdown__select--white" id='select_4'>
+          <select class="custom-dropdown__select custom-dropdown__select--white" id='select_4' name="select_4">
             <option selected disabled>Choisissez</option>
             <optgroup label="Prestation Adulte">
                 <option value='1'>1. Aide Vacances Adulte</option>
@@ -173,7 +174,7 @@
                                 </div>
                                 <div class="mySelect">
         <span class="custom-dropdown custom-dropdown--white">
-          <select class="custom-dropdown__select custom-dropdown__select--white" id='select_5'>
+          <select class="custom-dropdown__select custom-dropdown__select--white" id='select_5' name="select_5">
             <option selected disabled>Choisissez</option>
             <optgroup label="Prestation Adulte">
                 <option value='1'>1. Aide Vacances Adulte</option>
@@ -220,7 +221,7 @@
                             <div class="right">
                                 <div class="mySelect">
          <span class="custom-dropdown custom-dropdown--orange">
-        <select class="custom-dropdown__select custom-dropdown__select--white orange" id='select_1_n'>
+        <select class="custom-dropdown__select custom-dropdown__select--white orange" id='select_1_n' name="select_1_n">
             <option selected disabled>Choisissez</option>
             <optgroup label="Prestation Adulte">
                 <option value='1'>1. Aide Vacances Adulte</option>
@@ -260,7 +261,7 @@
                                 </div>
                                 <div class="mySelect">
         <span class="custom-dropdown custom-dropdown--orange">
-          <select class="custom-dropdown__select custom-dropdown__select--white orange" id='select_2_n'>
+          <select class="custom-dropdown__select custom-dropdown__select--white orange" id='select_2_n' name="select_2_n">
             <option selected disabled>Choisissez</option>
             <optgroup label="Prestation Adulte">
                 <option value='1'>1. Aide Vacances Adulte</option>
@@ -300,7 +301,7 @@
                                 </div>
                                 <div class=" mySelect">
         <span class="custom-dropdown custom-dropdown--orange">
-          <select class="custom-dropdown__select custom-dropdown__select--white orange" id='select_3_n'>
+          <select class="custom-dropdown__select custom-dropdown__select--white orange" id='select_3_n' name="select_3_n">
             <option selected disabled>Choisissez</option>
             <optgroup label="Prestation Adulte">
                 <option value='1'>1. Aide Vacances Adulte</option>
@@ -340,7 +341,7 @@
                                 </div>
                                 <div class="mySelect">
         <span class="custom-dropdown custom-dropdown--orange">
-          <select class="custom-dropdown__select custom-dropdown__select--white orange" id='select_4_n'>
+          <select class="custom-dropdown__select custom-dropdown__select--white orange" id='select_4_n' name="select_4_n">
             <option selected disabled>Choisissez</option>
             <optgroup label="Prestation Adulte">
                 <option value='1'>1. Aide Vacances Adulte</option>
@@ -380,7 +381,7 @@
                                 </div>
                                 <div class="mySelect">
         <span class="custom-dropdown custom-dropdown--orange">
-          <select class="custom-dropdown__select custom-dropdown__select--white orange" id='select_5_n'>
+          <select class="custom-dropdown__select custom-dropdown__select--white orange" id='select_5_n' name="select_5_n">
             <option selected disabled>Choisissez</option>
             <optgroup label="Prestation Adulte">
                 <option value='1'>1. Aide Vacances Adulte</option>
@@ -417,7 +418,9 @@
             </optgroup>
         </select>
         </span>
+
                                 </div>
+                                </form>
                             </div>
                         </div>
                         <button class="left">Précédent</button>
