@@ -130,7 +130,7 @@ class DefaultController extends Controller
                         'SELECT *
             FROM AppBundle:Reponse 
             WHERE question_id >= :minQ AND question_id <= :maxQ'
-            )->setParameter(array('minQ'=> $questions[0], 'maxQ' =>end($questions)));
+            )->setParameter('minQ', $questions[0])->setParameter('maxQ' ,end($questions));
 
             $reponses = $query->getResult();
             //$reponses = $em->getRepository('AppBundle:Reponse')->findBy(array('client'=>$client->getCode(), 'questionId'=>5));

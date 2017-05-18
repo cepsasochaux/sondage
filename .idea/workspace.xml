@@ -44,16 +44,16 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="135" column="14" lean-forward="false" selection-start-line="135" selection-start-column="14" selection-end-line="135" selection-end-column="14" />
+            <state relative-caret-position="391">
+              <caret line="128" column="38" lean-forward="true" selection-start-line="128" selection-start-column="38" selection-end-line="128" selection-end-column="38" />
               <folding>
                 <element signature="e#40#69#0#PHP" expanded="true" />
-                <marker date="1495092000844" expanded="true" signature="5877:5985" ph="SELECT p FRO... AppBundle" />
-                <marker date="1495092000844" expanded="true" signature="9476:9587" ph="..." />
-                <marker date="1495092000844" expanded="true" signature="9482:9587" ph="..." />
-                <marker date="1495092000844" expanded="true" signature="9518:9587" ph="..." />
-                <marker date="1495092000844" expanded="true" signature="9601:9620" ph="..." />
-                <marker date="1495092000844" expanded="true" signature="9682:9699" ph="..." />
+                <marker date="1495092157874" expanded="true" signature="5877:5985" ph="SELECT p FRO... AppBundle" />
+                <marker date="1495092157874" expanded="true" signature="9481:9592" ph="..." />
+                <marker date="1495092157874" expanded="true" signature="9487:9592" ph="..." />
+                <marker date="1495092157874" expanded="true" signature="9523:9592" ph="..." />
+                <marker date="1495092157874" expanded="true" signature="9606:9625" ph="..." />
+                <marker date="1495092157874" expanded="true" signature="9687:9704" ph="..." />
               </folding>
             </state>
           </provider>
@@ -568,12 +568,12 @@
       <workItem from="1494662320339" duration="11332000" />
       <workItem from="1494750373890" duration="11042000" />
       <workItem from="1494833332516" duration="24440000" />
-      <workItem from="1495088541462" duration="3460000" />
+      <workItem from="1495088541462" duration="3615000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91807000" />
+    <option name="totallyTimeSpent" value="91962000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -920,16 +920,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="135" column="14" lean-forward="false" selection-start-line="135" selection-start-column="14" selection-end-line="135" selection-end-column="14" />
+        <state relative-caret-position="391">
+          <caret line="128" column="38" lean-forward="true" selection-start-line="128" selection-start-column="38" selection-end-line="128" selection-end-column="38" />
           <folding>
             <element signature="e#40#69#0#PHP" expanded="true" />
-            <marker date="1495092000844" expanded="true" signature="5877:5985" ph="SELECT p FRO... AppBundle" />
-            <marker date="1495092000844" expanded="true" signature="9476:9587" ph="..." />
-            <marker date="1495092000844" expanded="true" signature="9482:9587" ph="..." />
-            <marker date="1495092000844" expanded="true" signature="9518:9587" ph="..." />
-            <marker date="1495092000844" expanded="true" signature="9601:9620" ph="..." />
-            <marker date="1495092000844" expanded="true" signature="9682:9699" ph="..." />
+            <marker date="1495092157874" expanded="true" signature="5877:5985" ph="SELECT p FRO... AppBundle" />
+            <marker date="1495092157874" expanded="true" signature="9481:9592" ph="..." />
+            <marker date="1495092157874" expanded="true" signature="9487:9592" ph="..." />
+            <marker date="1495092157874" expanded="true" signature="9523:9592" ph="..." />
+            <marker date="1495092157874" expanded="true" signature="9606:9625" ph="..." />
+            <marker date="1495092157874" expanded="true" signature="9687:9704" ph="..." />
           </folding>
         </state>
       </provider>
