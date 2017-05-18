@@ -129,6 +129,43 @@ class DefaultController extends Controller
 
             $reponses = $query->getResult();*/
 
+            if(isset($_POST['submit2'])){
+
+                if($client->getStatus()<=$number){
+                    $client->setStatus($number+1);
+                    $em->flush();
+                }
+                $k=0;
+                for($i=1;$i<=10;$i++){
+
+                    $qv = $_POST['input_'.$i];
+
+                    $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
+                        array('questionId' => (46+$i), 'clientId' => $client->getCode())
+                    );
+
+                    if($reponse){
+                        $reponse->setQuestionId((46+$i));
+                        $reponse->setClientId($client->getCode());
+                        $reponse->setValue($qv);
+                        $reponse->setMore('');
+                        $em->persist($reponse);
+                        $em->flush();
+                    }
+                    else {
+                        $response = new Reponse();
+                        $response->setQuestionId((25+$i));
+                        $response->setClientId($client->getCode());
+                        $response->setValue($qv);
+                        $response->setMore('');
+                        $em->persist($response);
+                        $em->flush();
+                    }
+                }
+
+                return $this->redirectToRoute('question', array('number'=>$number+1));
+            }
+
             return $this->render('default/page_9.html.twig', array(
             ));
         }
