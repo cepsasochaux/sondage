@@ -1,0 +1,276 @@
+    {% extends 'base.html.twig' %}
+
+    {% block body %}
+        <div id="wrapper">
+            <div id="container">
+                <div id="DIV_1">
+                    <h1 id="H1_2">
+                        Enquête de satisfaction
+                    </h1>
+                    <div id="content_first" class="clearfix">
+                        <form name="presta" method="post" id="myForm">
+                            <div class="block">
+                                <h2> Par quels moyens préférez-vous recevoir les informations ?</h2>
+                                <input type="radio" name="espace_perso" value="1"> Oui
+                                <input type="radio" name="espace_perso" value="0"> Non
+                            </div>
+                            <div class="block">
+                                <h2>Numérotez par ordre de préférence ce que vous souhaiteriez réaliser via cet espace ?</h2>
+                                <h4>Du N°1 : ce qui m'intéresse le plus au N°5 : ce qui m'intéresse le moins</h4>
+                                <table>
+                                    <tr>
+                                        <th>LE SUIVI DE VOS REMBOURSEMENTS</th>
+                                        <th>DEMANDER VOTRE CARTE CE</th>
+                                        <th>TRANSMETTRE VOS DOSSIERS</th>
+                                        <th>DEMANDER UN RENDEZ-VOUS</th>
+                                        <th>AUTRE SUGGESTION</th>
+                                    </tr>
+                                    <tr>
+                                        <td><select><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="block">
+                                <h2>Par ordre de préférence, vous souhaiteriez une communication...</h2>
+                                <h4>Du N°1 : ce qui m'intéresse le plus au N°5 : ce qui m'intéresse le moins</h4>
+                                <tr>
+                                    <th>PLUS RAPIDE</th>
+                                    <th>PLUS DETAILLÉE</th>
+                                    <th>PLUS PRESENTE SUR L'USINE</th>
+                                    <th>PLUS PERSONNALISÉE</th>
+                                    <th>AUTRE SUGGESTION</th>
+                                </tr>
+                                <tr>
+                                    <td><select><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+                                </tr>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}
+
+    {% block stylesheets %}
+        <style>
+            .btn {
+                border: none;
+                padding: 10px;
+                color: white;
+                margin-top: 35px;
+                float: right;
+                border-radius: 5px;
+            }
+            #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+            #sortable li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; height: 1.5em; }
+            html>body #sortable li { height: 1.5em; line-height: 1.2em;    border: 1px solid #1197d0; }
+            html>body #sortable li:hover { color:white; background:#1197d0;  }
+            .ui-state-highlight { height: 1.5em; line-height: 1.2em; }
+        </style>
+    {% endblock %}
+
+    {% block javascripts %}
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript">
+            /*!
+             * jQuery UI Touch Punch 0.2.3
+             *
+             * Copyright 2011–2014, Dave Furfero
+             * Dual licensed under the MIT or GPL Version 2 licenses.
+             *
+             * Depends:
+             *  jquery.ui.widget.js
+             *  jquery.ui.mouse.js
+             */
+            (function ($) {
+
+                // Detect touch support
+                $.support.touch = 'ontouchend' in document;
+
+                // Ignore browsers without touch support
+                if (!$.support.touch) {
+                    return;
+                }
+
+                var mouseProto = $.ui.mouse.prototype,
+                    _mouseInit = mouseProto._mouseInit,
+                    _mouseDestroy = mouseProto._mouseDestroy,
+                    touchHandled;
+
+                /**
+                 * Simulate a mouse event based on a corresponding touch event
+                 * @param {Object} event A touch event
+                 * @param {String} simulatedType The corresponding mouse event
+                 */
+                function simulateMouseEvent (event, simulatedType) {
+
+                    // Ignore multi-touch events
+                    if (event.originalEvent.touches.length > 1) {
+                        return;
+                    }
+
+                    event.preventDefault();
+
+                    var touch = event.originalEvent.changedTouches[0],
+                        simulatedEvent = document.createEvent('MouseEvents');
+
+                    // Initialize the simulated mouse event using the touch event's coordinates
+                    simulatedEvent.initMouseEvent(
+                        simulatedType,    // type
+                        true,             // bubbles
+                        true,             // cancelable
+                        window,           // view
+                        1,                // detail
+                        touch.screenX,    // screenX
+                        touch.screenY,    // screenY
+                        touch.clientX,    // clientX
+                        touch.clientY,    // clientY
+                        false,            // ctrlKey
+                        false,            // altKey
+                        false,            // shiftKey
+                        false,            // metaKey
+                        0,                // button
+                        null              // relatedTarget
+                    );
+
+                    // Dispatch the simulated event to the target element
+                    event.target.dispatchEvent(simulatedEvent);
+                }
+
+                /**
+                 * Handle the jQuery UI widget's touchstart events
+                 * @param {Object} event The widget element's touchstart event
+                 */
+                mouseProto._touchStart = function (event) {
+
+                    var self = this;
+
+                    // Ignore the event if another widget is already being handled
+                    if (touchHandled || !self._mouseCapture(event.originalEvent.changedTouches[0])) {
+                        return;
+                    }
+
+                    // Set the flag to prevent other widgets from inheriting the touch event
+                    touchHandled = true;
+
+                    // Track movement to determine if interaction was a click
+                    self._touchMoved = false;
+
+                    // Simulate the mouseover event
+                    simulateMouseEvent(event, 'mouseover');
+
+                    // Simulate the mousemove event
+                    simulateMouseEvent(event, 'mousemove');
+
+                    // Simulate the mousedown event
+                    simulateMouseEvent(event, 'mousedown');
+                };
+
+                /**
+                 * Handle the jQuery UI widget's touchmove events
+                 * @param {Object} event The document's touchmove event
+                 */
+                mouseProto._touchMove = function (event) {
+
+                    // Ignore event if not handled
+                    if (!touchHandled) {
+                        return;
+                    }
+
+                    // Interaction was not a click
+                    this._touchMoved = true;
+
+                    // Simulate the mousemove event
+                    simulateMouseEvent(event, 'mousemove');
+                };
+
+                /**
+                 * Handle the jQuery UI widget's touchend events
+                 * @param {Object} event The document's touchend event
+                 */
+                mouseProto._touchEnd = function (event) {
+
+                    // Ignore event if not handled
+                    if (!touchHandled) {
+                        return;
+                    }
+
+                    // Simulate the mouseup event
+                    simulateMouseEvent(event, 'mouseup');
+
+                    // Simulate the mouseout event
+                    simulateMouseEvent(event, 'mouseout');
+
+                    // If the touch interaction did not move, it should trigger a click
+                    if (!this._touchMoved) {
+
+                        // Simulate the click event
+                        simulateMouseEvent(event, 'click');
+                    }
+
+                    // Unset the flag to allow other widgets to inherit the touch event
+                    touchHandled = false;
+                };
+
+                /**
+                 * A duck punch of the $.ui.mouse _mouseInit method to support touch events.
+                 * This method extends the widget with bound touch event handlers that
+                 * translate touch events to mouse events and pass them to the widget's
+                 * original mouse event handling methods.
+                 */
+                mouseProto._mouseInit = function () {
+
+                    var self = this;
+
+                    // Delegate the touch handlers to the widget's element
+                    self.element.bind({
+                        touchstart: $.proxy(self, '_touchStart'),
+                        touchmove: $.proxy(self, '_touchMove'),
+                        touchend: $.proxy(self, '_touchEnd')
+                    });
+
+                    // Call the original $.ui.mouse init method
+                    _mouseInit.call(self);
+                };
+
+                /**
+                 * Remove the touch event handlers
+                 */
+                mouseProto._mouseDestroy = function () {
+
+                    var self = this;
+
+                    // Delegate the touch handlers to the widget's element
+                    self.element.unbind({
+                        touchstart: $.proxy(self, '_touchStart'),
+                        touchmove: $.proxy(self, '_touchMove'),
+                        touchend: $.proxy(self, '_touchEnd')
+                    });
+
+                    // Call the original $.ui.mouse destroy method
+                    _mouseDestroy.call(self);
+                };
+
+            })(jQuery);
+
+            function my_id() {
+                $('.btn').prop("disabled",false);
+                $('.btn').css("background", "#1197d0");
+               for(var i = 1 ; i<=10; i++){
+                   $("#input_"+i).val($("ul#sortable li:nth-child("+i+")").attr("id"));
+               }
+            }
+
+            $( function() {
+                $( "#sortable" ).sortable({
+                    placeholder: "ui-state-highlight"
+                });
+                $( "#sortable" ).disableSelection();
+            } );
+        </script>
+    {% endblock %}
+
+

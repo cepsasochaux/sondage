@@ -73,7 +73,7 @@ class DefaultController extends Controller
             return  $this->redirectToRoute('homepage');
         }
         $client = $this->get('session')->get('user');
-        $fin=10;
+        $fin=11;
 
         $em = $this->getDoctrine()->getManager();
         $client = $em->getRepository('AppBundle:Client')->findOneByCode($client);
@@ -128,6 +128,57 @@ class DefaultController extends Controller
             )->setParameter('minQ', 26)->setParameter('maxQ' ,35);
 
             $reponses = $query->getResult();*/
+
+            if(isset($_POST['submit2'])){
+
+                if($client->getStatus()<=$number){
+                    $client->setStatus($number+1);
+                    $em->flush();
+                }
+
+                for($i=1;$i<=10;$i++){
+
+                    $qv = $_POST['input_'.$i];
+
+                    $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
+                        array('questionId' => (46+$i), 'clientId' => $client->getCode())
+                    );
+
+                    if($reponse){
+                        $reponse->setQuestionId((46+$i));
+                        $reponse->setClientId($client->getCode());
+                        $reponse->setValue($qv);
+                        $reponse->setMore('');
+                        $em->persist($reponse);
+                        $em->flush();
+                    }
+                    else {
+                        $response = new Reponse();
+                        $response->setQuestionId((46+$i));
+                        $response->setClientId($client->getCode());
+                        $response->setValue($qv);
+                        $response->setMore('');
+                        $em->persist($response);
+                        $em->flush();
+                    }
+                }
+
+                return $this->redirectToRoute('question', array('number'=>$number+1));
+            }
+
+            return $this->render('default/page_9.html.twig', array(
+            ));
+        }
+
+        elseif($number==10){
+
+            /*            $query = $em->createQuery(
+                  'SELECT c
+              FROM AppBundle:Reponse c
+              WHERE c.questionId >= :minQ AND c.questionId <= :maxQ'
+              )->setParameter('minQ', 26)->setParameter('maxQ' ,35);
+
+              $reponses = $query->getResult();*/
 
             if(isset($_POST['submit2'])){
 
