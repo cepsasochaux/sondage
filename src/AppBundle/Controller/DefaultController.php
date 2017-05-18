@@ -122,7 +122,8 @@ class DefaultController extends Controller
         elseif($number==6){
 
             if(isset($_POST['submit2'])){
-
+                dump('succes');
+                die;
                 if($client->getStatus()<=$number){
                     $client->setStatus($number+1);
                     $em->flush();
@@ -155,11 +156,10 @@ class DefaultController extends Controller
                         $em->flush();
                     }
                 }
-                dump('succes');
-                die;
+
                 return $this->redirectToRoute('question', array('number'=>$number+1));
             }
-            
+
             return $this->render('default/page_5.html.twig', array(
             ));
         }
