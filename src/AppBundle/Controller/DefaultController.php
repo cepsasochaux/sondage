@@ -181,8 +181,6 @@ class DefaultController extends Controller
             $choices = explode("||", $page->getChoix());
 
             if(isset($_POST['submit'])){
-                dump('succes');
-                die;
                 if($client->getStatus()<=$number){
                     $client->setStatus($number+1);
                     $em->flush();
