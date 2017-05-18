@@ -30,14 +30,17 @@
     text-align: center;
     box-sizing: border-box;
 }
+
 #form_save {
-    float: left;
     border: none;
     color: white;
-    height: 40px;
+    height: 37px;
     padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
     margin-top: 8px;
 }
+
 #DIV_1 {
     margin-top: 50px;
 }
@@ -185,11 +188,7 @@ a {
         height: 89px;
         font-size: 3rem;
     }
-    #form_save {
-        height: 89px;
-        font-size: 1em;
-        padding: 13px;
-    }
+
     #P_3 {
         width: 98%;
         background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;

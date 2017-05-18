@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09ec901f-efda-4596-8f79-ab8c4bfada99" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/personnalisation.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/personnalisation.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/public/css/style.css" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/public/css/style.css" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2516">
-              <caret line="148" column="4" lean-forward="false" selection-start-line="148" selection-start-column="1" selection-end-line="148" selection-end-column="4" />
+            <state relative-caret-position="492">
+              <caret line="190" column="0" lean-forward="true" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -68,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personnalisation.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="personnalisation.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/personnalisation.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="740">
-              <caret line="130" column="16" lean-forward="false" selection-start-line="130" selection-start-column="16" selection-end-line="130" selection-end-column="16" />
+            <state relative-caret-position="374">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -124,21 +124,19 @@
       <find>REMOTE</find>
       <find>dump</find>
       <find>62.39.213.48</find>
-      <find>62.39.213.48</find>
       <find>D</find>
       <find>'</find>
       <find>'d</find>
       <find>'da</find>
       <find>'data</find>
       <find>'data'</find>
-      <find>'data'</find>
       <find>'data' =</find>
-      <find>'data' =&gt;</find>
       <find>'data' =&gt;</find>
       <find>'data' =&gt; '</find>
       <find>'data' =&gt; ''</find>
       <find>btn</find>
       <find>dum</find>
+      <find>form</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -184,12 +182,12 @@
         <option value="$PROJECT_DIR$/web/app_dev.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/formulaire.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/thx.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/css/style.css" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/end.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/questions.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/page_5.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/personnalisation.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/css/style.css" />
       </list>
     </option>
   </component>
@@ -569,12 +567,12 @@
       <workItem from="1494662320339" duration="11332000" />
       <workItem from="1494750373890" duration="11042000" />
       <workItem from="1494833332516" duration="24440000" />
-      <workItem from="1495088541462" duration="802000" />
+      <workItem from="1495088541462" duration="857000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89149000" />
+    <option name="totallyTimeSpent" value="89204000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -879,14 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2516">
-          <caret line="148" column="4" lean-forward="false" selection-start-line="148" selection-start-column="1" selection-end-line="148" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/end.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -928,8 +918,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/personnalisation.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="130" column="16" lean-forward="false" selection-start-line="130" selection-start-column="16" selection-end-line="130" selection-end-column="16" />
+        <state relative-caret-position="374">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="190" column="0" lean-forward="true" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
           <folding />
         </state>
       </provider>
