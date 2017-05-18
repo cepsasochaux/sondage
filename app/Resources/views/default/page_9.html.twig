@@ -44,12 +44,6 @@
 
     {% block stylesheets %}
         <style>
-
-        </style>
-    {% endblock %}
-
-    {% block javascripts %}
-        <style>
             .btn {
                 border: none;
                 padding: 10px;
@@ -64,10 +58,17 @@
             html>body #sortable li:hover { color:white; background:#1197d0;  }
             .ui-state-highlight { height: 1.5em; line-height: 1.2em; }
         </style>
+    {% endblock %}
+
+    {% block javascripts %}
+
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript">
+
             function my_id() {
+                $('.btn').prop("disabled",false);
+                $('.btn').css("background", "#1197d0");
                for(var i = 1 ; i<=10; i++){
                    $("#input_"+i).val($("ul#sortable li:nth-child("+i+")").attr("id"));
                }
