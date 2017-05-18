@@ -123,6 +123,7 @@ class DefaultController extends Controller
             return $this->render('default/page_5.html.twig', array(
             ));
         }
+
         else{
             $questions = $em->getRepository('AppBundle:Question')->findByPageId($number);
             $em = $this->getDoctrine()->getManager();
