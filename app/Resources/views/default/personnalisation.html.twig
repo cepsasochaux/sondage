@@ -42,7 +42,8 @@
                         {{ form_widget(form.situation) }}<br>
                     </div>
 
-                    {{ form_widget(form.save) }}
+                    <div class="right">{{ form_widget(form.save) }}</div>
+
                     {{ form_end(form) }}
 
                     {% if form.vars.valid == false %}
@@ -57,6 +58,9 @@
 
 {% block stylesheets %}
     <style>
+        .right {
+            float:right;
+        }
         .block h2 {
             font-size: 16px;
             float:left;
