@@ -13,35 +13,62 @@
                     {{ form_errors(form) }}
                     <div class="block clearfix">
                         <h2>Êtes-vous :</h2>
-                        {% if client.sexe !=0 %}
-                        {{ form_widget(form.sexe) }}<br>
+                        {% if client.sexe !='' %}
+                            {{ form_widget(form.sexe,  {'attr': {'value': client.sexe}}) }}<br>
+                        {% else %}
+                            {{ form_widget(form.sexe) }}<br>
                         {% endif %}
                     </div>
 
                     <div class="block clearfix">
                         <h2>Dans quelle tranche d'âge vous situez-vous ?</h2>
                         {{ form_widget(form.age) }}<br>
+                        {% if client.age !='' %}
+                            {{ form_widget(form.age,  {'attr': {'value': client.age}}) }}<br>
+                        {% else %}
+                            {{ form_widget(form.age) }}<br>
+                        {% endif %}
                     </div>
 
                     <div class="block clearfix">
                         <h2>Quelle est votre catégorie socio-professionnelle ?</h2>
                         {{ form_widget(form.profession) }}<br>
+                        {% if client.profession !='' %}
+                            {{ form_widget(form.profession,  {'attr': {'value': client.profession}}) }}<br>
+                        {% else %}
+                            {{ form_widget(form.profession) }}<br>
+                        {% endif %}
                     </div>
 
                     <div class="block clearfix">
                         <h2>Avez-vous des enfants à charge ?</h2>
                         {{ form_widget(form.enfant) }}<br>
+                        {% if client.enfant !='' %}
+                            {{ form_widget(form.enfant,  {'attr': {'value': client.enfant}}) }}<br>
+                        {% else %}
+                            {{ form_widget(form.enfant) }}<br>
+                        {% endif %}
                     </div>
 
 
                     <div class="block clearfix">
                         <h2>Si oui, merci de préciser le nombre d'enfant par tranche d'âge :</h2>
                         {{ form_widget(form.enfant_age) }}<br>
+                        {% if client.enfant_age !='' %}
+                            {{ form_widget(form.enfant_age,  {'attr': {'value': client.enfant_age}}) }}<br>
+                        {% else %}
+                            {{ form_widget(form.enfant_age) }}<br>
+                        {% endif %}
                     </div>
 
                     <div class="block clearfix">
                         <h2>Quelle est votre situation actuelle ?</h2>
                         {{ form_widget(form.situation) }}<br>
+                        {% if client.situation !='' %}
+                            {{ form_widget(form.situation,  {'attr': {'value': client.situation}}) }}<br>
+                        {% else %}
+                            {{ form_widget(form.situation) }}<br>
+                        {% endif %}
                     </div>
 
                     <div class="right">{{ form_widget(form.save) }}</div>
