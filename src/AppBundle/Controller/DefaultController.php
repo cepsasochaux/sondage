@@ -121,7 +121,24 @@ class DefaultController extends Controller
         }
         elseif($number==6){
 
-            if(isset($_POST['submit'])){
+            return $this->render('default/page_5.html.twig', array(
+            ));
+        }
+
+        else{
+            $questions = $em->getRepository('AppBundle:Question')->findByPageId($number);
+            $em = $this->getDoctrine()->getManager();
+            $query = $em->createQuery(
+                        'SELECT c
+            FROM AppBundle:Reponse c
+            WHERE c.questionId >= :minQ AND c.questionId <= :maxQ'
+            )->setParameter('minQ', $questions[0])->setParameter('maxQ' ,end($questions));
+
+            $reponses = $query->getResult();
+            //$reponses = $em->getRepository('AppBundle:Reponse')->findBy(array('client'=>$client->getCode(), 'questionId'=>5));
+            $choices = explode("||", $page->getChoix());
+
+            if(isset($_POST['submit2'])){
                 if($client->getStatus()<=$number){
                     $client->setStatus($number+1);
                     $em->flush();
@@ -133,8 +150,7 @@ class DefaultController extends Controller
                     else {
                         $qv = $_POST['select_'.$i.'_n'];
                     }
-                    dump($qv);
-                    die;
+
                     $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
                         array('questionId' => (25+$i), 'clientId' => $client->getCode())
                     );
@@ -159,22 +175,8 @@ class DefaultController extends Controller
                 return $this->redirectToRoute('question', array('number'=>$number+1));
             }
 
-            return $this->render('default/page_5.html.twig', array(
-            ));
-        }
 
-        else{
-            $questions = $em->getRepository('AppBundle:Question')->findByPageId($number);
-            $em = $this->getDoctrine()->getManager();
-            $query = $em->createQuery(
-                        'SELECT c
-            FROM AppBundle:Reponse c
-            WHERE c.questionId >= :minQ AND c.questionId <= :maxQ'
-            )->setParameter('minQ', $questions[0])->setParameter('maxQ' ,end($questions));
 
-            $reponses = $query->getResult();
-            //$reponses = $em->getRepository('AppBundle:Reponse')->findBy(array('client'=>$client->getCode(), 'questionId'=>5));
-            $choices = explode("||", $page->getChoix());
             if(isset($_POST['submit'])){
                 if($client->getStatus()<=$number){
                     $client->setStatus($number+1);
