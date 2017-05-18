@@ -135,7 +135,7 @@ class DefaultController extends Controller
                     $client->setStatus($number+1);
                     $em->flush();
                 }
-                $k=0;
+
                 for($i=1;$i<=10;$i++){
 
                     $qv = $_POST['input_'.$i];
@@ -154,7 +154,7 @@ class DefaultController extends Controller
                     }
                     else {
                         $response = new Reponse();
-                        $response->setQuestionId((25+$i));
+                        $response->setQuestionId((46+$i));
                         $response->setClientId($client->getCode());
                         $response->setValue($qv);
                         $response->setMore('');
