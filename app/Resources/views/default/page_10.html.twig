@@ -26,11 +26,11 @@
                                         <th>AUTRE SUGGESTION</th>
                                     </tr>
                                     <tr>
-                                        <td><select name="espace_1" ><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
-                                        <td><select name="espace_2" ><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
-                                        <td><select name="espace_3" ><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
-                                        <td><select name="espace_4" ><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
-                                        <td><select name="espace_5" ><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+                                        <td><select id='espace_1' name="espace_1" >  <option selected disabled>Choisissez</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+                                        <td><select id='espace_2' name="espace_2" >  <option selected disabled>Choisissez</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+                                        <td><select id='espace_3' name="espace_3" >  <option selected disabled>Choisissez</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+                                        <td><select id='espace_4' name="espace_4" >  <option selected disabled>Choisissez</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+                                        <td><select id='espace_5' name="espace_5" >  <option selected disabled>Choisissez</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
                                     </tr>
                                 </table>
                             </div>
@@ -46,14 +46,15 @@
                                     <th>AUTRE SUGGESTION</th>
                                 </tr>
                                 <tr>
-                                    <td><select name="comm_1"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
-                                    <td><select name="comm_2"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
-                                    <td><select name="comm_3"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
-                                    <td><select name="comm_4"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
-                                    <td><select name="comm_5"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+                                    <td><select id='comm_1' name="comm_1">  <option selected disabled>Choisissez</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+                                    <td><select id='comm_2' name="comm_2">  <option selected disabled>Choisissez</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+                                    <td><select id='comm_3' name="comm_3">  <option selected disabled>Choisissez</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+                                    <td><select id='comm_4' name="comm_4">  <option selected disabled>Choisissez</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+                                    <td><select id='comm_5' name="comm_5">  <option selected disabled>Choisissez</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
                                 </tr>
                                 </table>
                             </div>
+                            <input class="btn" type="submit" value="Suivant" name="submit2">
                         </form>
                     </div>
                 </div>
@@ -101,201 +102,114 @@
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript">
-            /*!
-             * jQuery UI Touch Punch 0.2.3
-             *
-             * Copyright 2011–2014, Dave Furfero
-             * Dual licensed under the MIT or GPL Version 2 licenses.
-             *
-             * Depends:
-             *  jquery.ui.widget.js
-             *  jquery.ui.mouse.js
-             */
-            (function ($) {
+            $('.btn').prop("disabled",true);
+            {% if not responses=="" %}
+            var    espace_1={{ responses[0].value }};
+            var    espace_2={{ responses[1].value }};
+            var    espace_3={{ responses[2].value }};
+            var    espace_4={{ responses[3].value }};
+            var    espace_5={{ responses[4].value }};
+            var    comm_1={{ responses[5].value }};
+            var    comm_2={{ responses[6].value }};
+            var    comm_3={{ responses[7].value }};
+            var    comm_4={{ responses[8].value }};
+            var    comm_5={{ responses[9].value }};
 
-                // Detect touch support
-                $.support.touch = 'ontouchend' in document;
+            $('#espace_1').val(espace_1);
+            $('#espace_2').val(espace_2);
+            $('#espace_3').val(espace_3);
+            $('#espace_4').val(espace_4);
+            $('#espace_5').val(espace_5);
 
-                // Ignore browsers without touch support
-                if (!$.support.touch) {
-                    return;
+            $('#comm_1').val(comm_1);
+            $('#comm_2').val(comm_2);
+            $('#comm_3').val(comm_3);
+            $('#comm_4').val(comm_4);
+            $('#comm_5').val(comm_5);
+
+            $('.btn').prop("disabled",false);
+            $('.btn').css("background", "#1197d0");
+
+
+            {% endif %}
+            $("select").on('change', function(){
+                var espace_1= $('#espace_1').val();
+                var espace_2= $('#espace_2').val();
+                var espace_3= $('#espace_3').val();
+                var espace_4= $('#espace_4').val();
+                var espace_5= $('#espace_5').val();
+
+                var comm_1 = $('#comm_1').val();
+                var comm_2= $('#comm_2').val();
+                var comm_3 = $('#comm_3').val();
+                var comm_4= $('#comm_4').val();
+                var comm_5= $('#comm_5').val();
+
+                $("select option").show();
+
+                if( espace_1==null || espace_2==null || espace_3==null || espace_4==null || espace_5==null || comm_1==null || comm_2==null || comm_3==null || comm_4==null || comm_5==null){
+                    $('.btn').prop("disabled",true);
+                }
+                else {
+                    $('.btn').prop("disabled",false);
+                    $('.btn').css("background", "#1197d0");
                 }
 
-                var mouseProto = $.ui.mouse.prototype,
-                    _mouseInit = mouseProto._mouseInit,
-                    _mouseDestroy = mouseProto._mouseDestroy,
-                    touchHandled;
+                $("#espace_1  option[value=" + espace_2 + "]").hide();
+                $("#espace_1  option[value=" + espace_3 + "]").hide();
+                $("#espace_1  option[value=" + espace_4 + "]").hide();
+                $("#espace_1  option[value=" + espace_5 + "]").hide();
 
-                /**
-                 * Simulate a mouse event based on a corresponding touch event
-                 * @param {Object} event A touch event
-                 * @param {String} simulatedType The corresponding mouse event
-                 */
-                function simulateMouseEvent (event, simulatedType) {
+                $("#espace_2  option[value=" + espace_1 + "]").hide();
+                $("#espace_2  option[value=" + espace_3 + "]").hide();
+                $("#espace_2  option[value=" + espace_4 + "]").hide();
+                $("#espace_2  option[value=" + espace_5 + "]").hide();
 
-                    // Ignore multi-touch events
-                    if (event.originalEvent.touches.length > 1) {
-                        return;
-                    }
+                $("#espace_3  option[value=" + espace_1 + "]").hide();
+                $("#espace_3  option[value=" + espace_2 + "]").hide();
+                $("#espace_3  option[value=" + espace_4 + "]").hide();
+                $("#espace_3  option[value=" + espace_5 + "]").hide();
 
-                    event.preventDefault();
+                $("#espace_4  option[value=" + espace_1 + "]").hide();
+                $("#espace_4  option[value=" + espace_2 + "]").hide();
+                $("#espace_4  option[value=" + espace_3 + "]").hide();
+                $("#espace_4  option[value=" + espace_5 + "]").hide();
 
-                    var touch = event.originalEvent.changedTouches[0],
-                        simulatedEvent = document.createEvent('MouseEvents');
+                $("#espace_5  option[value=" + espace_1 + "]").hide();
+                $("#espace_5  option[value=" + espace_2 + "]").hide();
+                $("#espace_5  option[value=" + espace_3 + "]").hide();
+                $("#espace_5  option[value=" + espace_4 + "]").hide();
 
-                    // Initialize the simulated mouse event using the touch event's coordinates
-                    simulatedEvent.initMouseEvent(
-                        simulatedType,    // type
-                        true,             // bubbles
-                        true,             // cancelable
-                        window,           // view
-                        1,                // detail
-                        touch.screenX,    // screenX
-                        touch.screenY,    // screenY
-                        touch.clientX,    // clientX
-                        touch.clientY,    // clientY
-                        false,            // ctrlKey
-                        false,            // altKey
-                        false,            // shiftKey
-                        false,            // metaKey
-                        0,                // button
-                        null              // relatedTarget
-                    );
+                /***********************************************/
 
-                    // Dispatch the simulated event to the target element
-                    event.target.dispatchEvent(simulatedEvent);
-                }
 
-                /**
-                 * Handle the jQuery UI widget's touchstart events
-                 * @param {Object} event The widget element's touchstart event
-                 */
-                mouseProto._touchStart = function (event) {
+                $("#comm_1  option[value=" + comm_2 + "]").hide();
+                $("#comm_1  option[value=" + comm_3 + "]").hide();
+                $("#comm_1  option[value=" + comm_4 + "]").hide();
+                $("#comm_1  option[value=" + comm_5 + "]").hide();
 
-                    var self = this;
+                $("#comm_2  option[value=" + comm_1 + "]").hide();
+                $("#comm_2  option[value=" + comm_4 + "]").hide();
+                $("#comm_2  option[value=" + comm_3 + "]").hide();
+                $("#comm_2  option[value=" + comm_5 + "]").hide();
 
-                    // Ignore the event if another widget is already being handled
-                    if (touchHandled || !self._mouseCapture(event.originalEvent.changedTouches[0])) {
-                        return;
-                    }
+                $("#comm_3  option[value=" + comm_1 + "]").hide();
+                $("#comm_3  option[value=" + comm_2 + "]").hide();
+                $("#comm_3  option[value=" + comm_4 + "]").hide();
+                $("#comm_3  option[value=" + comm_5 + "]").hide();
 
-                    // Set the flag to prevent other widgets from inheriting the touch event
-                    touchHandled = true;
+                $("#comm_4  option[value=" + comm_1 + "]").hide();
+                $("#comm_4  option[value=" + comm_2 + "]").hide();
+                $("#comm_4  option[value=" + comm_3 + "]").hide();
+                $("#comm_4  option[value=" + comm_5 + "]").hide();
 
-                    // Track movement to determine if interaction was a click
-                    self._touchMoved = false;
+                $("#comm_5  option[value=" + comm_1 + "]").hide();
+                $("#comm_5  option[value=" + comm_2 + "]").hide();
+                $("#comm_5  option[value=" + comm_3 + "]").hide();
+                $("#comm_5  option[value=" + comm_4 + "]").hide();
 
-                    // Simulate the mouseover event
-                    simulateMouseEvent(event, 'mouseover');
+            });
 
-                    // Simulate the mousemove event
-                    simulateMouseEvent(event, 'mousemove');
-
-                    // Simulate the mousedown event
-                    simulateMouseEvent(event, 'mousedown');
-                };
-
-                /**
-                 * Handle the jQuery UI widget's touchmove events
-                 * @param {Object} event The document's touchmove event
-                 */
-                mouseProto._touchMove = function (event) {
-
-                    // Ignore event if not handled
-                    if (!touchHandled) {
-                        return;
-                    }
-
-                    // Interaction was not a click
-                    this._touchMoved = true;
-
-                    // Simulate the mousemove event
-                    simulateMouseEvent(event, 'mousemove');
-                };
-
-                /**
-                 * Handle the jQuery UI widget's touchend events
-                 * @param {Object} event The document's touchend event
-                 */
-                mouseProto._touchEnd = function (event) {
-
-                    // Ignore event if not handled
-                    if (!touchHandled) {
-                        return;
-                    }
-
-                    // Simulate the mouseup event
-                    simulateMouseEvent(event, 'mouseup');
-
-                    // Simulate the mouseout event
-                    simulateMouseEvent(event, 'mouseout');
-
-                    // If the touch interaction did not move, it should trigger a click
-                    if (!this._touchMoved) {
-
-                        // Simulate the click event
-                        simulateMouseEvent(event, 'click');
-                    }
-
-                    // Unset the flag to allow other widgets to inherit the touch event
-                    touchHandled = false;
-                };
-
-                /**
-                 * A duck punch of the $.ui.mouse _mouseInit method to support touch events.
-                 * This method extends the widget with bound touch event handlers that
-                 * translate touch events to mouse events and pass them to the widget's
-                 * original mouse event handling methods.
-                 */
-                mouseProto._mouseInit = function () {
-
-                    var self = this;
-
-                    // Delegate the touch handlers to the widget's element
-                    self.element.bind({
-                        touchstart: $.proxy(self, '_touchStart'),
-                        touchmove: $.proxy(self, '_touchMove'),
-                        touchend: $.proxy(self, '_touchEnd')
-                    });
-
-                    // Call the original $.ui.mouse init method
-                    _mouseInit.call(self);
-                };
-
-                /**
-                 * Remove the touch event handlers
-                 */
-                mouseProto._mouseDestroy = function () {
-
-                    var self = this;
-
-                    // Delegate the touch handlers to the widget's element
-                    self.element.unbind({
-                        touchstart: $.proxy(self, '_touchStart'),
-                        touchmove: $.proxy(self, '_touchMove'),
-                        touchend: $.proxy(self, '_touchEnd')
-                    });
-
-                    // Call the original $.ui.mouse destroy method
-                    _mouseDestroy.call(self);
-                };
-
-            })(jQuery);
-
-            function my_id() {
-                $('.btn').prop("disabled",false);
-                $('.btn').css("background", "#1197d0");
-               for(var i = 1 ; i<=10; i++){
-                   $("#input_"+i).val($("ul#sortable li:nth-child("+i+")").attr("id"));
-               }
-            }
-
-            $( function() {
-                $( "#sortable" ).sortable({
-                    placeholder: "ui-state-highlight"
-                });
-                $( "#sortable" ).disableSelection();
-            } );
         </script>
     {% endblock %}
 
