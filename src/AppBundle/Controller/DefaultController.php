@@ -163,6 +163,7 @@ class DefaultController extends Controller
         if($number==1){
             return $this->render('default/personnalisation.html.twig', array(
                 'form' => $form->createView(),
+                'client'=> $client,
             ));
         }
         else {

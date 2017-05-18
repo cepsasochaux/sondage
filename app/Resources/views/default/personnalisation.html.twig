@@ -13,7 +13,9 @@
                     {{ form_errors(form) }}
                     <div class="block clearfix">
                         <h2>Êtes-vous :</h2>
+                        {% if client.sexe !=0 %}
                         {{ form_widget(form.sexe) }}<br>
+                        {% endif %}
                     </div>
 
                     <div class="block clearfix">
