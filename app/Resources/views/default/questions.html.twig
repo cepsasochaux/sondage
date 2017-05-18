@@ -38,7 +38,7 @@
                                 {% if not reponses=="" %}
 
                                     {% if reponses[k].value>=3 %}
-                                        <td><textarea type="text" id="question_{{ question.id }}_text" name="question_{{ question.id }}_text">{{ question.more }}</textarea></td>
+                                        <td><textarea type="text" id="question_{{ question.id }}_text" name="question_{{ question.id }}_text">{{ reponses[k].more }}</textarea></td>
                                     {% else %}
                                         <td><textarea type="text" id="question_{{ question.id }}_text" name="question_{{ question.id }}_text"></textarea></td>
                                     {% endif %}
