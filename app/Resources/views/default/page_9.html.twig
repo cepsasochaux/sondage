@@ -20,6 +20,7 @@
                                 <li id="6" class="ui-state-default">Item 6</li>
                                 <li id="7" class="ui-state-default">Item 7</li>
                             </ul>
+                            <input type="hidden" value="" id="input_1">
                         <input class="btn" type="submit" value="Suivant" name="submit2">
                         </form>
                     </div>
@@ -54,9 +55,10 @@
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript">
-            $("ul").on('change', function () {
-                alert('test');
-            })
+            $("ul").onmousedown(function () {
+                alert('lol');
+            });
+
             $( function() {
                 $( "#sortable" ).sortable({
                     placeholder: "ui-state-highlight"
