@@ -186,10 +186,16 @@ class DefaultController extends Controller
                     $client->setStatus($number+1);
                     $em->flush();
                 }
-
+                $k=1;
                 for($i=1;$i<=10;$i++){
+                    if($i>5){
+                        $qv = $_POST['espace_'.$i];
+                    }
+                    else {
+                        $k++;
+                        $qv = $_POST['comm_'.$i];
+                    }
 
-                    $qv = $_POST['input_'.$i];
 
                     $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
                         array('questionId' => (56+$i), 'clientId' => $client->getCode())
