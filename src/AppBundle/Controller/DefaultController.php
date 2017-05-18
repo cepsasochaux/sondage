@@ -188,7 +188,7 @@ class DefaultController extends Controller
                 }
                 $k=1;
                 for($i=1;$i<=10;$i++){
-                    if($i>5){
+                    if($i<=5){
                         $qv = $_POST['espace_'.$i];
                     }
                     else {
