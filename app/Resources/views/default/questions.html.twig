@@ -13,7 +13,7 @@
                     <form name="first" method="post" id="myForm">
                     <table>
                         <tr>
-                            <th>PRESTATIONS</th>
+                            <th style="width:200px;">PRESTATIONS</th>
                             {% for txt in choices %}
                                 <th>{{ txt }}</th>
                             {% endfor %}
@@ -35,7 +35,17 @@
                                         <td class="table_input"><input type="radio" value="{{ i }}" id="question_{{ question.id }}" name="question_{{ question.id }}"></td>
                                     {% endif %}
                                 {% endfor %}
-                                <td><textarea type="text" id="question_{{ question.id }}_text" name="question_{{ question.id }}_text"></textarea></td>
+                                {% if not reponses=="" %}
+
+                                    {% if reponses[k].value>=3 %}
+                                        <td><textarea type="text" id="question_{{ question.id }}_text" name="question_{{ question.id }}_text">{{ question.more }}</textarea></td>
+                                    {% else %}
+                                        <td><textarea type="text" id="question_{{ question.id }}_text" name="question_{{ question.id }}_text"></textarea></td>
+                                    {% endif %}
+                                {% else %}
+                                    <td><textarea type="text" id="question_{{ question.id }}_text" name="question_{{ question.id }}_text"></textarea></td>
+                                {% endif %}
+
                             </tr>
                         {% set k = k+1 %}
                         {% endfor %}
