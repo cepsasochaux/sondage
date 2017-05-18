@@ -125,7 +125,15 @@ class DefaultController extends Controller
         }
         else{
             $questions = $em->getRepository('AppBundle:Question')->findByPageId($number);
-            $reponses = $em->getRepository('AppBundle:Reponse')->findByClientId($client->getCode());
+            $em = $this->getDoctrine()->getManager();
+            $query = $em->createQuery(
+                        'SELECT *
+            FROM AppBundle:Reponse 
+            WHERE question_id >= :minQ AND question_id <= :maxQ'
+            )->setParameter(array('minQ'=> $questions[0], 'maxQ' =>end($questions)));
+
+            $reponses = $query->getResult();
+            //$reponses = $em->getRepository('AppBundle:Reponse')->findBy(array('client'=>$client->getCode(), 'questionId'=>5));
             $choices = explode("||", $page->getChoix());
         }
 
