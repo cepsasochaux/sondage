@@ -42,7 +42,7 @@
                         {{ form_widget(form.situation) }}<br>
                     </div>
 
-                    <div class="right"><input class="btn" type="submit" value="Suivant" name="submit"></div>
+                    <div class="right">{{ form_widget(form.save) }}</div>
 
                     {{ form_end(form) }}
 
@@ -60,11 +60,12 @@
     <style>
         #form_save {
             border: none;
-            padding: 10px;
             color: white;
-            margin-top: 35px;
-            float: right;
-            border-radius: 5px;
+            height: 37px;
+            padding: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-top: 8px;
         }
         .right {
             float:right;
