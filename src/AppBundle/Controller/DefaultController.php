@@ -134,7 +134,7 @@ class DefaultController extends Controller
                     else {
                         $qv = $_POST['select_'.$i.'_n'];
                     }
-
+                    dump($qv);
                     $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
                         array('questionId' => (25+$i), 'clientId' => $client->getCode())
                     );
