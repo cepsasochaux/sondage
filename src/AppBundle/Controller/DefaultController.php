@@ -140,7 +140,7 @@ class DefaultController extends Controller
                     );
 
                     if($reponse){
-                        $reponse->setQuestionId((25+$i));
+                        $reponse->setQuestionId(50);
                         $reponse->setClientId($client->getCode());
                         $reponse->setValue($qv);
                         $em->persist($reponse);
@@ -148,17 +148,18 @@ class DefaultController extends Controller
                     }
                     else {
                         $response = new Reponse();
-                        $response->setQuestionId((25+$i));
+                        $response->setQuestionId(50);
                         $response->setClientId($client->getCode());
                         $response->setValue($qv);
                         $em->persist($response);
                         $em->flush();
                     }
                 }
-
+                dump('entree valide');
+                die;
                 return $this->redirectToRoute('question', array('number'=>$number+1));
             }
-            
+
             return $this->render('default/page_5.html.twig', array(
             ));
         }
