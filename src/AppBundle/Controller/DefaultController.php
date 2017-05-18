@@ -172,13 +172,13 @@ class DefaultController extends Controller
 
         elseif($number==10){
 
-            /*            $query = $em->createQuery(
+            $query = $em->createQuery(
                   'SELECT c
               FROM AppBundle:Reponse c
               WHERE c.questionId >= :minQ AND c.questionId <= :maxQ'
-              )->setParameter('minQ', 26)->setParameter('maxQ' ,35);
+              )->setParameter('minQ', 57)->setParameter('maxQ' ,67);
 
-              $reponses = $query->getResult();*/
+              $reponses = $query->getResult();
 
             if(isset($_POST['submit2'])){
 
@@ -192,11 +192,11 @@ class DefaultController extends Controller
                     $qv = $_POST['input_'.$i];
 
                     $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
-                        array('questionId' => (46+$i), 'clientId' => $client->getCode())
+                        array('questionId' => (56+$i), 'clientId' => $client->getCode())
                     );
 
                     if($reponse){
-                        $reponse->setQuestionId((46+$i));
+                        $reponse->setQuestionId((56+$i));
                         $reponse->setClientId($client->getCode());
                         $reponse->setValue($qv);
                         $reponse->setMore('');
@@ -205,7 +205,7 @@ class DefaultController extends Controller
                     }
                     else {
                         $response = new Reponse();
-                        $response->setQuestionId((46+$i));
+                        $response->setQuestionId((56+$i));
                         $response->setClientId($client->getCode());
                         $response->setValue($qv);
                         $response->setMore('');
@@ -217,7 +217,7 @@ class DefaultController extends Controller
                 return $this->redirectToRoute('question', array('number'=>$number+1));
             }
 
-            return $this->render('default/page_10.html.twig', array(
+            return $this->render('default/page_10.html.twig', array('responses' => $reponses
             ));
         }
 
