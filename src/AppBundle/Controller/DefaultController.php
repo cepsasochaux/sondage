@@ -143,6 +143,7 @@ class DefaultController extends Controller
                         $reponse->setQuestionId((25+$i));
                         $reponse->setClientId($client->getCode());
                         $reponse->setValue($qv);
+                        $reponse->setMore('');
                         $em->persist($reponse);
                         $em->flush();
                     }
@@ -151,6 +152,7 @@ class DefaultController extends Controller
                         $response->setQuestionId((25+$i));
                         $response->setClientId($client->getCode());
                         $response->setValue($qv);
+                        $response->setMore('');
                         $em->persist($response);
                         $em->flush();
                     }
