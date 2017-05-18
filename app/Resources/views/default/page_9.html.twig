@@ -12,13 +12,13 @@
                         <h2> Par quels moyens préférez-vous recevoir les informations ?</h2>
                         <h4>Clicquez et déplacez l'élément dans l'ordre de préférence du plus haut celui qui vous intéresse le plus au plus bas celui qui vous intéresse le moins.</h4>
                             <ul id="sortable">
-                                <li class="ui-state-default">Item 1</li>
-                                <li class="ui-state-default">Item 2</li>
-                                <li class="ui-state-default">Item 3</li>
-                                <li class="ui-state-default">Item 4</li>
-                                <li class="ui-state-default">Item 5</li>
-                                <li class="ui-state-default">Item 6</li>
-                                <li class="ui-state-default">Item 7</li>
+                                <li id="1"class="ui-state-default">Item 1</li>
+                                <li id="2" class="ui-state-default">Item 2</li>
+                                <li id="3" class="ui-state-default">Item 3</li>
+                                <li id="4" class="ui-state-default">Item 4</li>
+                                <li id="5" class="ui-state-default">Item 5</li>
+                                <li id="6" class="ui-state-default">Item 6</li>
+                                <li id="7" class="ui-state-default">Item 7</li>
                             </ul>
                         <input class="btn" type="submit" value="Suivant" name="submit2">
                         </form>
@@ -54,7 +54,7 @@
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript">
-            $("#myForm").on('change', function () {
+            $("ul").on('change', function () {
                 alert('test');
             })
             $( function() {
