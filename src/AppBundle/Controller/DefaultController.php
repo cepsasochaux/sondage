@@ -217,7 +217,7 @@ class DefaultController extends Controller
                 return $this->redirectToRoute('question', array('number'=>$number+1));
             }
 
-            return $this->render('default/page_9.html.twig', array(
+            return $this->render('default/page_10.html.twig', array(
             ));
         }
 
