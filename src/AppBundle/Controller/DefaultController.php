@@ -37,15 +37,21 @@ class DefaultController extends Controller
             $client = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $clients = $em->getRepository('AppBundle:Client')->findOneByCode($client->getCode());
-            if(!$clients){
+                if(!$clients){
                 $this->get('session')->getFlashBag()->set('error', 'Le N° de participation anonyme n\'existe pas.');
                 return  $this->redirectToRoute('homepage');
             }
             else{
                 if($clients->getStatus()==0)
                 {
+                    $token = "AeOI".random_int(0,1000)."ZD".random_int(0,1000)."e".random_int(0,1000)."Mp";
+                    $testToken = $em->getRepository('AppBundle:Client')->findOneByToken($token);
+                    while ($testToken) {
+                        $token = "AeOI".random_int(0,1000)."ZD".random_int(0,1000)."e".random_int(0,1000)."Mp";
+                        $testToken = $em->getRepository('AppBundle:Client')->findOneByToken($token);
+                    }
                     $clients->setStatus(1);
-                    $clients->setToken("AeOI".random_int(0,1000)."ZD".random_int(0,1000)."e".random_int(0,1000)."Mp");
+                    $clients->setToken($token);
                     $em->flush();
                     $this->get('session')->set('user', $clients->getCode());
                     return $this->redirectToRoute('question', array('number' => 1));
