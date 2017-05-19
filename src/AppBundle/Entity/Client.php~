@@ -66,6 +66,41 @@ class Client
     /**
      * @var int
      *
+     * @ORM\Column(name="enfant_0_5", type="integer", nullable=true)
+     */
+    private $enfant_0_5;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="enfant_6_11", type="integer", nullable=true)
+     */
+    private $enfant_6_11;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="enfant_12_16", type="integer", nullable=true)
+     */
+    private $enfant_12_16;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="enfant_16_18", type="integer", nullable=true)
+     */
+    private $enfant_16_18;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="enfant_18", type="integer", nullable=true)
+     */
+    private $enfant_18;
+
+    /**
+     * @var int
+     *
      * @ORM\Column(name="enfant_age", type="integer", nullable=true)
      */
     private $enfantAge;
