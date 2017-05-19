@@ -20,7 +20,7 @@
     padding: 15px;
 }
 #numero_anonyme input[type=text] {
-    width: 79%;
+    width: 73%;
     border: none;
     float:left;
     margin: 8px 0;
@@ -34,7 +34,7 @@
 #form_save {
     border: none;
     color: white;
-    height: 37px;
+    height: 40px;
     padding: 5px;
     padding-left: 15px;
     padding-right: 15px;
@@ -185,7 +185,7 @@ a {
         margin-bottom: 50px;
     }
     #numero_anonyme input[type=text] {
-        width: 74%;
+        width: 73%;
         height: 89px;
         font-size: 3rem;
     }
