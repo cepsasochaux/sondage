@@ -51,7 +51,7 @@
                     <div class="block clearfix">
                         <h2>Si oui, merci de préciser le nombre d'enfant par tranche d'âge :</h2>
                         {% if client.enfantage !='' %}
-                            {{ form_widget(form.enfant_age,  {'attr': {'value': client.enfant_age}}) }}<br>
+                            {{ form_widget(form.enfant_age,  {'attr': {'value': client.enfantage}}) }}<br>
                         {% else %}
                             {{ form_widget(form.enfant_age) }}<br>
                         {% endif %}
