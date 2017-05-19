@@ -38,49 +38,49 @@ class Client
     /**
      * @var int
      *
-     * @ORM\Column(name="sexe", type="integer")
+     * @ORM\Column(name="sexe", type="integer", nullable=true)
      */
     private $sexe;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="age", type="integer")
+     * @ORM\Column(name="age", type="integer", nullable=true)
      */
     private $age;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="profession", type="string", length=255)
+     * @ORM\Column(name="profession", type="string", length=255, nullable=true)
      */
     private $profession;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="enfant", type="integer")
+     * @ORM\Column(name="enfant", type="integer", nullable=true)
      */
     private $enfant;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="enfant_age", type="integer")
+     * @ORM\Column(name="enfant_age", type="integer", nullable=true)
      */
     private $enfantAge;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="situation", type="integer")
+     * @ORM\Column(name="situation", type="integer", nullable=true)
      */
     private $situation;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="token", type="string", length=255)
+     * @ORM\Column(name="token", type="string", length=255, nullable=true)
      */
     private $token;
 
