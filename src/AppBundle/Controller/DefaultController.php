@@ -274,8 +274,8 @@ class DefaultController extends Controller
             $query = $em->createQuery(
                 'SELECT c
             FROM AppBundle:Reponse c
-            WHERE c.questionId >= :minQ AND c.questionId <= :maxQ'
-            )->setParameter('minQ', 26)->setParameter('maxQ' ,35);
+            WHERE c.questionId >= :minQ AND c.questionId <= :maxQ AND c.client = :client'
+            )->setParameter('minQ', 26)->setParameter('maxQ' ,35)->setParameter('client', $client->getCode());
 
             $reponses = $query->getResult();
 
@@ -289,8 +289,8 @@ class DefaultController extends Controller
             $query = $em->createQuery(
                         'SELECT c
             FROM AppBundle:Reponse c
-            WHERE c.questionId >= :minQ AND c.questionId <= :maxQ'
-            )->setParameter('minQ', $questions[0])->setParameter('maxQ' ,end($questions));
+            WHERE c.questionId >= :minQ AND c.questionId <= :maxQ AND c.client = :client'
+            )->setParameter('minQ', $questions[0])->setParameter('maxQ' ,end($questions))->setParameter('client', $client->getCode());
 
             $reponses = $query->getResult();
             //$reponses = $em->getRepository('AppBundle:Reponse')->findBy(array('client'=>$client->getCode(), 'questionId'=>5));
