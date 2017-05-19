@@ -1,8 +1,8 @@
 # To get started with security, check out the documentation:
 # http://symfony.com/doc/current/security.html
 security:
-    #access_control:
-       # - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https}
+    access_control:
+        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https}
 
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
