@@ -120,6 +120,12 @@ class DefaultController extends Controller
 
             if ($form->isSubmitted() && $form->isValid()) {
                 $em->flush();
+                $client->setEnfant05($_POST['tranche_1']);
+                $client->setEnfant611($_POST['tranche_2']);
+                $client->setEnfant1215($_POST['tranche_3']);
+                $client->setEnfant1618($_POST['tranche_4']);
+                $client->setEnfant18($_POST['tranche_5']);
+
                 $client->setStatus($number+1);
                 $em->flush();
                 return $this->redirectToRoute('question', array('number'=>$number+1));

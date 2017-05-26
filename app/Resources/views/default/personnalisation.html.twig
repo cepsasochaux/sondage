@@ -50,11 +50,22 @@
 
                     <div class="block clearfix">
                         <h2>Si oui, merci de préciser le nombre d'enfant par tranche d'âge :</h2>
-                        {% if client.enfantage !='' %}
-                            {{ form_widget(form.enfant_age,  {'attr': {'value': client.enfantage}}) }}<br>
-                        {% else %}
-                            {{ form_widget(form.enfant_age) }}<br>
-                        {% endif %}
+                        <table>
+                            <tr>
+                                <th>0-5 ans</th>
+                                <th>6-11 ans</th>
+                                <th>12-15 ans</th>
+                                <th>16-18 ans</th>
+                                <th>18+ ans</th>
+                            </tr>
+                            <tr>
+                                <td><select id='tranche_1' name="tranche_1">  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+                                <td><select id='tranche_2' name="tranche_2">  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+                                <td><select id='tranche_3' name="tranche_3">  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+                                <td><select id='tranche_4' name="tranche_4">  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+                                <td><select id='tranche_5' name="tranche_5">  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+                            </tr>
+                        </table>
                     </div>
 
                     <div class="block clearfix">
