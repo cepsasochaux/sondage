@@ -35,7 +35,7 @@
                                 <h4>
                                     Autre suggestion :
                                 </h4>
-                                <textarea type="text" name="espace_5" ></textarea>
+                                <textarea style="width: 845px;" type="text" name="espace_5" ></textarea>
                             </div>
                             <div class="block">
                                 <h2>Par ordre de préférence, vous souhaiteriez une communication...</h2>
@@ -58,7 +58,7 @@
                                 <h4>
                                     Autre suggestion :
                                 </h4>
-                                <textarea type="text" name="comm_5" ></textarea>
+                                <textarea style="width: 845px;" type="text" name="comm_5" ></textarea>
                             </div>
                             <input class="btn" type="submit" value="Suivant" name="submit2">
                         </form>
@@ -71,6 +71,36 @@
 
     {% block stylesheets %}
         <style>
+            /* Masquer le bouton radio d'origine */
+            input[type=radio]{
+                display: none;
+            }
+            /* Affichage par défaut du bouton radio personnalisé */
+            input[type=radio] + label:before {
+                background: #fff;
+                border: 2px solid #ccc;
+                border-radius: 50%;
+                margin-top: -3px;
+                margin-right: 6px;
+                display: inline-block;
+                vertical-align: middle;
+                content: '';
+                width: 17px;
+                height: 17px;
+            }
+            /* Affichage du bouton radio personnalisé quand il est sélectionné */
+            input[type=radio]:checked + label:before {
+                background: rgb(207,  233, 246);
+                border-color: rgb(207,  233, 246);
+                box-shadow: inset 0px 0px 0px 2px #fff;
+            }
+            .element{
+                margin-bottom:14px;
+            }
+            label{
+                cursor:pointer;
+            }
+
             h4{
                 margin-top: -15px;
             }
