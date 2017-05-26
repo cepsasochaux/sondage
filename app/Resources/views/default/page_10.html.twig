@@ -16,7 +16,7 @@
                             </div>
                             <div class="block">
                                 <h2>Numérotez par ordre de préférence ce que vous souhaiteriez réaliser via cet espace ?</h2>
-                                <h4>Du N°1 : ce qui m'intéresse le plus au N°5 : ce qui m'intéresse le moins</h4>
+                                <h4>Du N°1 : ce qui m'intéresse le plus au N°4 : ce qui m'intéresse le moins</h4>
                                 <table>
                                     <tr>
                                         <th>LE SUIVI DE VOS REMBOURSEMENTS</th>
@@ -26,17 +26,20 @@
                                         <th>AUTRE SUGGESTION</th>
                                     </tr>
                                     <tr>
-                                        <td><select id='espace_1' name="espace_1" >  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
-                                        <td><select id='espace_2' name="espace_2" >  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
-                                        <td><select id='espace_3' name="espace_3" >  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
-                                        <td><select id='espace_4' name="espace_4" >  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
-                                        <td><select id='espace_5' name="espace_5" >  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+                                        <td><select id='espace_1' name="espace_1" >  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+                                        <td><select id='espace_2' name="espace_2" >  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+                                        <td><select id='espace_3' name="espace_3" >  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+                                        <td><select id='espace_4' name="espace_4" >  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
                                     </tr>
                                 </table>
+                                <h4>
+                                    Autre suggestion :
+                                </h4>
+                                <input type="text" name="espace_5" >
                             </div>
                             <div class="block">
                                 <h2>Par ordre de préférence, vous souhaiteriez une communication...</h2>
-                                <h4>Du N°1 : ce qui m'intéresse le plus au N°5 : ce qui m'intéresse le moins</h4>
+                                <h4>Du N°1 : ce qui m'intéresse le plus au N°4 : ce qui m'intéresse le moins</h4>
                                 <table>
                                 <tr>
                                     <th>PLUS RAPIDE</th>
@@ -46,13 +49,16 @@
                                     <th>AUTRE SUGGESTION</th>
                                 </tr>
                                 <tr>
-                                    <td><select id='comm_1' name="comm_1">  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
-                                    <td><select id='comm_2' name="comm_2">  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
-                                    <td><select id='comm_3' name="comm_3">  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
-                                    <td><select id='comm_4' name="comm_4">  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
-                                    <td><select id='comm_5' name="comm_5">  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
+                                    <td><select id='comm_1' name="comm_1">  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+                                    <td><select id='comm_2' name="comm_2">  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+                                    <td><select id='comm_3' name="comm_3">  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+                                    <td><select id='comm_4' name="comm_4">  <option selected disabled>--</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
                                 </tr>
                                 </table>
+                                <h4>
+                                    Autre suggestion :
+                                </h4>
+                                <input type="text" name="comm_5" >
                             </div>
                             <input class="btn" type="submit" value="Suivant" name="submit2">
                         </form>
@@ -65,11 +71,14 @@
 
     {% block stylesheets %}
         <style>
+            h4{
+                margin-top: -15px;
+            }
             table {
                 width: 100%;
             }
             tr th{
-                background: rgba(17, 151, 208, 0.41);
+                background: rgb(207,  233, 246);
                 padding: 10px;
                 padding-left: 10px;
                 padding-right: 10px;
@@ -81,14 +90,7 @@
                 padding-left: 44%;
                 text-align: center;
             }
-            .btn {
-                border: none;
-                padding: 10px;
-                color: white;
-                margin-top: 35px;
-                float: right;
-                border-radius: 5px;
-            }
+
             #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
             #sortable li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; height: 1.5em; }
             html>body #sortable li { height: 1.5em; line-height: 1.2em;    border: 1px solid #1197d0; }

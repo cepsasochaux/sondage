@@ -63,14 +63,15 @@
     width: 850px;
     background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
     border-radius: 5px 5px 5px 5px;
-    font: normal normal normal normal 16px / normal "calibri Light";
+
     margin: 0 auto;
     font-size: 15px;
     padding: 30px 30px 20px;
 }
 
 #BR_4 {
-    font: normal normal normal normal 16px / normal "calibri Light";
+    font-family: "calibri Light", Calibri, SansSerif;
+    font-size:16px;
 }/*#BR_4*/
 
 #BUTTON_5 {
@@ -131,7 +132,7 @@ body {
     text-align: center;
     color: #FFF;
     margin: 0px 5%;
-    font-family: calibri Light;
+    font-family: "Calibri Light", Calibri, SansSerif;
     font-size: 14px;
     display: inline-block;
 }
@@ -150,6 +151,17 @@ a {
     height: 0;
     clear: both;
 }
+.btn {
+    border: none;
+    padding: 12px;
+    color: white;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 35px;
+    float: right;
+    border-radius: 5px;
+}
+
 .btn_ok {
     background: #777575;
 }
@@ -193,7 +205,8 @@ a {
     #P_3 {
         width: 98%;
         background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
-        font: normal normal normal normal 16px / normal "calibri Light";
+        font-family: "calibri Light", Calibri, SansSerif;
+        font-size:16px;
         margin: 0 auto;
         font-size: 2rem;
         padding: 20px;

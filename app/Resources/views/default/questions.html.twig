@@ -8,7 +8,6 @@
                     Enquête de satisfaction
                 </h1>
                 <div id="content_first" class="clearfix">
-                    <h2>{{ page.description }}</h2>
                     {% if not page.titre == '' %}<h3>{{ page.titre }}</h3>{% endif %}
                     <form name="first" method="post" id="myForm">
                     <table>
@@ -18,7 +17,7 @@
                             {% elseif page.id == 7 %}
                                 <!-- NOTHING -->
                             {% else %}
-                                <th style="width:200px;">PRESTATIONS</th>
+                                <th style="width:200px;text-transform: uppercase;">{{ page.description }}</th>
                             {% endif %}
                             {% for txt in choices %}
                                 <th>{{ txt }}</th>
@@ -67,13 +66,16 @@
 
 {% block stylesheets %}
     <style>
+        #content_first::-moz-placeholder {
+            font-family: 'Calibri Light', Calibri, Arial, Helvetica, sans-serif;
+        }
         .col_id {
             text-align: center;
             color:white;
             background: orangered;
         }
         .active{
-            background: #868686;
+            background: rgb(246, 114, 71);
         }
         textarea {
             width: 99%;
@@ -87,21 +89,14 @@
             background-color: #1197d0;
             color: white;
             padding: 5px;
-            text-transform: uppercase;
+            font-weight: normal;
         }
         td {
             /*width: 50px;*/
         }
-        .btn {
-            border: none;
-            padding: 10px;
-            color: white;
-            margin-top: 35px;
-            float: right;
-            border-radius: 5px;
-        }
+
         tr:nth-child(odd) {
-            background: #cbdaff;
+            background: rgb(207,  233, 246);
         }
         .warning {
             border:1px solid palevioletred;
@@ -140,7 +135,7 @@
             }
             if($('input[name=question_{{ question.id }}]:checked').val() == 3 || $('input[name=question_{{ question.id }}]:checked').val() == 4){
                 $("#question_{{ question.id }}_text").addClass('warning');
-                $("#question_{{ question.id }}_text").attr('placeholder','Pourquoi ?')
+                $("#question_{{ question.id }}_text").attr('placeholder','Pour quelle(s) raison(s) ? ')
             }
             else {
                 $("#question_{{ question.id }}_text").removeClass('warning');
