@@ -13,11 +13,11 @@
                                 <h2> Connaissez-vous l'espace personnel disponible sur le site internet du CE ?</h2>
                                 <div class="demo">
                                     <div class="element">
-                                        <input type="radio" id="bouton_1" name="espace_perso" value="1">
+                                        <input type="radio" id="espace_0" name="espace_perso" value="1">
                                         <label for="bouton_1">Oui</label>
                                     </div>
                                     <div class="element">
-                                        <input type="radio" id="bouton_2" name="espace_perso" value="0">
+                                        <input type="radio" id="espace_0" name="espace_perso" value="0">
                                         <label for="bouton_2">Non</label>
                                     </div>
 
@@ -174,6 +174,7 @@
 
             {% endif %}
             $("select").on('change', function(){
+                var espace_0= $('#espace_0').val();
                 var espace_1= $('#espace_1').val();
                 var espace_2= $('#espace_2').val();
                 var espace_3= $('#espace_3').val();
@@ -188,7 +189,7 @@
 
                 $("select option").show();
 
-                if( espace_1==null || espace_2==null || espace_3==null || espace_4==null || espace_5==null || comm_1==null || comm_2==null || comm_3==null || comm_4==null || comm_5==null){
+                if( espace_0==null || espace_1==null || espace_2==null || espace_3==null || espace_4==null || espace_5==null || comm_1==null || comm_2==null || comm_3==null || comm_4==null || comm_5==null){
                     $('.btn').prop("disabled",true);
                 }
                 else {
