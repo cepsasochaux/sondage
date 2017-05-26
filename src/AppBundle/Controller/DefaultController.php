@@ -132,13 +132,13 @@ class DefaultController extends Controller
         }
         elseif($number==9){
 
-          /*            $query = $em->createQuery(
+            $query = $em->createQuery(
                 'SELECT c
             FROM AppBundle:Reponse c
-            WHERE c.questionId >= :minQ AND c.questionId <= :maxQ'
-            )->setParameter('minQ', 26)->setParameter('maxQ' ,35);
+            WHERE c.questionId >= :minQ AND c.questionId <= :maxQ AND c.clientId = :client'
+              )->setParameter('minQ', 47)->setParameter('maxQ' ,56)->setParameter('client', $client->getCode());
 
-            $reponses = $query->getResult();*/
+            $reponses = $query->getResult();
 
             if(isset($_POST['submit2'])){
 
@@ -177,7 +177,7 @@ class DefaultController extends Controller
                 return $this->redirectToRoute('question', array('number'=>$number+1));
             }
 
-            return $this->render('default/page_9.html.twig', array(
+            return $this->render('default/page_9.html.twig', array('responses' =>$reponses
             ));
         }
 
