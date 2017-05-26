@@ -14,11 +14,11 @@
                                 <div class="demo">
                                     <div class="element">
                                         <input type="radio" id="espace_0" name="espace_perso" value="1">
-                                        <label for="bouton_1">Oui</label>
+                                        <label for="espace_0">Oui</label>
                                     </div>
                                     <div class="element">
                                         <input type="radio" id="espace_0" name="espace_perso" value="0">
-                                        <label for="bouton_2">Non</label>
+                                        <label for="espace_0_1">Non</label>
                                     </div>
 
                                 </div>
@@ -174,22 +174,20 @@
 
             {% endif %}
             $("select").on('change', function(){
-                var espace_0= $('#espace_0').val();
                 var espace_1= $('#espace_1').val();
                 var espace_2= $('#espace_2').val();
                 var espace_3= $('#espace_3').val();
                 var espace_4= $('#espace_4').val();
-                var espace_5= $('#espace_5').val();
 
                 var comm_1 = $('#comm_1').val();
                 var comm_2= $('#comm_2').val();
                 var comm_3 = $('#comm_3').val();
                 var comm_4= $('#comm_4').val();
-                var comm_5= $('#comm_5').val();
+
 
                 $("select option").show();
 
-                if( espace_0==null || espace_1==null || espace_2==null || espace_3==null || espace_4==null || espace_5==null || comm_1==null || comm_2==null || comm_3==null || comm_4==null || comm_5==null){
+                if( espace_1==null || espace_2==null || espace_3==null || espace_4==null || comm_1==null || comm_2==null || comm_3==null || comm_4==null ){
                     $('.btn').prop("disabled",true);
                 }
                 else {
