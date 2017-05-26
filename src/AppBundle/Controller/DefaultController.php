@@ -109,7 +109,6 @@ class DefaultController extends Controller
                 ->add('profession', ChoiceType::class, array('placeholder' => 'Choisissez', 'choices' => array("Apprenti"=>0, "Ouvrier"=>1, "Employé ou technicien"=>2, "cadre"=>3, "Autre"=>4)))
                 ->add('enfant', ChoiceType::class, array('choices' => array("Oui"=>0, "Non"=>1),
                     'choices_as_values' => true,'multiple'=>false,'expanded'=>true,'required' => true))
-                ->add('enfant_age', ChoiceType::class, array('choices' => array('' => null , "0-5 ans"=>0, "6-11 ans"=>1, "12-15 ans"=>2, "16-18 ans"=>3, "Plus de 18 ans"=>4)))
                 ->add('situation', ChoiceType::class, array('placeholder' => 'Choisissez', 'choices' => array("Célibataire"=>0, "En couple"=>1, "Marié(e) / Pacsé(e)"=>2, "Séparé/Divorcé"=>3, "Famille recomposée"=>4)))
                 ->add('save', SubmitType::class, array('label' => 'suivant'))
                 ->getForm();
@@ -122,7 +121,7 @@ class DefaultController extends Controller
                 $em->flush();
                 $client->setEnfant05($_POST['tranche_1']);
                 $client->setEnfant611($_POST['tranche_2']);
-                $client->setEnfant1215($_POST['tranche_3']);
+                $client->setEnfant1216($_POST['tranche_3']);
                 $client->setEnfant1618($_POST['tranche_4']);
                 $client->setEnfant18($_POST['tranche_5']);
 
