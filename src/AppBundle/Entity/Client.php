@@ -98,12 +98,6 @@ class Client
      */
     private $enfant_18;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="enfant_age", type="integer", nullable=true)
-     */
-    private $enfantAge;
 
     /**
      * @var int
