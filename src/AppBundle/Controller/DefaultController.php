@@ -177,7 +177,7 @@ class DefaultController extends Controller
                 return $this->redirectToRoute('question', array('number'=>$number+1));
             }
 
-            return $this->render('default/page_9.html.twig', array('responses' =>$reponses
+            return $this->render('default/page_9.html.twig', array('responses' =>$reponses, 'number' => $number
             ));
         }
 
@@ -234,7 +234,7 @@ class DefaultController extends Controller
                 return $this->redirectToRoute('question', array('number'=>$number+1));
             }
 
-            return $this->render('default/page_10.html.twig', array('responses' => $reponses
+            return $this->render('default/page_10.html.twig', array('responses' => $reponses, 'number' => $number
             ));
         }
 
@@ -290,7 +290,7 @@ class DefaultController extends Controller
 
             $reponses = $query->getResult();
 
-            return $this->render('default/page_5.html.twig', array('responses' => $reponses
+            return $this->render('default/page_5.html.twig', array('responses' => $reponses, 'number' => $number
             ));
         }
 
@@ -353,7 +353,7 @@ class DefaultController extends Controller
                 'page' => $page,
                 'questions' => $questions,
                 'choices' => $choices,
-                'reponses' => $reponses,
+                'reponses' => $reponses, 'number' => $number
             ));
         }
 
