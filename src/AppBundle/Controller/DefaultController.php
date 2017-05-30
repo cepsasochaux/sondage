@@ -136,7 +136,7 @@ class DefaultController extends Controller
             $query = $em->createQuery(
                 'SELECT c
             FROM AppBundle:Reponse c
-            WHERE c.questionId >= :minQ AND c.questionId <= :maxQ AND c.clientId = :client'
+            WHERE c.questionId >= :minQ AND c.questionId <= :maxQ AND c.codeClient = :client'
               )->setParameter('minQ', 47)->setParameter('maxQ' ,56)->setParameter('client', $client->getCode());
 
             $reponses = $query->getResult();
@@ -158,7 +158,7 @@ class DefaultController extends Controller
 
                     if($reponse){
                         $reponse->setQuestionId((46+$i));
-                        $reponse->setClientId($client->getCode());
+                        $reponse->setCodeClient($client->getCode());
                         $reponse->setValue($qv);
                         $reponse->setMore('');
                         $em->persist($reponse);
@@ -167,7 +167,7 @@ class DefaultController extends Controller
                     else {
                         $response = new Reponse();
                         $response->setQuestionId((46+$i));
-                        $response->setClientId($client->getCode());
+                        $response->setCodeClient($client->getCode());
                         $response->setValue($qv);
                         $response->setMore('');
                         $em->persist($response);
@@ -187,7 +187,7 @@ class DefaultController extends Controller
             $query = $em->createQuery(
                   'SELECT c
               FROM AppBundle:Reponse c
-              WHERE c.questionId >= :minQ AND c.questionId <= :maxQ AND c.clientId = :client'
+              WHERE c.questionId >= :minQ AND c.questionId <= :maxQ AND c.codeClient = :client'
               )->setParameter('minQ', 57)->setParameter('maxQ' ,67)->setParameter('client', $client->getCode());
 
               $reponses = $query->getResult();
@@ -215,7 +215,7 @@ class DefaultController extends Controller
 
                     if($reponse){
                         $reponse->setQuestionId((56+$i));
-                        $reponse->setClientId($client->getCode());
+                        $reponse->setCodeClient($client->getCode());
                         $reponse->setValue($qv);
                         $reponse->setMore('');
                         $em->persist($reponse);
@@ -224,7 +224,7 @@ class DefaultController extends Controller
                     else {
                         $response = new Reponse();
                         $response->setQuestionId((56+$i));
-                        $response->setClientId($client->getCode());
+                        $response->setCodeClient($client->getCode());
                         $response->setValue($qv);
                         $response->setMore('');
                         $em->persist($response);
@@ -263,7 +263,7 @@ class DefaultController extends Controller
 
                     if($reponse){
                         $reponse->setQuestionId((25+$i));
-                        $reponse->setClientId($client->getCode());
+                        $reponse->setCodeClient($client->getCode());
                         $reponse->setValue($qv);
                         $reponse->setMore('');
                         $em->persist($reponse);
@@ -272,7 +272,7 @@ class DefaultController extends Controller
                     else {
                         $response = new Reponse();
                         $response->setQuestionId((25+$i));
-                        $response->setClientId($client->getCode());
+                        $response->setCodeClient($client->getCode());
                         $response->setValue($qv);
                         $response->setMore('');
                         $em->persist($response);
@@ -286,7 +286,7 @@ class DefaultController extends Controller
             $query = $em->createQuery(
                 'SELECT c
             FROM AppBundle:Reponse c
-            WHERE c.questionId >= :minQ AND c.questionId <= :maxQ AND c.clientId = :client'
+            WHERE c.questionId >= :minQ AND c.questionId <= :maxQ AND c.codeClient = :client'
             )->setParameter('minQ', 26)->setParameter('maxQ' ,35)->setParameter('client', $client->getCode());
 
             $reponses = $query->getResult();
@@ -322,7 +322,7 @@ class DefaultController extends Controller
                     );
                     if($reponse){
                         $reponse->setQuestionId($question->getId());
-                        $reponse->setClientId($client->getCode());
+                        $reponse->setCodeClient($client->getCode());
                         $reponse->setValue($qv);
                         $reponse->setMore($qt);
                         $em->persist($reponse);
@@ -331,7 +331,7 @@ class DefaultController extends Controller
                     else {
                         $response = new Reponse();
                         $response->setQuestionId($question->getId());
-                        $response->setClientId($client->getCode());
+                        $response->setCodeClient($client->getCode());
                         $response->setValue($qv);
                         $response->setMore($qt);
                         $em->persist($response);
