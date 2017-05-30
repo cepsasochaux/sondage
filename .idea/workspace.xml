@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="09ec901f-efda-4596-8f79-ab8c4bfada99" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/end.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/end.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/formulaire.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/formulaire.html.twig" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="end.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="end.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/end.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1462">
-              <caret line="86" column="31" lean-forward="true" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+            <state relative-caret-position="675">
+              <caret line="109" column="210" lean-forward="false" selection-start-line="109" selection-start-column="210" selection-end-line="109" selection-end-column="210" />
               <folding />
             </state>
           </provider>
@@ -72,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="formulaire.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="formulaire.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/formulaire.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1454">
-              <caret line="90" column="13" lean-forward="true" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
+            <state relative-caret-position="386">
+              <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -224,8 +223,8 @@
         <option value="$PROJECT_DIR$/app/Resources/views/default/page_5.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/page_9.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/page_10.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/default/end.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/formulaire.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/end.html.twig" />
       </list>
     </option>
   </component>
@@ -608,12 +607,12 @@
       <workItem from="1495088541462" duration="20065000" />
       <workItem from="1495192811787" duration="5690000" />
       <workItem from="1495805948842" duration="9620000" />
-      <workItem from="1496126742469" duration="5789000" />
+      <workItem from="1496126742469" duration="5836000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129511000" />
+    <option name="totallyTimeSpent" value="129558000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -966,18 +965,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/end.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/formulaire.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1462">
-          <caret line="86" column="31" lean-forward="true" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+        <state relative-caret-position="386">
+          <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/formulaire.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/end.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1454">
-          <caret line="90" column="13" lean-forward="true" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
+        <state relative-caret-position="675">
+          <caret line="109" column="210" lean-forward="false" selection-start-line="109" selection-start-column="210" selection-end-line="109" selection-end-column="210" />
           <folding />
         </state>
       </provider>
