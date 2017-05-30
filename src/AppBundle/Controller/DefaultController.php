@@ -379,7 +379,7 @@ class DefaultController extends Controller
                 ->add('firstname', TextType::class, array('label' => "Prénom"))
                 ->add('email', EmailType::class, array('label' => "email"))
                 ->add('telephone', NumberType::class, array('label' => "téléphone", 'required'=>false))
-                ->add('code_personnel', NumberType::class, array('label'=> 'Votre code  personnel'))
+                ->add('code_personnel', TextType::class, array('label'=> 'Votre code  personnel'))
                 ->add('save', SubmitType::class, array('label' => 'VALIDER'))
                 ->getForm();
 
@@ -399,7 +399,7 @@ class DefaultController extends Controller
                 $message .= "<tr><td><strong>Téléphone:</strong> </td><td>" . $client['telephone'] . "</td></tr>";
                 $message .= "</table>";
                 $message .= "</body></html>";
-                $to = 'leo.meyer12@gmail.com';
+                $to = 'leo.meyer12@gmail.com, mmontmirail@cepsa-sochaux.com';
 
                 $subject = 'Tombola ticket virtuel';
 
