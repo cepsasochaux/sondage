@@ -98,12 +98,6 @@ class Client
      */
     private $enfant_18;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="enfant_age", type="integer", nullable=true)
-     */
-    private $enfantAge;
 
     /**
      * @var int
@@ -375,5 +369,125 @@ class Client
     public function getTombola()
     {
         return $this->tombola;
+    }
+
+    /**
+     * Set enfant05
+     *
+     * @param integer $enfant05
+     *
+     * @return Client
+     */
+    public function setEnfant05($enfant05)
+    {
+        $this->enfant_0_5 = $enfant05;
+
+        return $this;
+    }
+
+    /**
+     * Get enfant05
+     *
+     * @return integer
+     */
+    public function getEnfant05()
+    {
+        return $this->enfant_0_5;
+    }
+
+    /**
+     * Set enfant611
+     *
+     * @param integer $enfant611
+     *
+     * @return Client
+     */
+    public function setEnfant611($enfant611)
+    {
+        $this->enfant_6_11 = $enfant611;
+
+        return $this;
+    }
+
+    /**
+     * Get enfant611
+     *
+     * @return integer
+     */
+    public function getEnfant611()
+    {
+        return $this->enfant_6_11;
+    }
+
+    /**
+     * Set enfant1216
+     *
+     * @param integer $enfant1216
+     *
+     * @return Client
+     */
+    public function setEnfant1216($enfant1216)
+    {
+        $this->enfant_12_16 = $enfant1216;
+
+        return $this;
+    }
+
+    /**
+     * Get enfant1216
+     *
+     * @return integer
+     */
+    public function getEnfant1216()
+    {
+        return $this->enfant_12_16;
+    }
+
+    /**
+     * Set enfant1618
+     *
+     * @param integer $enfant1618
+     *
+     * @return Client
+     */
+    public function setEnfant1618($enfant1618)
+    {
+        $this->enfant_16_18 = $enfant1618;
+
+        return $this;
+    }
+
+    /**
+     * Get enfant1618
+     *
+     * @return integer
+     */
+    public function getEnfant1618()
+    {
+        return $this->enfant_16_18;
+    }
+
+    /**
+     * Set enfant18
+     *
+     * @param integer $enfant18
+     *
+     * @return Client
+     */
+    public function setEnfant18($enfant18)
+    {
+        $this->enfant_18 = $enfant18;
+
+        return $this;
+    }
+
+    /**
+     * Get enfant18
+     *
+     * @return integer
+     */
+    public function getEnfant18()
+    {
+        return $this->enfant_18;
     }
 }
