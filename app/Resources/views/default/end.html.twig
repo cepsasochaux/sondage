@@ -107,7 +107,7 @@
             $("#tombola").css('background', '#aaaaaa');
         {% endif %}
         $("#tombola").on('click', function () {
-            window.open('https://cepsa-sochaux-sondage.com/sondage/{{ client }}', "nom_popup","directories=0,titlebar=0,toolbar=no,location=no,status=0,menubar=0,scrollbars=no,resizable=no,width=980,height=350")
+            window.open('https://cepsa-sochaux-sondage.com/sondage/{{ client }}', "nom_popup","with=980, height=540, directories=0,titlebar=0,toolbar=no,location=no,status=0,menubar=0,scrollbars=no,resizable=no,width=980,height=350")
         })
     </script>
 {% endblock %}
