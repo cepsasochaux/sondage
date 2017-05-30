@@ -304,8 +304,9 @@ class DefaultController extends Controller
             FROM AppBundle:Reponse c
             WHERE c.questionId >= :minQ AND c.questionId <= :maxQ AND c.codeClient = :client'
             )->setParameter('minQ', $questions[0])->setParameter('maxQ' ,end($questions))->setParameter('client', $client->getCode());
-            die;
+
             $reponses = $query->getResult();
+            die;
             //$reponses = $em->getRepository('AppBundle:Reponse')->findBy(array('client'=>$client->getCode(), 'questionId'=>5));
             $choices = explode("||", $page->getChoix());
 
