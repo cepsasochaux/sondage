@@ -153,7 +153,7 @@ class DefaultController extends Controller
                     $qv = $_POST['select_'.$i];
 
                     $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
-                        array('questionId' => (46+$i), 'clientId' => $client->getCode())
+                        array('questionId' => (46+$i), 'codeClient' => $client->getCode())
                     );
 
                     if($reponse){
@@ -210,7 +210,7 @@ class DefaultController extends Controller
 
 
                     $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
-                        array('questionId' => (56+$i), 'clientId' => $client->getCode())
+                        array('questionId' => (56+$i), 'codeClient' => $client->getCode())
                     );
 
                     if($reponse){
@@ -258,7 +258,7 @@ class DefaultController extends Controller
                     }
 
                     $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
-                        array('questionId' => (25+$i), 'clientId' => $client->getCode())
+                        array('questionId' => (25+$i), 'codeClient' => $client->getCode())
                     );
 
                     if($reponse){
@@ -318,7 +318,7 @@ class DefaultController extends Controller
                     $qv = $_POST['question_'.$question->getId()];
                     $qt = $_POST['question_'.$question->getId().'_text'];
                     $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
-                        array('questionId' => $question->getId(), 'clientId' => $client->getCode())
+                        array('questionId' => $question->getId(), 'codeClient' => $client->getCode())
                     );
                     if($reponse){
                         $reponse->setQuestionId($question->getId());
