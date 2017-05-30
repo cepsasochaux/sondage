@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>{% block title %}Cepsa Sochaux | Tombola{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/app/css/style.css') }}">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <link href="https://fonts.googleapis.com/css?family=Advent+Pro" rel="stylesheet">
-    <script src="{{ asset('/bundles/app/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('/bundles/app/js/Nibbler.js') }}"></script>
-</head>
-<body>
+{% extends 'base.html.twig' %}
+
+{% block body %}
 <div id="wrapper">
     <div id="container">
         <div id="DIV_1">
@@ -84,8 +75,6 @@
         background: orangered;
     }
 </style>
-</body>
-</html>
-
+{% endblock %}
 
 
