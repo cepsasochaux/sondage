@@ -321,6 +321,7 @@
     {% block javascripts %}
 
       <script type="text/javascript">
+          {% dump responses %}
           $('.btn').prop("disabled",true);
           {% if not responses=="" %}
           var    sel1={{ responses[0].value }};
