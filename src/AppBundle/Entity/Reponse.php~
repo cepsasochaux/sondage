@@ -33,7 +33,7 @@ class Reponse
      *
      * @ORM\Column(name="code_client", type="integer")
      */
-    private $clientId;
+    private $codeClient;
 
     /**
      * @var string

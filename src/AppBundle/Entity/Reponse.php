@@ -155,4 +155,28 @@ class Reponse
     {
         return $this->more;
     }
+
+    /**
+     * Set codeClient
+     *
+     * @param integer $codeClient
+     *
+     * @return Reponse
+     */
+    public function setCodeClient($codeClient)
+    {
+        $this->codeClient = $codeClient;
+
+        return $this;
+    }
+
+    /**
+     * Get codeClient
+     *
+     * @return integer
+     */
+    public function getCodeClient()
+    {
+        return $this->codeClient;
+    }
 }
