@@ -19,6 +19,19 @@
     margin-top: 30px;
     padding: 15px;
 }
+.prec {
+    text-decoration: none;
+    border: none;
+    font-family: Calibri;
+    padding: 11px;
+    color: white;
+    padding-right: 10px;
+    padding-left: 10px;
+    background: rgb(17, 151, 208);
+    margin-top: 35px;
+    float: left;
+    border-radius: 5px;
+}
 #numero_anonyme input[type=text] {
     width: 73%;
     border: none;
