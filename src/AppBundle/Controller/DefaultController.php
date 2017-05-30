@@ -301,7 +301,7 @@ class DefaultController extends Controller
             $query = $em->createQuery(
                         'SELECT c
             FROM AppBundle:Reponse c
-            WHERE c.questionId >= :minQ AND c.questionId <= :maxQ AND c.clientId = :client'
+            WHERE c.questionId >= :minQ AND c.questionId <= :maxQ AND c.codeClient = :client'
             )->setParameter('minQ', $questions[0])->setParameter('maxQ' ,end($questions))->setParameter('client', $client->getCode());
 
             $reponses = $query->getResult();
