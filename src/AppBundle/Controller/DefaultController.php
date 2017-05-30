@@ -306,7 +306,6 @@ class DefaultController extends Controller
             )->setParameter('minQ', $questions[0])->setParameter('maxQ' ,end($questions))->setParameter('client', $client->getCode());
 
             $reponses = $query->getResult();
-            die;
             //$reponses = $em->getRepository('AppBundle:Reponse')->findBy(array('client'=>$client->getCode(), 'questionId'=>5));
             $choices = explode("||", $page->getChoix());
 
