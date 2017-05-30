@@ -325,7 +325,7 @@
           $('.btn').prop("disabled",true);
           {% if not responses=="" %}
           {% for response in responses %}
-          var $option = $('#Select_{{ response.id-46 }}').children('option[value="'+ {{ response.value }} +'"]');
+          var $option = $('#Select_{{ response.id-46 }}').children('option[value="{{ response.value }}" ]');
           // and now set the option we want selected
           $option.attr('selected', true);​​
           {% endfor %}
