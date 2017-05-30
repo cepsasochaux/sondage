@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09ec901f-efda-4596-8f79-ab8c4bfada99" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/questions.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/questions.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/public/css/style.css" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/public/css/style.css" />
-    </list>
+    <list default="true" id="09ec901f-efda-4596-8f79-ab8c4bfada99" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -608,12 +605,12 @@
       <workItem from="1495088541462" duration="20065000" />
       <workItem from="1495192811787" duration="5690000" />
       <workItem from="1495805948842" duration="9620000" />
-      <workItem from="1496126742469" duration="1468000" />
+      <workItem from="1496126742469" duration="1618000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125190000" />
+    <option name="totallyTimeSpent" value="125340000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
