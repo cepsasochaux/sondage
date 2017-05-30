@@ -324,16 +324,22 @@
           {% dump responses %}
           $('.btn').prop("disabled",true);
           {% if not responses=="" %}
-          var    sel1={{ responses[0].value }};
+          {% for responses as response %}
+          var $option = $('#Select_{{ response.id-46 }}').children('option[value="'+ {{ reponse.value }} +'"]');
+          // and now set the option we want selected
+          $option.attr('selected', true);​​
+          {% endfor %}
+
+          /*var    sel1={{ responses[0].value }};
           var    sel2={{ responses[1].value }};
-          //var    sel3={{ responses[2].value }};
-          //var    sel4={{ responses[3].value }};
-          //var    sel5={{ responses[4].value }};
-          //var    sel6={{ responses[5].value }};
-          //var    sel7={{ responses[6].value }};
-          //var    sel8={{ responses[7].value }};
-          //var    sel9={{ responses[8].value }};
-         // var    sel10={{ responses[9].value }};
+          var    sel3={{ responses[2].value }};
+          var    sel4={{ responses[3].value }};
+          var    sel5={{ responses[4].value }};
+          var    sel6={{ responses[5].value }};
+          var    sel7={{ responses[6].value }};
+          var    sel8={{ responses[7].value }};
+          var    sel9={{ responses[8].value }};
+          var    sel10={{ responses[9].value }};
 
           console.log();
           console.log(sel2);
@@ -355,7 +361,7 @@
           $('#select_7').val(sel7);
           $('#select_8').val(sel8);
           $('#select_9').val(sel9);
-          $('#select_10').val(sel10);
+          $('#select_10').val(sel10);*/
 
 
           $('.btn').prop("disabled",false);
