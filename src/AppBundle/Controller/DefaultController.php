@@ -298,6 +298,7 @@ class DefaultController extends Controller
         else{
             $questions = $em->getRepository('AppBundle:Question')->findByPageId($number);
             $em = $this->getDoctrine()->getManager();
+            die;
             $query = $em->createQuery(
                         'SELECT c
             FROM AppBundle:Reponse c
