@@ -78,6 +78,7 @@ class DefaultController extends Controller
             $this->get('session')->getFlashBag()->set('error', 'Vous n\'êtes pas connecté.');
             return  $this->redirectToRoute('homepage');
         }
+
         $client = $this->get('session')->get('user');
         $fin=11;
 

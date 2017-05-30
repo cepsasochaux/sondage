@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09ec901f-efda-4596-8f79-ab8c4bfada99" name="Default" comment="" />
+    <list default="true" id="09ec901f-efda-4596-8f79-ab8c4bfada99" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/questions.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/questions.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
+    </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +22,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="544">
@@ -59,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="questions.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="questions.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/questions.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="59" column="38" lean-forward="false" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
+              <caret line="59" column="58" lean-forward="false" selection-start-line="59" selection-start-column="58" selection-end-line="59" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -92,17 +95,17 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="359" column="0" lean-forward="true" selection-start-line="359" selection-start-column="0" selection-end-line="359" selection-end-column="0" />
+            <state relative-caret-position="680">
+              <caret line="86" column="26" lean-forward="true" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
               <folding>
                 <element signature="e#40#69#0#PHP" expanded="true" />
-                <marker date="1496127141075" expanded="true" signature="6092:6203" ph="SELECT c FRO... AppBundle" />
-                <marker date="1496127141075" expanded="true" signature="6092:6228" ph="SELECT c FRO... AppBundle" />
-                <marker date="1496127141075" expanded="true" signature="7996:8136" ph="SELECT c FRO... AppBundle" />
-                <marker date="1496127141075" expanded="true" signature="11704:11840" ph="SELECT c FRO... AppBundle" />
-                <marker date="1496127141075" expanded="true" signature="12362:12498" ph="SELECT c FRO... AppBundle" />
-                <marker date="1496127141075" expanded="true" signature="16326:16345" ph="..." />
-                <marker date="1496127141075" expanded="true" signature="16407:16424" ph="..." />
+                <marker date="1496128541839" expanded="true" signature="6093:6204" ph="SELECT c FRO... AppBundle" />
+                <marker date="1496128541839" expanded="true" signature="6093:6229" ph="SELECT c FRO... AppBundle" />
+                <marker date="1496128541839" expanded="true" signature="7997:8137" ph="SELECT c FRO... AppBundle" />
+                <marker date="1496128541839" expanded="true" signature="11705:11841" ph="SELECT c FRO... AppBundle" />
+                <marker date="1496128541839" expanded="true" signature="12363:12499" ph="SELECT c FRO... AppBundle" />
+                <marker date="1496128541839" expanded="true" signature="16327:16346" ph="..." />
+                <marker date="1496128541839" expanded="true" signature="16408:16425" ph="..." />
               </folding>
             </state>
           </provider>
@@ -220,9 +223,9 @@
         <option value="$PROJECT_DIR$/app/Resources/views/default/personnalisation.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/page_9.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/page_10.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/css/style.css" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/questions.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/css/style.css" />
       </list>
     </option>
   </component>
@@ -605,12 +608,12 @@
       <workItem from="1495088541462" duration="20065000" />
       <workItem from="1495192811787" duration="5690000" />
       <workItem from="1495805948842" duration="9620000" />
-      <workItem from="1496126742469" duration="1618000" />
+      <workItem from="1496126742469" duration="1810000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125340000" />
+    <option name="totallyTimeSpent" value="125532000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -938,23 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="359" column="0" lean-forward="true" selection-start-line="359" selection-start-column="0" selection-end-line="359" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#69#0#PHP" expanded="true" />
-            <marker date="1496127141075" expanded="true" signature="6092:6203" ph="SELECT c FRO... AppBundle" />
-            <marker date="1496127141075" expanded="true" signature="6092:6228" ph="SELECT c FRO... AppBundle" />
-            <marker date="1496127141075" expanded="true" signature="7996:8136" ph="SELECT c FRO... AppBundle" />
-            <marker date="1496127141075" expanded="true" signature="11704:11840" ph="SELECT c FRO... AppBundle" />
-            <marker date="1496127141075" expanded="true" signature="12362:12498" ph="SELECT c FRO... AppBundle" />
-            <marker date="1496127141075" expanded="true" signature="16326:16345" ph="..." />
-            <marker date="1496127141075" expanded="true" signature="16407:16424" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/page_9.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -963,18 +949,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/questions.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="59" column="38" lean-forward="false" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="86" column="26" lean-forward="true" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
+          <folding>
+            <element signature="e#40#69#0#PHP" expanded="true" />
+            <marker date="1496128541839" expanded="true" signature="6093:6204" ph="SELECT c FRO... AppBundle" />
+            <marker date="1496128541839" expanded="true" signature="6093:6229" ph="SELECT c FRO... AppBundle" />
+            <marker date="1496128541839" expanded="true" signature="7997:8137" ph="SELECT c FRO... AppBundle" />
+            <marker date="1496128541839" expanded="true" signature="11705:11841" ph="SELECT c FRO... AppBundle" />
+            <marker date="1496128541839" expanded="true" signature="12363:12499" ph="SELECT c FRO... AppBundle" />
+            <marker date="1496128541839" expanded="true" signature="16327:16346" ph="..." />
+            <marker date="1496128541839" expanded="true" signature="16408:16425" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/questions.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="59" column="58" lean-forward="false" selection-start-line="59" selection-start-column="58" selection-end-line="59" selection-end-column="58" />
           <folding />
         </state>
       </provider>
