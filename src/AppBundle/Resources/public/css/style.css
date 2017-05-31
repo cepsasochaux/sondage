@@ -210,6 +210,17 @@ a {
         padding-right: 15px;
         margin-top: 8px;
     }
+    #tombola {
+        font-family: "Calibri Light";
+        font-size: 64px;
+        padding: 31px;
+        margin-top: 50px;
+        border: none;
+        text-align: center;
+        border-radius: 5px;
+        background: orangered;
+        color: white;
+    }
     #BUTTON_5 {
         font: normal normal normal normal 25px / normal Arial;
 
