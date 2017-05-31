@@ -200,6 +200,16 @@ a {
         width: 82%;
         font-size: 4rem;
     }
+    #form_save {
+        border: none;
+        color: white;
+        height: 88px;
+        font-size: 35px;
+        padding: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 8px;
+    }
     #BUTTON_5 {
         font: normal normal normal normal 25px / normal Arial;
 
