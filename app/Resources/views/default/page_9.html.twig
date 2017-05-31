@@ -321,16 +321,9 @@
     {% block javascripts %}
 
       <script type="text/javascript">
-          {% dump responses %}
           $('.btn').prop("disabled",true);
           {% if not responses=="" %}
-          {% for response in responses %}
-          var $option = $('#Select_{{ response.id-46 }}').children('option[value="{{ response.value }}" ]');
-          // and now set the option we want selected
-          $option.attr('selected', true);​​
-          {% endfor %}
-
-          /*var    sel1={{ responses[0].value }};
+          var    sel1={{ responses[0].value }};
           var    sel2={{ responses[1].value }};
           var    sel3={{ responses[2].value }};
           var    sel4={{ responses[3].value }};
@@ -341,17 +334,6 @@
           var    sel9={{ responses[8].value }};
           var    sel10={{ responses[9].value }};
 
-          console.log();
-          console.log(sel2);
-          console.log(sel3);
-          console.log(sel4);
-          console.log(sel5);
-          console.log(sel6);
-          console.log(sel7);
-          console.log(sel8);
-          console.log(sel9);
-          console.log(sel10);
-
           $('#select_1').val(sel1);
           $('#select_2').val(sel2);
           $('#select_3').val(sel3);
@@ -361,7 +343,7 @@
           $('#select_7').val(sel7);
           $('#select_8').val(sel8);
           $('#select_9').val(sel9);
-          $('#select_10').val(sel10);*/
+          $('#select_10').val(sel10);
 
 
           $('.btn').prop("disabled",false);
