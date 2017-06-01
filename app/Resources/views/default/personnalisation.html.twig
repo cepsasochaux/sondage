@@ -85,6 +85,9 @@
                     {% if form.vars.valid == false %}
                         <p class="error"> There is an error in the form. please Correct. </p>
                     {% endif %}
+                    <div id="myProgress">
+                        <div id="myBar"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -94,6 +97,16 @@
 
 {% block stylesheets %}
     <style>
+        #myProgress {
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        #myBar {
+            width: 1%;
+            height: 30px;
+            background-color: #4CAF50;
+        }
         #form_sexe, #form_enfant {
             padding-top: 15px;
         }
