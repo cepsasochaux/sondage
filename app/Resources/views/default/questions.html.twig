@@ -73,7 +73,12 @@
 {% block stylesheets %}
     <style>
         #text_prog {
+        {% if number > 5 %}
+            color: white;
+        {% else %}
             color: black;
+        {% endif %}
+
             text-align: center;
             margin-top: -17px;
             margin-left: 60px;

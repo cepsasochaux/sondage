@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09ec901f-efda-4596-8f79-ab8c4bfada99" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/page_10.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/page_10.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/page_5.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/page_5.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/page_9.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/page_9.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/questions.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/questions.html.twig" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page_10.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="page_10.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/page_10.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2533">
-              <caret line="149" column="23" lean-forward="false" selection-start-line="149" selection-start-column="23" selection-end-line="149" selection-end-column="23" />
+            <state relative-caret-position="859">
+              <caret line="111" column="13" lean-forward="false" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -44,8 +47,8 @@
       <file leaf-file-name="page_9.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/page_9.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3332">
-              <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
+            <state relative-caret-position="400">
+              <caret line="195" column="65" lean-forward="false" selection-start-line="195" selection-start-column="65" selection-end-line="195" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -84,8 +87,8 @@
       <file leaf-file-name="questions.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/questions.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="69" column="0" lean-forward="false" selection-start-line="61" selection-start-column="20" selection-end-line="64" selection-end-column="61" />
+            <state relative-caret-position="646">
+              <caret line="98" column="9" lean-forward="true" selection-start-line="74" selection-start-column="7" selection-end-line="98" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -101,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page_5.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="page_5.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/page_5.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="432" column="65" lean-forward="false" selection-start-line="432" selection-start-column="65" selection-end-line="432" selection-end-column="65" />
+            <state relative-caret-position="153">
+              <caret line="429" column="24" lean-forward="true" selection-start-line="429" selection-start-column="24" selection-end-line="432" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -220,13 +223,13 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Client.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Reponse.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/default/page_10.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/default/page_9.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/css/style.css" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/formulaire.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/personnalisation.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/default/questions.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/page_5.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/questions.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/page_9.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/page_10.html.twig" />
       </list>
     </option>
   </component>
@@ -610,12 +613,12 @@
       <workItem from="1495192811787" duration="5690000" />
       <workItem from="1495805948842" duration="9620000" />
       <workItem from="1496126742469" duration="12893000" />
-      <workItem from="1496319407307" duration="1445000" />
+      <workItem from="1496319407307" duration="1575000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138060000" />
+    <option name="totallyTimeSpent" value="138190000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -921,22 +924,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/page_10.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2533">
-          <caret line="149" column="23" lean-forward="false" selection-start-line="149" selection-start-column="23" selection-end-line="149" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/page_9.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3332">
-          <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3281">
@@ -969,18 +956,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/questions.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/page_5.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="61" selection-start-column="20" selection-end-line="64" selection-end-column="61" />
+        <state relative-caret-position="153">
+          <caret line="429" column="24" lean-forward="true" selection-start-line="429" selection-start-column="24" selection-end-line="432" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/page_5.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/page_9.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="432" column="65" lean-forward="false" selection-start-line="432" selection-start-column="65" selection-end-line="432" selection-end-column="65" />
+        <state relative-caret-position="400">
+          <caret line="195" column="65" lean-forward="false" selection-start-line="195" selection-start-column="65" selection-end-line="195" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/questions.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="98" column="9" lean-forward="true" selection-start-line="74" selection-start-column="7" selection-end-line="98" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/page_10.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="859">
+          <caret line="111" column="13" lean-forward="false" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
           <folding />
         </state>
       </provider>
