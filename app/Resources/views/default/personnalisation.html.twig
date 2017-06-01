@@ -235,8 +235,11 @@
             debug: false,
             success: "valid"
         });
-       if($("#form_enfant_0").is(':checked')){
-           alert("oui0");
+       if($("#form_enfant_1").is(':checked')){
+            $(".age_enfant").hide();
+       }
+       else {
+           $(".age_enfant").show();
        }
         var form = $("#myForm");
         form.validate({ errorPlacement: function(error, element) {} });
