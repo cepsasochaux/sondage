@@ -28,7 +28,7 @@
                         {% set k = 0 %}
                         {% for question in questions %}
                             <tr>
-                                {% if page.id == 7 %}{% else %}<td><bold>{{ question.titre }}</bold><span class="italique">{{ question.description }}</span></td>{% endif %}
+                                {% if page.id == 7 %}{% else %}<td><span style="font-weight: bold;">{{ question.titre }}</span><span class="italique">{{ question.description }}</span></td>{% endif %}
                                 {% for i in 0..(page.nombre-1) %}
                                     {% if not reponses=="" %}
 
