@@ -1,74 +1,98 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>{% block title %}Cepsa Sochaux | Tombola{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/app/css/style.css') }}">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <link href="https://fonts.googleapis.com/css?family=Advent+Pro" rel="stylesheet">
-    <script src="{{ asset('/bundles/app/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('/bundles/app/js/Nibbler.js') }}"></script>
-</head>
-<body>
-<div id="wrapper">
-    <div id="container">
-        <div id="DIV_1">
-          <h1>Votre participation a bien été prise en compte</h1>
-            <p>Vous pouvez désormais quitter la page. </p>
-            <p>
-                Bonne chance !
-            </p>
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="DIV_1">
+                <h1 id="H1_2">
+                    Tombola
+                </h1>
+                <div id="content_first" class="clearfix">
+
+                    <h2>Votre participation a bien été prise en compte</h2>
+                    <br>
+                    Vous pouvez désormais quitter la page.
+                    <br>
+                    Bonne chance !
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<script type="text/javascript"></script>
-<style>
-    body {
-        font-family: 'Calibri Light';
 
-    }
-    label {
-        background: orangered;
-        padding:5px;
-        color: #FFFFFF;
-    }
-    input {
-        height: 25px;
-    }
-    form{
-        min-width: 100px;
-        display: inline-block;
-    }
+    <style>
+        body {
+            font-family: 'Calibri Light';
 
-    form input{
-        float: right;
-    }
+        }
+        label {
+            background: orangered;
+            padding:5px;
+            color: #FFFFFF;
+        }
+        input {
+            height: 22px;
+        }
+        form{
+            min-width: 100px;
+            display: inline-block;
+        }
 
-    form label{
-        display: inline-block;
-        margin-bottom: 2px;
-        background: orangered;
-        width: 78px;
-    }
-    .right label{
-        width: 150px;
-    }
-    .left {
-        float: left;
-        width: 265px;
-    }
-    .right {
-        float: right;
-        width:333px;
-        margin-left: 30px;
-    }
-    #form_save {
-        height:40px;
-        background: orangered;
-    }
-</style>
-</body>
-</html>
+        form input{
+            float: right;
+        }
+
+        form label{
+            display: inline-block;
+            margin-bottom: 2px;
+            background: orangered;
+            width: 78px;
+        }
+        .right label{
+            width: 150px;
+        }
+        .left {
+            float: left;
+            width: 275px;
+            margin-top: 40px;
+        }
+        .right {
+            float: right;
+            width:345px;
+            margin-left: 30px;
+            margin-top: 40px;
+        }
+        #form_save {
+            height:40px;
+            background: orangered;
+        }
+        /*@media screen and (max-width: 980px)
+        {
+            .right {
+                 float: none;
+                width: 320px;
+                margin-top: 15px;
+                margin-left: 0px;
+            }
+            .left {
+                 float: none;
+                 width: 266px;
+                margin-right: 0px;
+                margin-top: 0px;
+                display: block;
+            }
+            form input {
+                float: none;
+            }
+        }*/
+    </style>
+{% endblock %}
 
 
+{% block javascripts %}
 
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(".footer").hide();
+    </script>
+{% endblock %}
