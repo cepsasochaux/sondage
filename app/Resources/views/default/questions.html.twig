@@ -59,6 +59,10 @@
                         <input class="btn" type="submit" value="Suivant" name="submit">
                         <a class="prec" href="/{{ number-1 }}">Précédent</a>
                     </form>
+                    <div id="myProgress">
+                        <div id="myBar"></div>
+                    </div>
+                    <p id="text_prog">1%</p>
                 </div>
             </div>
         </div>
@@ -68,6 +72,26 @@
 
 {% block stylesheets %}
     <style>
+        #text_prog {
+            color: black;
+            text-align: center;
+            margin-top: -17px;
+            margin-left: 60px;
+        }
+        #myProgress {
+            margin: 0 auto;
+            margin-top: 20px;
+            width: 50%;
+            background-color: #ddd;
+        }
+
+        #myBar {
+            width: 1%;
+            height: 15px;
+            text-align: center;
+            color: black;
+            background-color: #FF5722;
+        }
         #content_first::-moz-placeholder {
             font-family: 'Calibri Light', Calibri, Arial, Helvetica, sans-serif;
         }
