@@ -377,8 +377,8 @@ class DefaultController extends Controller
             $form = $this->createFormBuilder(null)
                 ->add('lastname', TextType::class, array('label' => "Nom"))
                 ->add('firstname', TextType::class, array('label' => "Prénom"))
-                ->add('email', EmailType::class, array('label' => "email"))
-                ->add('telephone', NumberType::class, array('label' => "téléphone", 'required'=>false))
+                ->add('email', EmailType::class, array('label' => "Email"))
+                ->add('telephone', NumberType::class, array('label' => "Téléphone", 'required'=>false))
                 ->add('code_personnel', TextType::class, array('label'=> 'Votre code  personnel'))
                 ->add('save', SubmitType::class, array('label' => 'VALIDER'))
                 ->getForm();
