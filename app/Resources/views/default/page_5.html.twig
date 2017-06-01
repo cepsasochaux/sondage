@@ -427,6 +427,10 @@
                         <input class="btn" type="submit" value="Suivant" name="submit2">
                             <a class="prec" href="/{{ number-1 }}">Précédent</a>
                         </form>
+                        <div id="myProgress">
+                            <div id="myBar"></div>
+                        </div>
+                        <p id="text_prog">{{ number*10-10 }}%</p>
                     </div>
                 </div>
             </div>
@@ -436,6 +440,26 @@
 
     {% block stylesheets %}
         <style>
+            #text_prog {
+                color: black;
+                text-align: center;
+                margin-top: -17px;
+                margin-left: 60px;
+            }
+            #myProgress {
+                margin: 0 auto;
+                margin-top: 45px;
+                width: 50%;
+                background-color: #ddd;
+            }
+
+            #myBar {
+                width: {{ number*10-10 }}%;
+                height: 15px;
+                text-align: center;
+                color: black;
+                background-color: #FF5722;
+            }
             .cnt {
                 width: 850px;
             }
