@@ -241,6 +241,14 @@
        else {
            $(".age_enfant").show();
        }
+       $("#form_enfant").on('click', function () {
+           if($("#form_enfant_1").is(':checked')){
+               $(".age_enfant").hide();
+           }
+           else {
+               $(".age_enfant").show();
+           }
+       });
         var form = $("#myForm");
         form.validate({ errorPlacement: function(error, element) {} });
            if(form.valid()){
