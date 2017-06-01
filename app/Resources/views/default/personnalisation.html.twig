@@ -48,7 +48,7 @@
                     </div>
 
 
-                    <div class="block clearfix">
+                    <div class="block clearfix age_enfant">
                         <h2>Si oui, merci de préciser le nombre d'enfant par tranche d'âge :</h2>
                         <br><br><br>
                         <table>
@@ -57,7 +57,7 @@
                                 <th>6-11 ans</th>
                                 <th>12-15 ans</th>
                                 <th>16-18 ans</th>
-                                <th>18+ ans</th>
+                                <th>+18 ans</th>
                             </tr>
                             <tr>
                                 <td><select id='tranche_1' name="tranche_1">  <option selected value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
@@ -235,8 +235,20 @@
             debug: false,
             success: "valid"
         });
+       if($("#form_enfant_0").is('checked')){
+           alert("oui0");
+       }
         var form = $("#myForm");
         form.validate({ errorPlacement: function(error, element) {} });
+           if(form.valid()){
+               $('#form_save').prop("disabled",false);
+               $('#form_save').css("background", "#1197d0");
+           }
+           else {
+               $('#form_save').prop("disabled",false);
+           }
+           $(".error label").hide();
+
         form.on('change', function () {
 
             if(form.valid()){
