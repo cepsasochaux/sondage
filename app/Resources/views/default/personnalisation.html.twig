@@ -78,14 +78,14 @@
                         {% endif %}
                     </div>
 
-                    <div class="right">{{ form_widget(form.save) }}</div>
+                    <div class="right clearfix">{{ form_widget(form.save) }}</div>
 
                     {{ form_end(form) }}
 
                     {% if form.vars.valid == false %}
                         <p class="error"> There is an error in the form. please Correct. </p>
                     {% endif %}
-                    <div id="myProgress">
+                    <div id="myProgress clearfix">
                         <div id="myBar"></div>
                     </div>
                 </div>
