@@ -62,7 +62,7 @@
                     <div id="myProgress">
                         <div id="myBar"></div>
                     </div>
-                    <p id="text_prog">1%</p>
+                    <p id="text_prog">{{ number*10 }}%</p>
                 </div>
             </div>
         </div>
@@ -80,13 +80,13 @@
         }
         #myProgress {
             margin: 0 auto;
-            margin-top: 20px;
+            margin-top: 45px;
             width: 50%;
             background-color: #ddd;
         }
 
         #myBar {
-            width: 1%;
+            width: {{ number*10 }}%;
             height: 15px;
             text-align: center;
             color: black;
