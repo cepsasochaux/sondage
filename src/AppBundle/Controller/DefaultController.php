@@ -188,7 +188,7 @@ class DefaultController extends Controller
                   'SELECT c
               FROM AppBundle:Reponse c
               WHERE c.questionId >= :minQ AND c.questionId <= :maxQ AND c.codeClient = :client'
-              )->setParameter('minQ', 58)->setParameter('maxQ' ,68)->setParameter('client', $client->getCode());
+              )->setParameter('minQ', 58)->setParameter('maxQ' ,67)->setParameter('client', $client->getCode());
 
               $reponses = $query->getResult();
 
