@@ -23,7 +23,7 @@
                     <h2><center>Répondez à l’enquête et participez à la tombola !</center></h2>
 
                     <div id="numero_anonyme" class="clearfix">
-                        <h2>Votre N° de participation anonyme</h2>
+                        <h2>Votre N° de participation anonyme <i id="icon" class="material-icons">help</i></h2>
                         {{ form_start(form) }}
                         {{ form_widget(form) }}
                         {{ form_end(form) }}
@@ -55,6 +55,9 @@
 
 {% block javascripts %}
     <script type="text/javascript">
+        $("#icon").on("click", function () {
+
+        });
         $("#form_code").on('keypress', function () {
             var ten_char = $("#form_code").val().length+1;
             if(ten_char>=4){
