@@ -188,7 +188,7 @@ class DefaultController extends Controller
                   'SELECT c
               FROM AppBundle:Reponse c
               WHERE c.questionId >= :minQ AND c.questionId <= :maxQ AND c.codeClient = :client'
-              )->setParameter('minQ', 57)->setParameter('maxQ' ,67)->setParameter('client', $client->getCode());
+              )->setParameter('minQ', 58)->setParameter('maxQ' ,68)->setParameter('client', $client->getCode());
 
               $reponses = $query->getResult();
 
@@ -199,7 +199,7 @@ class DefaultController extends Controller
                     $em->flush();
                 }
                 $k=1;
-                for($i=1;$i<=10;$i++){
+                for($i=0;$i<=10;$i++){
                     if($i<=5){
                         $qv = $_POST['espace_'.$i];
                     }
