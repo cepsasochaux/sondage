@@ -66,6 +66,7 @@ class DefaultController extends Controller
                     }
                 }
             }
+            $code = implode("",$code);
             dump($code);
             die;
             $clients = $em->getRepository('AppBundle:Client')->findOneByCode($client->getCode());
