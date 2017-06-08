@@ -37,10 +37,8 @@ class DefaultController extends Controller
             $client = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $code = $client->getCode();
-            if($code[0]==0){
-
-            }
-
+            //$code = explode("",$code);
+            $code  = array_map('intval', str_split($code));
             if($code[2]==0){
                 if($code[1]==0){
                     if($code[0]==0){
@@ -48,8 +46,6 @@ class DefaultController extends Controller
                     }
                 }
             }
-            //$code = explode("",$code);
-            $code  = array_map('intval', str_split($code));
             dump($code);
             die;
             $clients = $em->getRepository('AppBundle:Client')->findOneByCode($client->getCode());
