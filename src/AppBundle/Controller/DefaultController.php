@@ -37,7 +37,7 @@ class DefaultController extends Controller
             $client = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $code = $client->getCode();
-            //$code = explode("",$code);
+
             $code  = array_map('intval', str_split($code));
             if($code[2]==0){
                 if($code[1]==0){
@@ -67,9 +67,8 @@ class DefaultController extends Controller
                 }
             }
             $code = implode("",$code);
-            dump($code);
-            die;
-            $clients = $em->getRepository('AppBundle:Client')->findOneByCode($client->getCode());
+
+            $clients = $em->getRepository('AppBundle:Client')->findOneByCode($code);
                 if(!$clients){
                 $this->get('session')->getFlashBag()->set('error', 'Le N° de participation anonyme n\'existe pas.');
                 return  $this->redirectToRoute('homepage');
