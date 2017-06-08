@@ -44,7 +44,7 @@ class DefaultController extends Controller
             if($code[2]==0){
                 if($code[1]==0){
                     if($code[0]==0){
-                        array_slice($code,2,1);
+                        $code = array_slice($code,2,1);
                     }
                 }
             }
