@@ -43,6 +43,26 @@ class DefaultController extends Controller
                 if($code[1]==0){
                     if($code[0]==0){
                         unset($code[2]);
+                        unset($code[1]);
+                        unset($code[0]);
+                    }
+                }
+                else {
+                    if($code[0]==0){
+                        unset($code[0]);
+                    }
+                }
+            }
+            else {
+                if($code[1]==0){
+                    if($code[0]==0){
+                        unset($code[1]);
+                        unset($code[0]);
+                    }
+                }
+                else {
+                    if($code[0]==0){
+                        unset($code[0]);
                     }
                 }
             }
