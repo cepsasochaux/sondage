@@ -37,7 +37,7 @@ class DefaultController extends Controller
             $client = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $code = $client->getCode();
-            //$code = str_repeat("0","",$code);
+            $code = str_replace("0","",$code);
             dump($code);
             die;
             $clients = $em->getRepository('AppBundle:Client')->findOneByCode($client->getCode());
