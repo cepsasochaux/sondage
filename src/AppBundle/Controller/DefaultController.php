@@ -36,6 +36,10 @@ class DefaultController extends Controller
 
             $client = $form->getData();
             $em = $this->getDoctrine()->getManager();
+            $code = $client->getCode();
+            $code = str_repeat("0","",$code);
+            dump($code);
+            die;
             $clients = $em->getRepository('AppBundle:Client')->findOneByCode($client->getCode());
                 if(!$clients){
                 $this->get('session')->getFlashBag()->set('error', 'Le N° de participation anonyme n\'existe pas.');
