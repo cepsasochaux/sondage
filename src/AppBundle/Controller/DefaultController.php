@@ -317,36 +317,45 @@ class DefaultController extends Controller
                 }
                 $k=1;
                 for($i=0;$i<=10;$i++){
+                    $qv="";
                     if($i<=5){
-                        $qv = $_POST['espace_'.$i];
+                        if(isset($_POST['espace_'.$i])){
+                            $qv = $_POST['espace_'.$i];
+                        }
+
                     }
                     else {
-                        $qv = $_POST['comm_'.$k];
+                        if(isset($_POST['comm_'.$k])){
+                            $qv = $_POST['comm_'.$k];
+                        }
+
                         $k++;
                     }
 
+                    if($qv==""){
+                        $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
+                            array('questionId' => (57+$i), 'codeClient' => $client->getCode())
+                        );
 
-                    $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
-                        array('questionId' => (57+$i), 'codeClient' => $client->getCode())
-                    );
-
-                    if($reponse){
-                        $reponse->setQuestionId((57+$i));
-                        $reponse->setCodeClient($client->getCode());
-                        $reponse->setValue($qv);
-                        $reponse->setMore('');
-                        $em->persist($reponse);
-                        $em->flush();
+                        if($reponse){
+                            $reponse->setQuestionId((57+$i));
+                            $reponse->setCodeClient($client->getCode());
+                            $reponse->setValue($qv);
+                            $reponse->setMore('');
+                            $em->persist($reponse);
+                            $em->flush();
+                        }
+                        else {
+                            $response = new Reponse();
+                            $response->setQuestionId((57+$i));
+                            $response->setCodeClient($client->getCode());
+                            $response->setValue($qv);
+                            $response->setMore('');
+                            $em->persist($response);
+                            $em->flush();
+                        }
                     }
-                    else {
-                        $response = new Reponse();
-                        $response->setQuestionId((57+$i));
-                        $response->setCodeClient($client->getCode());
-                        $response->setValue($qv);
-                        $response->setMore('');
-                        $em->persist($response);
-                        $em->flush();
-                    }
+                    
                 }
 
                 return $this->redirectToRoute('question', array('number'=>$number+1));
