@@ -265,8 +265,11 @@ class DefaultController extends Controller
 
                 for($i=1;$i<=10;$i++){
 
+                    $qv=NULL;
+
                     if(isset($_POST['select_'.$i])){
                         $qv = $_POST['select_'.$i];
+                    }
 
                         $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
                             array('questionId' => (46+$i), 'codeClient' => $client->getCode())
@@ -289,7 +292,7 @@ class DefaultController extends Controller
                             $em->persist($response);
                             $em->flush();
                         }
-                    }
+
 
                 }
                 return $this->redirectToRoute('question', array('number'=>$number+1));
@@ -317,7 +320,7 @@ class DefaultController extends Controller
                 }
                 $k=1;
                 for($i=0;$i<=10;$i++){
-                    $qv="";
+                    $qv=NULL;
                     if($i<=5){
                         if(isset($_POST['espace_'.$i])){
                             $qv = $_POST['espace_'.$i];
@@ -332,7 +335,6 @@ class DefaultController extends Controller
                         $k++;
                     }
 
-                    if($qv==""){
                         $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
                             array('questionId' => (57+$i), 'codeClient' => $client->getCode())
                         );
@@ -354,7 +356,7 @@ class DefaultController extends Controller
                             $em->persist($response);
                             $em->flush();
                         }
-                    }
+
 
                 }
 
@@ -375,7 +377,7 @@ class DefaultController extends Controller
                 }
                 $k=0;
                 for($i=1;$i<=10;$i++){
-                    $qv="";
+                    $qv=NULL;
                     if($i<=5){
                         if(isset($_POST['select_'.$i])){
                             $qv = $_POST['select_'.$i];
@@ -389,7 +391,6 @@ class DefaultController extends Controller
                         }
 
                     }
-                    if($qv==""){
                         $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
                             array('questionId' => (25+$i), 'codeClient' => $client->getCode())
                         );
@@ -411,7 +412,7 @@ class DefaultController extends Controller
                             $em->persist($response);
                             $em->flush();
                         }
-                    }
+
 
                 }
 
@@ -450,9 +451,15 @@ class DefaultController extends Controller
                     $em->flush();
                 }
                 foreach ($questions as $question){
-                    if(isset($_POST['question_'.$question->getId()])){
+                    if(isset($_POST['question_'.$question->getId()])) {
                         $qv = $_POST['question_'.$question->getId()];
                         $qt = $_POST['question_'.$question->getId().'_text'];
+                    }
+                    else {
+                        $qv = '';
+                        $qt = '';
+                    }
+
                         $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
                             array('questionId' => $question->getId(), 'codeClient' => $client->getCode())
                         );
@@ -473,7 +480,8 @@ class DefaultController extends Controller
                             $em->persist($response);
                             $em->flush();
                         }
-                    }
+
+
                 }
 
                 return $this->redirectToRoute('question', array('number'=>$number+1));
