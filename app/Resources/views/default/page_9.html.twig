@@ -363,7 +363,7 @@
     {% block javascripts %}
 
       <script type="text/javascript">
-          $('.btn').prop("disabled",true);
+
           {% if not responses=="" %}
           var    sel1={{ responses[0].value }};
           var    sel2={{ responses[1].value }};
@@ -408,13 +408,9 @@
 
               $("select option").show();
 
-              if( sel1==null || sel2==null || sel3==null || sel4==null || sel5==null|| sel6==null|| sel7==null|| sel8==null|| sel9==null|| sel10==null){
-                  $('.btn').prop("disabled",true);
-              }
-              else {
                   $('.btn').prop("disabled",false);
                   $('.btn').css("background", "#1197d0");
-              }
+
 
               $("#select_1  option[value=" + sel2 + "]").hide();
               $("#select_1  option[value=" + sel3 + "]").hide();
