@@ -678,9 +678,6 @@
             $('#select_4_n').val(sel4_n);
             $('#select_5_n').val(sel5_n);
 
-            $('.btn').prop("disabled",false);
-            $('.btn').css("background", "#1197d0");
-
 
             {% endif %}
             $("select").on('change', function(){
@@ -698,13 +695,10 @@
 
                 $("select option").show();
 
-                if( sel1==null || sel2==null || sel3==null || sel4==null || sel5==null || sel1_n==null || sel2_n==null || sel3_n==null || sel4_n==null || sel5_n==null){
-                    $('.btn').prop("disabled",true);
-                }
-                else {
+
                     $('.btn').prop("disabled",false);
                     $('.btn').css("background", "#1197d0");
-                }
+
 
                 $("#select_1  option[value=" + sel2 + "]").hide();
                 $("#select_1  option[value=" + sel3 + "]").hide();
