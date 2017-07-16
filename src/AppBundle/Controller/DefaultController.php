@@ -414,13 +414,13 @@ class DefaultController extends Controller
             $questions = $em->getRepository('AppBundle:Question')->findByPageId($number);
             $em = $this->getDoctrine()->getManager();
 
-            $query = $em->createQuery(
+            /*$query = $em->createQuery(
                         'SELECT c
             FROM AppBundle:Reponse c
             WHERE c.questionId >= :minQ AND c.questionId <= :maxQ AND c.codeClient = :client'
             )->setParameter('minQ', $questions[0])->setParameter('maxQ' ,end($questions))->setParameter('client', $client->getCode());
 
-            $reponses = $query->getResult();
+            $reponses = $query->getResult();*/
             //$reponses = $em->getRepository('AppBundle:Reponse')->findBy(array('client'=>$client->getCode(), 'questionId'=>5));
             $choices = explode("||", $page->getChoix());
 
@@ -470,7 +470,7 @@ class DefaultController extends Controller
                 'page' => $page,
                 'questions' => $questions,
                 'choices' => $choices,
-                'reponses' => $reponses, 'number' => $number
+                'reponses' => "", 'number' => $number
             ));
         }
 
