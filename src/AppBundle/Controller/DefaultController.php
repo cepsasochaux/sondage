@@ -430,7 +430,7 @@ class DefaultController extends Controller
                     $em->flush();
                 }
                 foreach ($questions as $question){
-                    if($_POST['question_'.$question->getId()]){
+                    if(isset($_POST['question_'.$question->getId()])){
                         $qv = $_POST['question_'.$question->getId()];
                         $qt = $_POST['question_'.$question->getId().'_text'];
                         $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
