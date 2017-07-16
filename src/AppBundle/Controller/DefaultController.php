@@ -221,11 +221,11 @@ class DefaultController extends Controller
                 //CHOICE IS FOR SELECT
                 ->add('sexe', ChoiceType::class, array('choices' => array("Un homme" =>0,"Une femme"=>1),
                     'choices_as_values' => true,'multiple'=>false,'expanded'=>true,'required' => false))
-                ->add('age', ChoiceType::class, array('placeholder' => 'Choisissez', 'choices' => array("Moins de 25 ans"=>0, "de 25 à 34 ans"=>1, "de 35 à 44 ans"=>2, "de 45 à 54 ans"=>3, "55 et plus"=>4)))
-                ->add('profession', ChoiceType::class, array('placeholder' => 'Choisissez', 'choices' => array("Apprenti"=>0, "Ouvrier"=>1, "Employé ou Technicien"=>2, "Cadre"=>3, "Autre"=>4)))
+                ->add('age', ChoiceType::class, array('placeholder' => 'Choisissez','required' => false, 'choices' => array("Moins de 25 ans"=>0, "de 25 à 34 ans"=>1, "de 35 à 44 ans"=>2, "de 45 à 54 ans"=>3, "55 et plus"=>4)))
+                ->add('profession', ChoiceType::class, array('placeholder' => 'Choisissez','required' => false, 'choices' => array("Apprenti"=>0, "Ouvrier"=>1, "Employé ou Technicien"=>2, "Cadre"=>3, "Autre"=>4)))
                 ->add('enfant', ChoiceType::class, array('choices' => array("Oui"=>1, "Non"=>0),
                     'choices_as_values' => true,'multiple'=>false,'expanded'=>true,'required' => false))
-                ->add('situation', ChoiceType::class, array('placeholder' => 'Choisissez', 'choices' => array("Célibataire"=>0, "En couple"=>1, "Marié(e) / Pacsé(e)"=>2, "Séparé/Divorcé"=>3, "Famille recomposée"=>4)))
+                ->add('situation', ChoiceType::class, array('placeholder' => 'Choisissez','required' => false, 'choices' => array("Célibataire"=>0, "En couple"=>1, "Marié(e) / Pacsé(e)"=>2, "Séparé/Divorcé"=>3, "Famille recomposée"=>4)))
                 ->add('save', SubmitType::class, array('label' => 'suivant'))
                 ->getForm();
 
