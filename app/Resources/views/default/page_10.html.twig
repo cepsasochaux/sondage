@@ -174,7 +174,7 @@
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript">
-            $('.btn').prop("disabled",true);
+
             {% if not responses=="" %}
             var    espace_1={{ responses[0].value }};
             var    espace_2={{ responses[1].value }};
@@ -220,13 +220,11 @@
 
                 $("select option").show();
 
-                if( espace_1==null || espace_2==null || espace_3==null || espace_4==null || comm_1==null || comm_2==null || comm_3==null || comm_4==null ){
-                    $('.btn').prop("disabled",true);
-                }
-                else {
+
+
                     $('.btn').prop("disabled",false);
                     $('.btn').css("background", "#1197d0");
-                }
+
 
                 $("#espace_1  option[value=" + espace_2 + "]").hide();
                 $("#espace_1  option[value=" + espace_3 + "]").hide();
