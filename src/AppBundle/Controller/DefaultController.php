@@ -430,27 +430,29 @@ class DefaultController extends Controller
                     $em->flush();
                 }
                 foreach ($questions as $question){
-                    $qv = $_POST['question_'.$question->getId()];
-                    $qt = $_POST['question_'.$question->getId().'_text'];
-                    $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
-                        array('questionId' => $question->getId(), 'codeClient' => $client->getCode())
-                    );
-                    if($reponse){
-                        $reponse->setQuestionId($question->getId());
-                        $reponse->setCodeClient($client->getCode());
-                        $reponse->setValue($qv);
-                        $reponse->setMore($qt);
-                        $em->persist($reponse);
-                        $em->flush();
-                    }
-                    else {
-                        $response = new Reponse();
-                        $response->setQuestionId($question->getId());
-                        $response->setCodeClient($client->getCode());
-                        $response->setValue($qv);
-                        $response->setMore($qt);
-                        $em->persist($response);
-                        $em->flush();
+                    if($_POST['question_'.$question->getId()]){
+                        $qv = $_POST['question_'.$question->getId()];
+                        $qt = $_POST['question_'.$question->getId().'_text'];
+                        $reponse = $em->getRepository('AppBundle:Reponse')->findOneBy(
+                            array('questionId' => $question->getId(), 'codeClient' => $client->getCode())
+                        );
+                        if($reponse){
+                            $reponse->setQuestionId($question->getId());
+                            $reponse->setCodeClient($client->getCode());
+                            $reponse->setValue($qv);
+                            $reponse->setMore($qt);
+                            $em->persist($reponse);
+                            $em->flush();
+                        }
+                        else {
+                            $response = new Reponse();
+                            $response->setQuestionId($question->getId());
+                            $response->setCodeClient($client->getCode());
+                            $response->setValue($qv);
+                            $response->setMore($qt);
+                            $em->persist($response);
+                            $em->flush();
+                        }
                     }
                 }
 
