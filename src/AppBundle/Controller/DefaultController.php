@@ -179,7 +179,7 @@ class DefaultController extends Controller
         }
 
 
-        return $this->render('default/myindex.html.twig', array(
+        return $this->render('default/myadmin.html.twig', array(
             'form' => $form->createView(),
         ));
     }
