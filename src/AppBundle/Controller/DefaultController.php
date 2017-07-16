@@ -265,7 +265,7 @@ class DefaultController extends Controller
 
                 for($i=1;$i<=10;$i++){
 
-                    $qv=NULL;
+                    $qv='NULL';
 
                     if(isset($_POST['select_'.$i])){
                         $qv = $_POST['select_'.$i];
@@ -320,7 +320,7 @@ class DefaultController extends Controller
                 }
                 $k=1;
                 for($i=0;$i<=10;$i++){
-                    $qv=NULL;
+                    $qv='NULL';
                     if($i<=5){
                         if(isset($_POST['espace_'.$i])){
                             $qv = $_POST['espace_'.$i];
@@ -377,7 +377,7 @@ class DefaultController extends Controller
                 }
                 $k=0;
                 for($i=1;$i<=10;$i++){
-                    $qv=NULL;
+                    $qv='NULL';
                     if($i<=5){
                         if(isset($_POST['select_'.$i])){
                             $qv = $_POST['select_'.$i];
