@@ -29,14 +29,15 @@
 
                     participation.
                 </p>
-                    <h2><center>Répondez à l’enquête et participez à la tombola !</center></h2>
+                    <h2><center>L'enqûete est désormais  close !</center></h2>
+                    <h2><center>Merci pour votre participation</center></h2>
 
-                    <div id="numero_anonyme" class="clearfix">
+                    {#<div id="numero_anonyme" class="clearfix">
                         <h2>Votre N° de participation anonyme <i id="icon" class="material-icons">help</i></h2>
                         {{ form_start(form) }}
                         {{ form_widget(form) }}
                         {{ form_end(form) }}
-                    </div>
+                    </div>#}
                     {% for flashMessage in app.session.flashbag.get('error') %}
                     <br><br>
                         <div id="flash">

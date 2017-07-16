@@ -102,6 +102,89 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/admin/cepsa/new", name="homepage")
+     */
+    public function adminAction(Request $request)
+    {
+        $client = new Client();
+
+        $form = $this->createFormBuilder($client)
+            ->add('code', TextType::class, array('label' => false))
+            ->add('save', SubmitType::class, array('label' => 'VALIDER'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $client = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $code = $client->getCode();
+
+            $code  = array_map('intval', str_split($code));
+            if($code[2]==0){
+                if($code[1]==0){
+                    if($code[0]==0){
+                        unset($code[2]);
+                        unset($code[1]);
+                        unset($code[0]);
+                    }
+                }
+                else {
+                    if($code[0]==0){
+                        unset($code[0]);
+                    }
+                }
+            }
+            else {
+                if($code[1]==0){
+                    if($code[0]==0){
+                        unset($code[1]);
+                        unset($code[0]);
+                    }
+                }
+                else {
+                    if($code[0]==0){
+                        unset($code[0]);
+                    }
+                }
+            }
+            $code = implode("",$code);
+
+            $clients = $em->getRepository('AppBundle:Client')->findOneByCode($code);
+            if(!$clients){
+                $this->get('session')->getFlashBag()->set('error', 'Le N° de participation anonyme n\'existe pas.');
+                return  $this->redirectToRoute('homepage');
+            }
+            else{
+                if($clients->getStatus()==0)
+                {
+                    $token = "AeOI".random_int(0,1000)."ZD".random_int(0,1000)."e".random_int(0,1000)."Mp";
+                    $testToken = $em->getRepository('AppBundle:Client')->findOneByToken($token);
+                    while ($testToken) {
+                        $token = "AeOI".random_int(0,1000)."ZD".random_int(0,1000)."e".random_int(0,1000)."Mp";
+                        $testToken = $em->getRepository('AppBundle:Client')->findOneByToken($token);
+                    }
+                    $clients->setStatus(1);
+                    $clients->setToken($token);
+                    $em->flush();
+                    $this->get('session')->set('user', $clients->getCode());
+                    return $this->redirectToRoute('question', array('number' => 1));
+                }
+                else {
+                    $this->get('session')->set('user', $clients->getCode());
+                    return $this->redirectToRoute('question', array('number' => $clients->getStatus()));
+                }
+            }
+        }
+
+
+        return $this->render('default/myindex.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
+
+    /**
      * @Route("/{number}", name="question")
      */
     public function firstAction(Request $request, $number)
