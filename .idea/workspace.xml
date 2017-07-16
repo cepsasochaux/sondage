@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09ec901f-efda-4596-8f79-ab8c4bfada99" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/page_5.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/page_5.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
@@ -95,17 +94,17 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="379" column="30" lean-forward="false" selection-start-line="379" selection-start-column="30" selection-end-line="379" selection-end-column="30" />
+            <state relative-caret-position="356">
+              <caret line="525" column="88" lean-forward="true" selection-start-line="525" selection-start-column="88" selection-end-line="525" selection-end-column="88" />
               <folding>
                 <element signature="e#40#69#0#PHP" expanded="true" />
-                <marker date="1500211135328" expanded="true" signature="10031:10142" ph="SELECT c FRO... AppBundle" />
-                <marker date="1500211135328" expanded="true" signature="10031:10169" ph="SELECT c FRO... AppBundle" />
-                <marker date="1500211135328" expanded="true" signature="12136:12278" ph="SELECT c FRO... AppBundle" />
-                <marker date="1500211135328" expanded="true" signature="16440:16578" ph="SELECT c FRO... AppBundle" />
-                <marker date="1500211135328" expanded="true" signature="17103:17241" ph="SELECT c FRO... AppBundle" />
-                <marker date="1500211135328" expanded="true" signature="21370:21389" ph="..." />
-                <marker date="1500211135328" expanded="true" signature="21451:21468" ph="..." />
+                <marker date="1500211222799" expanded="true" signature="10031:10142" ph="SELECT c FRO... AppBundle" />
+                <marker date="1500211222799" expanded="true" signature="10031:10169" ph="SELECT c FRO... AppBundle" />
+                <marker date="1500211222799" expanded="true" signature="12132:12274" ph="SELECT c FRO... AppBundle" />
+                <marker date="1500211222799" expanded="true" signature="16428:16566" ph="SELECT c FRO... AppBundle" />
+                <marker date="1500211222799" expanded="true" signature="17091:17229" ph="SELECT c FRO... AppBundle" />
+                <marker date="1500211222799" expanded="true" signature="21358:21377" ph="..." />
+                <marker date="1500211222799" expanded="true" signature="21439:21456" ph="..." />
               </folding>
             </state>
           </provider>
@@ -648,12 +647,12 @@
       <workItem from="1496319407307" duration="4957000" />
       <workItem from="1496753559928" duration="4203000" />
       <workItem from="1496911648270" duration="4289000" />
-      <workItem from="1500206772628" duration="4161000" />
+      <workItem from="1500206772628" duration="4252000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154225000" />
+    <option name="totallyTimeSpent" value="154316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -1017,17 +1016,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="379" column="30" lean-forward="false" selection-start-line="379" selection-start-column="30" selection-end-line="379" selection-end-column="30" />
+        <state relative-caret-position="356">
+          <caret line="525" column="88" lean-forward="true" selection-start-line="525" selection-start-column="88" selection-end-line="525" selection-end-column="88" />
           <folding>
             <element signature="e#40#69#0#PHP" expanded="true" />
-            <marker date="1500211135328" expanded="true" signature="10031:10142" ph="SELECT c FRO... AppBundle" />
-            <marker date="1500211135328" expanded="true" signature="10031:10169" ph="SELECT c FRO... AppBundle" />
-            <marker date="1500211135328" expanded="true" signature="12136:12278" ph="SELECT c FRO... AppBundle" />
-            <marker date="1500211135328" expanded="true" signature="16440:16578" ph="SELECT c FRO... AppBundle" />
-            <marker date="1500211135328" expanded="true" signature="17103:17241" ph="SELECT c FRO... AppBundle" />
-            <marker date="1500211135328" expanded="true" signature="21370:21389" ph="..." />
-            <marker date="1500211135328" expanded="true" signature="21451:21468" ph="..." />
+            <marker date="1500211222799" expanded="true" signature="10031:10142" ph="SELECT c FRO... AppBundle" />
+            <marker date="1500211222799" expanded="true" signature="10031:10169" ph="SELECT c FRO... AppBundle" />
+            <marker date="1500211222799" expanded="true" signature="12132:12274" ph="SELECT c FRO... AppBundle" />
+            <marker date="1500211222799" expanded="true" signature="16428:16566" ph="SELECT c FRO... AppBundle" />
+            <marker date="1500211222799" expanded="true" signature="17091:17229" ph="SELECT c FRO... AppBundle" />
+            <marker date="1500211222799" expanded="true" signature="21358:21377" ph="..." />
+            <marker date="1500211222799" expanded="true" signature="21439:21456" ph="..." />
           </folding>
         </state>
       </provider>
