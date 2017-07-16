@@ -250,28 +250,6 @@
                $(".age_enfant").show();
            }
        });
-        var form = $("#myForm");
-        form.validate({ errorPlacement: function(error, element) {} });
-           if(form.valid()){
-               $('#form_save').prop("disabled",false);
-               $('#form_save').css("background", "#1197d0");
-           }
-           else {
-               $('#form_save').prop("disabled",false);
-           }
-           $(".error label").hide();
-
-        form.on('change', function () {
-
-            if(form.valid()){
-                $('#form_save').prop("disabled",false);
-                $('#form_save').css("background", "#1197d0");
-            }
-            else {
-                $('#form_save').prop("disabled",false);
-            }
-            $(".error label").hide();
-        });
     </script>
 {% endblock %}
 
