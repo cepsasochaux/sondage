@@ -102,7 +102,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/admin/cepsa/new", name="homepage")
+     * @Route("/admin/cepsa/new", name="admin")
      */
     public function adminAction(Request $request)
     {
